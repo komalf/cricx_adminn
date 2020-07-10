@@ -1,0 +1,1312 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .card-block,
+    .card-footer,
+    .card-header {
+        padding: 0.1rem;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: .1rem .1rem;
+        font-size: 14px;
+        height: calc(1.7rem + 2px);
+        line-height: 1.25;
+        color: #404E67;
+        background-color: #fff;
+        background-image: none;
+        background-clip: padding-box;
+        border: 1px solid;
+        border-radius: .25rem;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.0rem - 1px);
+    }
+
+    ::-webkit-input-placeholder {
+        color: peachpuff;
+        font-size: 11px;
+    }
+
+    ::-moz-placeholder {
+        color: peachpuff;
+        font-size: 11px;
+    }
+
+    :-ms-input-placeholder {
+        color: peachpuff;
+        font-size: 11px;
+    }
+
+    ::placeholder {
+        color: peachpuff;
+        font-size: 11px;
+    }
+
+    fieldset {
+        min-width: 0;
+        padding: 1px;
+        margin: 0;
+        border: 0;
+    }
+
+    /*@media (min-width: 1200px)
+        .col-xl-6 {
+            float: left !important;
+            width: 25% !important;
+        }*/
+
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    label {
+        margin-bottom: .2rem;
+    }
+
+    @media (min-width: 320px) and (max-width:414px) {
+        .card .card-title {
+            font-size: 0.8rem;
+        }
+
+        /*.setting .form-control {
+        width: 60px !important;
+        }*/
+        .setting {
+            font-size: 10px !important
+        }
+
+        .col-xl-6 {
+            padding-right: 0px !important;
+            padding-left: 10px !important
+        }
+
+        .form-group {
+            margin-left: 2px !important;
+        }
+    }
+
+    @media (min-width: 320px) and (max-width:780px) {
+        .custom-control {
+            min-height: 0.1rem !important;
+        }
+
+        .two {
+            display: block !important;
+        }
+    }
+
+    @media (min-width: 750px) {
+        .three {
+            display: -webkit-box !important;
+        }
+
+        .col-xl-4 {
+            /*  float: left;*/
+            width: 33.33333%;
+        }
+    }
+
+    /*@media (min-width: 500px){
+        
+         .check1 {
+        
+            width:25%;
+        }
+        .check2{
+        
+            width:25%;
+        }
+        
+        }*/
+    /*
+        @media (min-width:600px){
+        .col-xl-3 {
+            width: 25% !important;
+        }
+        }*/
+    /*@media (min-width: 500px){
+         .check1 {
+            width: 50%;
+            margin: -36% 0 0 50%;
+        }
+         .check2 {
+            width: 50%;
+        }
+        }*/
+
+    @media (max-width: 500px) {
+        .one {
+            display: block !important;
+        }
+    }
+
+    .error {
+        color: red;
+    }
+
+    .margin {
+        margin-top: 10px;
+        margin-left: -55%;
+    }
+
+    @media (max-width: 500px) {
+        .margin {
+            margin-left: 0;
+        }
+    }
+</style>
+<div class="app-content content container-fluid ng-scope">
+    <div class="content-wrapper">
+        <div class="content-body">
+
+            <section>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="card">
+                            <div class="card-body collapse in">
+                                <div class="card-block">
+
+                                    <div class="header _clearfix">
+
+                                        <h1 class="ng-binding ng-scope">CLIENT INFO</h1>
+                                    </div>
+
+
+
+                                    <div class="card-block">
+
+                                        <div class="simple">
+                                            <div class="col-xl-3 check2">
+
+
+
+                                                <div>
+                                                    <span class="danger">*</span>
+                                                    <label for="usertype"><b>User Type :</b></label>
+                                                    <select
+                                                        class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse"
+                                                        id="usertype">
+                                                        <option value="" class="">--Select User Type--</option>
+                                                        <option label="Demoadmin (Demoadmin)" value="object:112">
+                                                            Whitelabel</option>
+                                                        <option label="Demoadmin (Demoadmin)" value="object:112">Senior
+                                                            Super</option>
+                                                        <option label="demomdl (demomdl)" value="object:113">Super
+                                                            master </option>
+                                                        <option label="don (ivory100)" value="object:114">Master
+                                                        </option>
+                                                        <option label="jmd123 (jmd100)" value="object:115">Client
+                                                        </option>
+                                                    </select>
+                                                </div>
+
+                                                <fieldset>
+                                                    <span class="danger">*</span>
+                                                    <label for="fullname"><b>Enter Full Name :</b></label>
+                                                    <input [(ngModel)]="name" id="fullname" maxlength="20" type="text"
+                                                        onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
+                                                        class="form-control" placeholder="Enter Full Name">
+                                                </fieldset>
+
+                                                <div>
+                                                    <span class="danger">*</span>
+                                                    <label for="username"><b>Enter UserName :</b></label>
+                                                    <br>
+                                                    <input [(ngModel)]="username" id="username"
+                                                        onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
+                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength"
+                                                        maxlength="20" type="text" placeholder="Username"
+                                                        data-ng-disabled="editDisabled">
+                                                </div>
+
+                                                <fieldset>
+                                                    <label for="mobile"><b>Mobile Number :</b></label>
+                                                    <input type="number" [(ngModel)]="mobile" id="mobile"
+                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength"
+                                                        placeholder=" Enter Mobile Number">
+
+
+                                                </fieldset>
+
+                                                <fieldset>
+                                                    <span class="danger">*</span>
+                                                    <label for="password"><b>Password :</b></label>
+                                                    <input [(ngModel)]="password" id="password" maxlength="10"
+                                                        type="password"
+                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength"
+                                                        placeholder="Enter Password">
+                                                </fieldset>
+                                                <fieldset>
+                                                    <div class="">
+                                                        <label class="label-control" for="note">Note :</label>
+                                                        <div class="">
+                                                            <textarea id="note"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                placeholder="Note"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+
+                                            </div>
+
+                                            <div class="col-xl-3 check1">
+
+                                                <fieldset class="">
+                                                    <span class="danger">*</span>
+                                                    <label for="email"><b>Email Address :</b></label>
+                                                    <input [(ngModel)]="email" id="email" type="email"
+                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-email ng-valid-maxlength"
+                                                        placeholder="Enter Email">
+                                                </fieldset>
+
+                                                <fieldset class="">
+                                                    <span class="danger">*</span>
+                                                    <label for="application"><b>Application Name :</b></label>
+                                                    <input [(ngModel)]="application" id="application" maxlength="20"
+                                                        type="text"
+                                                        onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
+                                                        class="form-control ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched"
+                                                        placeholder="Enter Application name">
+                                                </fieldset>
+                                                <fieldset class="">
+                                                    <span class="danger">*</span>
+                                                    <label for="creditreference"><b>Credit Refrence :</b></label>
+                                                    <input [(ngModel)]="creditreference" id="creditreference"
+                                                        type="number" min="0"
+                                                        class="form-control ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched"
+                                                        placeholder=" Enter Credit Refrence">
+                                                </fieldset>
+
+                                                <fieldset class="">
+                                                    <span class="danger">*</span>
+                                                    <label for="depositfunds"><b>Deposit Funds :</b></label>
+                                                    <input [(ngModel)]="depositfunds" id="depositfunds" type="number"
+                                                        class="form-control ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched"
+                                                        min="0" placeholder=" Enter Deposit Funds">
+                                                </fieldset>
+
+                                                <fieldset class="">
+                                                    <span class="danger">*</span>
+                                                    <label for="confirmpassword"><b>Confirm Password :</b></label>
+                                                    <input [(ngModel)]="confirmpassword" id="confirmpassword"
+                                                        maxlength="10" type="password"
+                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength"
+                                                        placeholder="Confirm Password">
+                                                </fieldset>
+
+                                                <fieldset class="">
+                                                    <div class="test" style="display: inline-flex;">
+                                                        <div class="col-md-6" style="margin-top: 10px;">
+                                                            <button type="button"
+                                                                class="mr-1 mb-1 btn btn-outline-success btn-min-width">Save</button>
+                                                        </div>
+                                                        <div class="col-md-6" style="margin-top: 10px;">
+
+                                                            <button type="submit"
+                                                                class="mr-1 mb-1 btn btn-outline-danger btn-min-width">Clear</button>
+
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-6">
+
+                                            <form class="ng-pristine ng-valid">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" [(ngModel)]="clientmodel"
+                                                        class="custom-control-input ng-valid ng-dirty ng-touched ng-pristine ng-untouched ng-empty"
+                                                        id="bfAll" name="dataModeSatBet" value="All">
+                                                    <label class="custom-control-label" for="bfAll">ALL</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" [(ngModel)]="clientmodel"
+                                                        class="custom-control-input ng-valid ng-dirty ng-touched ng-pristine ng-untouched ng-empty"
+                                                        id="bfRadio0" name="dataModeSatBet" value="Active">
+                                                    <label class="custom-control-label" for="bfRadio0">Active</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" [(ngModel)]="clientmodel"
+                                                        class="custom-control-input ng-valid ng-dirty ng-touched ng-valid-parse ng-pristine ng-untouched ng-empty"
+                                                        id="lotusRadio0" name="dataModeSatBet" value="InActive">
+                                                    <label class="custom-control-label"
+                                                        for="lotusRadio0">InActive</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" [(ngModel)]="clientmodel"
+                                                        class="custom-control-input ng-valid ng-dirty ng-touched ng-pristine ng-untouched ng-empty"
+                                                        id="lon" name="dataModeSatBet" value="Suspended">
+                                                    <label class="custom-control-label" for="lon">Suspended</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" [(ngModel)]="clientmodel"
+                                                        class="custom-control-input ng-valid ng-dirty ng-touched ng-pristine ng-untouched ng-empty"
+                                                        id="lot" name="dataModeSatBet" value="Locked">
+                                                    <label class="custom-control-label" for="lot">Locked</label>
+                                                </div>
+                                            </form>
+
+                                            <div class="card-body collapse in">
+                                                <div class="card-block card-dashboard">
+
+                                                    <div class="table-responsive">
+                                                        <table
+                                                            class="table table-striped table-bordered ng-scope ng-table"
+                                                            style="text-align: center; white-space: nowrap;">
+                                                            <thead>
+                                                                <tr class="ng-table-sort-header">
+                                                                    <th>Edit</th>
+                                                                    <th>User Type</th>
+                                                                    <th>User Name</th>
+                                                                    <th>Credit Reference</th>
+                                                                    <th>Deposit Funds</th>
+                                                                    <th>Application Name</th>
+                                                                    <th>Note</th>
+                                                                    <th>Status</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr *ngFor="let userData of CreateUserdata">
+                                                                    <td><img src="assets/editpen.png" (click)="ShowHide()" style="cursor:pointer" width="20" height="20" alt="editpen"></td>
+                                                                    <td>{{userData.UserType}}</td>
+                                                                    <td>{{userData.UserName}}</td>
+                                                                    <td>{{userData.CreditRefrence}}</td>
+                                                                    <td>{{userData.DepositFunds}}</td>
+                                                                    <td>{{userData.ApplicationName}}</td>
+                                                                    <td>{{userData.note}}</td>
+                                                                    <td>{{userData.status}}</td>
+                                                                    <td title="'Action'">
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-sm" title="User"
+                                                                            data-target="#userset" value="Show Hide DIV"
+                                                                            data-toggle="modal">
+                                                                            <i class="fa fa-users"></i></button>
+                                                                        <button 
+                                                                            type="button" class="btn btn-primary btn-sm"
+                                                                            title="Block" value="Show Hide DIV"
+                                                                            >B</button>
+                                                                        <button type="button"
+                                                                        
+                                                                            class="btn btn-danger btn-sm"
+                                                                            title="Unblock" value="Show Hide DIV"
+                                                                            >U</button>
+
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            title="Deposit" data-toggle="modal"
+                                                                            data-target="#Deposit"
+                                                                            style="background-color: #9e0ca0; border: none;">D</button>
+
+                                                                        <button type="button"
+                                                                            class="btn btn-warning btn-sm"
+                                                                            title="Withdraw" data-target="#withdraw"
+                                                                            data-toggle="modal">W</button>
+
+                                                                        <button type="button"
+                                                                            class="btn btn-success btn-sm"
+                                                                            title="Credit Reference"
+                                                                            data-target="#Credit"
+                                                                            data-toggle="modal">C</button>
+
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            title="Account Statement" data-target=""
+                                                                            data-toggle="modal">A</button>
+                                                                        <button type="button"
+                                                                            class="btn btn-info btn-sm"
+                                                                            title="Change password"
+                                                                            data-target="#changepass"
+                                                                            data-toggle="modal">P</button>
+
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            title="Report" data-target=""
+                                                                            data-toggle="modal"
+                                                                            style="background-color:#4644b9; border: none;">R</button>
+
+                                                                        <button
+                                                                            type="button"
+                                                                            class="btn btn-primary btn-sm showpass"
+                                                                            title="Bet Suspend" data-target=""
+                                                                            data-toggle="modal"
+                                                                            >BS</button>
+                                                                        <button
+                                                                            type="button"
+                                                                            class="btn btn-danger btn-sm showpass"
+                                                                            title="Bet Unblock" data-target=""
+                                                                            data-toggle="modal"
+                                                                            >BU</button>
+
+                                                                    </td>
+
+
+
+
+                                                                </tr>
+
+
+
+                                                            </tbody>
+
+
+                                                        </table>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="setting" *ngIf="IsVisible">
+                                        <div class="card-body two"
+                                            style="display: inline-flex;border: 10px solid rgba(0, 0, 0, 0.1);width: -webkit-fill-available;">
+
+                                            <div class="form-group" style="margin-left: 10px;">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox"
+                                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        [(ngModel)]="isSportswise">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description"><b>Sports Wise</b></span>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-group" style="margin-left: 10px;">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox"
+                                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        [(ngModel)]="isEventwise">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description"><b>Event Wise</b></span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group" style="margin-left: 10px;">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox"
+                                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        [(ngModel)]="isSeniorsuperwise">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description"><b>Senior Super
+                                                            Wise</b></span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group" style="margin-left: 10px;">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox"
+                                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        [(ngModel)]="isSupermasterwise">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description"><b>Super Master
+                                                            Wise</b></span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group" style="margin-left: 10px;">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox"
+                                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        [(ngModel)]="isMasterwise">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description"><b>Master Wise</b></span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group" style="margin-left: 10px;">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox"
+                                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        [(ngModel)]="isClienttwise">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description"><b>Client Wise</b></span>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-group" style="margin-left: 10px;">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox"
+                                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        [(ngModel)]="isDefaultwise">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description"><b>Default</b></span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="card-body one" style="display: inline-flex;">
+                                                <div class="form-group" *ngIf="isSportswise">
+                                                    <span class="danger">*</span>
+                                                    <label><b>Select Sport Wise</b></label>
+                                                    <select
+                                                        class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse">
+                                                        <option value="" class="" selected="selected">--Select Sport--
+                                                        </option>
+                                                        <option label="demomdl (demomdl)" value="object:113">Cricket
+                                                        </option>
+                                                        <option label="don (ivory100)" value="object:114">Soccer
+                                                        </option>
+                                                        <option label="jmd123 (jmd100)" value="object:115">Tennis
+                                                        </option>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group ng-hide" *ngIf="isEventwise">
+                                                    <span class="danger">*</span>
+                                                    <label><b>Select Event Wise</b></label>
+                                                    <select
+                                                        class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse">
+                                                        <option value="" class="" selected="selected">--Select Event--
+                                                        </option>
+                                                        <option label="demomdl (demomdl)" value="object:113">India Vs
+                                                            Pakistan(Match Odds)
+                                                        </option>
+                                                        <option label="don (ivory100)" value="object:114">India Vs South
+                                                            Africa(Match Odds)</option>
+                                                        <option label="jmd123 (jmd100)" value="object:115">Tennis (match
+                                                            Odds) </option>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group ng-hide" *ngIf="isSeniorsuperwise">
+                                                    <span class="danger">*</span>
+                                                    <label><b>Select Senior Super Master Wise</b></label>
+                                                    <select
+                                                        class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse">
+                                                        <option value="" class="" selected="selected">--Select Senior
+                                                            Super Master--</option>
+                                                        <option label="demomdl (demomdl)" value="object:113">demomdl
+                                                        </option>
+                                                        <option label="don (ivory100)" value="object:114">don</option>
+                                                        <option label="jmd123 (jmd100)" value="object:115">jmd123
+                                                        </option>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group ng-hide" *ngIf="isSupermasterwise">
+                                                    <span class="danger">*</span>
+                                                    <label><b>Select Super Master Wise</b></label>
+                                                    <select
+                                                        class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse">
+                                                        <option value="" class="" selected="selected">--Select Super
+                                                            Master--</option>
+                                                        <option label="demomdl (demomdl)" value="object:113">demomdl
+                                                        </option>
+                                                        <option label="don (ivory100)" value="object:114">ivory100
+                                                        </option>
+                                                        <option label="jmd123 (jmd100)" value="object:115">jmd100
+                                                        </option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="form-group ng-hide" *ngIf="isMasterwise">
+                                                    <span class="danger">*</span>
+                                                    <label><b>Select Master Wise</b></label>
+                                                    <select
+                                                        class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse">
+                                                        <option value="" class="" selected="selected">--Select Master--
+                                                        </option>
+                                                        <option label="demomdl (demomdl)" value="object:113">Master 1
+                                                        </option>
+                                                        <option label="don (ivory100)" value="object:114">Master 2
+                                                        </option>
+                                                        <option label="jmd123 (jmd100)" value="object:115">Master 3
+                                                        </option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="form-group ng-hide" *ngIf="isClienttwise">
+                                                    <span class="danger">*</span>
+                                                    <label><b>Client Wise</b></label>
+                                                    <select
+                                                        class="form-control ng-pristine ng-valid localytics-chosen ng-empty ng-touched">
+
+                                                        <option value="" class="" selected="selected">--Select Client--
+                                                        </option>
+                                                        <option label="demomdl (demomdl)" value="object:113">Client 1
+                                                        </option>
+                                                        <option label="don (ivory100)" value="object:114">Client 2
+                                                        </option>
+                                                        <option label="jmd123 (jmd100)" value="object:115">Client 3
+                                                        </option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-body three">
+
+
+                                            <div class="col-xl-4" style="border: 10px solid rgba(0, 0, 0, 0.1);">
+                                                <div>
+                                                    <h4 class="card-title" style="text-align: center;">
+                                                        <b>LIMIT SETTING</b>
+                                                    </h4>
+                                                </div>
+
+                                                <div class="row">
+
+                                                    <div class="col-xl-6">
+                                                        <div class="">
+                                                            <label><b>Exposure Limit :</b></label>
+                                                            <input type="number" name="exposureLimit"
+                                                                [(ngModel)]="exposure" min="0"
+                                                                placeholder="Enter exposure limit"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+                                                        <div class="">
+                                                            <label><b>PNL(%) :</b></label>
+                                                            <input type="number" name="exposureLimit" [(ngModel)]="PNL"
+                                                                min="0" max="100" placeholder="Enter PNL"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+
+                                                        <div class="">
+                                                            <label><b>Bet Delay :</b>[Second]</label>
+                                                            <input type="number" name="betDelay" [(ngModel)]="betDelay"
+                                                                min="0" data-ng-change="betDelayChange()"
+                                                                placeholder="Enter bet delay"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+                                                        <div class="">
+                                                            <label><b>Fancy Bonus :</b></label>
+                                                            <input type="number" name="exposureLimit"
+                                                                [(ngModel)]="fancyBonus" min="0"
+                                                                placeholder="Enter Fancy Bonus"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+                                                        <div>
+                                                            <label><b>Exchange Rate :</b></label>
+                                                            <input type="number" name="exposureLimit"
+                                                                [(ngModel)]="exposureLimit" min="0"
+                                                                placeholder="Enter Exchange Rate"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-xl-6">
+
+
+                                                        <div>
+                                                            <label><b>Bookmaking Commissions :</b></label>
+                                                            <input type="number" name="exposureLimit"
+                                                                [(ngModel)]="bookmaking" min="0"
+                                                                placeholder="Enter Booking Commission"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+                                                        <div class="" style="">
+                                                            <label><b>Match Odds Commissions :</b></label>
+                                                            <input type="number" name="exposureLimit"
+                                                                [(ngModel)]="matchOdd" min="0"
+                                                                placeholder="Enter Match Odds Commission"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+                                                        <div class="">
+                                                            <label><b>Fancy Commissions :</b></label>
+                                                            <input type="number" name="exposureLimit"
+                                                                [(ngModel)]="fancyCommissions" min="0"
+                                                                placeholder="Enter Fancy Commission"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-xl-4" style="border: 10px solid rgba(0, 0, 0, 0.1);">
+
+                                                <div>
+                                                    <h4 class="card-title" *ngIf="!isMarketwise"
+                                                        style="text-align: center;">
+                                                        <b>MARKET SETTING</b>
+                                                    </h4>
+                                                </div>
+
+                                                <div class="row" *ngIf="!isMarketwise">
+
+                                                    <div class="col-xl-6">
+
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Bet Min. Rate</b></label>
+                                                            <input type="number" name="betMinRate"
+                                                                [(ngModel)]="betMinRate" min="1.01" max="100"
+                                                                step="0.01" placeholder="Enter bet min rate limit"
+                                                                class="form-control ng-valid ng-valid-min ng-valid-max ng-not-empty ng-dirty ng-valid-number ng-touched">
+                                                            <!-- <span class="error ng-hide">Please enter valid input</span> -->
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Bet Max. Rate :</b></label>
+                                                            <input type="number" name="betMaxRate"
+                                                                [(ngModel)]="betMaxRate" min="1.01" max="1000"
+                                                                step="0.01" placeholder="Enter bet max rate limit"
+                                                                class="form-control ng-valid ng-valid-min ng-valid-max ng-not-empty ng-dirty ng-valid-number ng-touched">
+                                                            <!-- <span class="error ng-hide">Please enter valid
+                                                                    input...</span>
+                                                                <span class="error ng-hide">Max rate can not be less than
+                                                                    min rate</span> -->
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Min. Stake :</b></label>
+                                                            <input type="number" name="minStake" [(ngModel)]="minStake"
+                                                                min="0" placeholder="Ener market mimimum stake"
+                                                                class="form-control ng-valid ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Max. Profit :</b></label>
+                                                            <input type="number" name="maxProfit"
+                                                                [(ngModel)]="maxProfit" min="0"
+                                                                placeholder="Enter market maximum profit"
+                                                                class="form-control ng-valid ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="custom-control custom-checkbox">
+                                                                <input type="checkbox"
+                                                                    class="custom-control-input ng-valid ng-dirty ng-valid-parse ng-touched ng-not-empty"
+                                                                    [(ngModel)]="isUnMatchedAllowed">
+                                                                <span class="custom-control-indicator"></span>
+                                                                <span class="custom-control-description"><b>Is UnMatched
+                                                                        Allowed</b></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="custom-control custom-checkbox">
+                                                                <input type="checkbox"
+                                                                    class="custom-control-input ng-valid ng-dirty ng-valid-parse ng-touched ng-empty"
+                                                                    [(ngModel)]="isCheckVolume">
+                                                                <span class="custom-control-indicator"></span>
+                                                                <span class="custom-control-description"><b>Is
+                                                                        CheckVolume</b></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-6">
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Commission(%) :</b></label>
+                                                            <input type="number" name="commission"
+                                                                [(ngModel)]="marketCommission" min="0" max="100"
+                                                                placeholder="Enter commission"
+                                                                class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Volume Multiplier(%) :</b></label>
+                                                            <input type="number" name="volumeMultiplier"
+                                                                [(ngModel)]="volumeMultiplier" min="0" max="100"
+                                                                placeholder="Enter volume Multiplier"
+                                                                class="form-control ng-valid ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Max. Stake :</b></label>
+                                                            <input type="number" name="maxStake" [(ngModel)]="maxStake"
+                                                                min="0" placeholder="Enter market maximum stake"
+                                                                class="form-control ng-valid ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Max. Loss :</b></label>
+                                                            <input type="number" name="maxLoss" [(ngModel)]="maxLoss"
+                                                                min="0" placeholder="Enter Market maximum loss"
+                                                                class="form-control ng-valid ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                                                        </div>
+
+
+                                                        <div class="form-group" style="">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Market Before Inplay Limit </b></label>
+                                                            <input type="number" name="marketBeforeInplayLimit"
+                                                                [(ngModel)]="marketBeforeInplayLimit" min="0"
+                                                                placeholder="Enter market before inplay limit"
+                                                                class="form-control ng-valid ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-touched">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group" style="margin-left: 10px;text-align: center;">
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input type="checkbox"
+                                                            class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                                            [(ngModel)]="isMarketwise">
+                                                        <span class="custom-control-indicator"></span>
+                                                        <span class="custom-control-description"><b>Is Market
+                                                                Wise</b></span>
+                                                    </label>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-xl-4" style="border: 10px solid rgba(0, 0, 0, 0.1);">
+                                                <h4 class="card-title" style="text-align: center;">
+                                                    <b>SESSION SETTING</b>
+                                                </h4>
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+
+
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Min. Stake :</b></label>
+                                                            <input type="number" name="sessionMinStake"
+                                                                [(ngModel)]="sessionMinStake" min="0"
+                                                                placeholder="Enter session minimum stake"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Max. Profit :</b></label>
+                                                            <input type="number" name="sessionMaxProfit"
+                                                                [(ngModel)]="sessionMaxProfit" min="0"
+                                                                placeholder="Enetr session Maximum Profit"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Commission(%) :</b></label>
+                                                            <input type="number" name="sessionCommission"
+                                                                [(ngModel)]="session" min="0" max="100"
+                                                                data-ng-change="sessionCommissionChange()"
+                                                                placeholder="Enter session commission"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Max. Stake :</b></label>
+                                                            <input type="number" name="sessionMaxStake"
+                                                                [(ngModel)]="sessionMaxStake" min="0"
+                                                                data-ng-change="sessionMaxStakeChange()"
+                                                                placeholder="Enetr session Maximum Stake"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="col-xl-6">
+
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Max. Loss :</b></label>
+                                                            <input type="number" name="sessionMaxLoss"
+                                                                [(ngModel)]="sessionMaxLoss" min="0"
+                                                                placeholder="Enter session maximum loss"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <span class="danger">*</span>
+                                                            <label><b>Per Rate Max. Stake :</b></label>
+                                                            <input type="number" name="sessionRateMaxStake"
+                                                                [(ngModel)]="sessionRateMaxStake" min="0"
+                                                                placeholder="Enter session per rate maximum stake"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+
+                                        <hr>
+                                        <div class="form-actions">
+                                            <div class="text-xs-center">
+
+                                                <button type="submit"
+                                                    class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope">Save
+                                                    &amp; Close</button>
+
+                                                <button type="button"
+                                                    class="mr-1 mb-1 btn btn-outline-danger btn-min-width"
+                                                    data-ng-click="ShowHide()">Cancel</button>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade text-xs-left ng-scope" id="Deposit">
+    <div class="modal-dialog " role="document" style="max-width: 400px">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h3 class="modal-title ">Deposit to Account</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table data-border="0">
+
+                            <tr>
+                                <th>Admin[ADMIN]</th>
+                                <th><i class="fa fa-arrow-right" aria-hidden="true"></i></th>
+                                <th>demowl[WHitelabel]</th>
+                            </tr>
+
+                            <tr>
+
+                                <td>8479398889.00</td>
+                                <td>Available balance</td>
+                                <td>121083.93</td>
+                            </tr>
+
+                            <tr>
+                                <td>-</td>
+                                <td>Balance Change</td>
+                                <td>+</td>
+                            </tr>
+
+                            <tr>
+                                <td>8479398889.00</td>
+                                <td>New Balance</td>
+                                <td>121083.93</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="row"></div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="text" placeholder="Amount to Deposit"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="text" placeholder="Short Description"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty"
+                                name="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="password" placeholder="Your password"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty"
+                                name="name">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer ">
+
+                <button type="button" class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope"
+                    style="background-color: #139993; color: white; margin-bottom: 0">Cancel</button>
+                <button type="button" class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope"
+                    style="background-color: #139993; color: white; margin-bottom: 0">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade text-xs-left ng-scope" id="withdraw">
+    <div class="modal-dialog " role="document" style="max-width: 400px">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h3 class="modal-title ">Withdraw From Account</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table data-border="0">
+
+                            <tr>
+                                <th>Admin[ADMIN]</th>
+                                <th><i class="fa fa-arrow-left" aria-hidden="true"></i></th>
+                                <th>demowl[WHitelabel]</th>
+                            </tr>
+
+                            <tr>
+
+                                <td>8479398889.00</td>
+                                <td>Available balance</td>
+                                <td>121083.93</td>
+                            </tr>
+
+                            <tr>
+                                <td>-</td>
+                                <td>Balance Change</td>
+                                <td>+</td>
+                            </tr>
+
+                            <tr>
+                                <td>8479398889.00</td>
+                                <td>New Balance</td>
+                                <td>121083.93</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="row"></div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="text" placeholder="Amount to Withdraw"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="text" placeholder="Short Description"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty"
+                                name="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="password" placeholder="Your password"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty"
+                                name="name">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer ">
+
+                <button type="button" class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope"
+                    style="background-color: #139993; color: white; margin-bottom: 0">Cancel</button>
+                <button type="button" class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope"
+                    style="background-color: #139993; color: white; margin-bottom: 0">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade text-xs-left ng-scope" id="changepass">
+    <div class="modal-dialog " role="document" style="max-width: 350px">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h3 class="modal-title ">Change Password</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="text" placeholder="New password"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="text" placeholder="Reapet password"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty"
+                                name="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="password" placeholder="Your password"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty"
+                                name="name">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer ">
+
+                <button type="button" class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope"
+                    style="background-color: #139993; color: white; margin-bottom: 0">Cancel</button>
+                <button type="button" class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope"
+                    style="background-color: #139993; color: white; margin-bottom: 0">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade text-xs-left ng-scope" id="userset">
+    <div class="modal-dialog " role="document" style="max-width: 350px">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h3 class="modal-title ">Change Status</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+
+            </div>
+            <div class="modal-body">
+                <div class="card-header">
+                    <a role="button" class="ng-binding">demomdl</a>
+                </div>
+
+                <div class="" style="display: inline-flex;">
+
+                    <div style="padding-right: 20px;">
+                        <button type="button" class="btn"><i
+                                class="material-icons">check_circle_outline</i>Active</button>
+                    </div>
+                    <div style="padding-right: 20px;">
+                        <button type="button" name="Suspend" class="btn"><i
+                                class="material-icons">block</i><span>Suspend</span></button>
+                    </div>
+                    <div style="padding-right: 20px;">
+                        <button type="button" name="lock" class="btn"><i class="material-icons">https</i>Lock</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+
+                <label>Password :</label>
+                <input type="password" placeholder="Your password"
+                    class="border-primary ng-pristine ng-untouched ng-valid ng-empty" name="name"
+                    style="padding: .1rem .1rem;height: calc(1.7rem + 2px);border-radius: .5rem;">
+
+                <button type="button" class="btn">Change</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade text-xs-left ng-scope" id="Credit">
+    <div class="modal-dialog " role="document" style="max-width: 350px">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h3 class="modal-title ">Credit</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="text" placeholder="Old Credit"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="text" placeholder="New Credit Reference"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty"
+                                name="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <input type="password" placeholder=" Enter Your password"
+                                class="form-control border-primary ng-pristine ng-untouched ng-valid ng-empty"
+                                name="name">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer ">
+
+                <button type="button" class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope"
+                    style="background-color: #139993; color: white; margin-bottom: 0">Cancel</button>
+                <button type="button" class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope"
+                    style="background-color: #139993; color: white; margin-bottom: 0">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>

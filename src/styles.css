@@ -1,0 +1,402 @@
+/* You can add global styles to this file, and also import other style files */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: transparent !important;
+}
+.apl-icon-custom-clock:before {
+    content: '\A014';
+  }
+  .apl-icon-custom-play:before {
+    content: '\A006';
+  }
+  .apl-icon-custom-calendar:before {
+    content: '\A009';
+  }
+  .apl-icon-custom-dashboard:before {
+    content: '\A016';
+  }
+  .apl-icon-custom-eye:before {
+    content: '\A013';
+  }
+  .apl-icon-custom-arrow-up:before {
+    content: '\A012';
+  }
+  .apl-icon-custom-filter:before {
+    content: '\A011';
+  }
+  .apl-icon-custom-match-stats:before {
+    content: '\A010';
+  }
+  .apl-icon-custom-play-o:before {
+    content: '\A008';
+  }
+  .apl-icon-custom-ladder:before {
+    content: '\A015';
+  }
+  .apl-icon-custom-indent:before {
+    content: '\F113';
+  }
+  .apl-icon-sport-greyhoundracing:before {
+    content: '\A001';
+  }
+  .apl-icon-sport-horseracing:before {
+    content: '\A002';
+  }
+  .apl-icon-sport-cricket:before {
+    content: '\A003';
+  }
+  .apl-icon-sport-football:before {
+    content: '\A004';
+  }
+  .apl-icon-sport-tennis:before {
+    content: '\A005';
+  }
+  .apl-icon-search:before {
+    content: '\F002';
+  }
+  .apl-icon-heart:before {
+    content: '\F004';
+  }
+  .apl-icon-star:before {
+    content: '\F005';
+  }
+  .apl-icon-star-o:before {
+    content: '\F006';
+  }
+  .apl-icon-user:before {
+    content: '\F007';
+  }
+  .apl-icon-th-list:before {
+    content: '\F00B';
+  }
+  .apl-icon-ok:before {
+    content: '\F00C';
+  }
+  .apl-icon-remove:before {
+    content: '\F00D';
+  }
+  .apl-icon-off:before {
+    content: '\F011';
+  }
+  .apl-icon-cog:before {
+    content: '\F013';
+  }
+  .apl-icon-trash:before {
+    content: '\F014';
+  }
+  .apl-icon-home:before {
+    content: '\F015';
+  }
+  .apl-icon-file-alt:before {
+    content: '\F016';
+  }
+  .apl-icon-time:before {
+    content: '\F017';
+  }
+  .apl-icon-download-alt:before {
+    content: '\F019';
+  }
+  .apl-icon-download:before {
+    content: '\F01A';
+  }
+  .apl-icon-upload:before {
+    content: '\F01B';
+  }
+  .apl-icon-repeat:before {
+    content: '\F01E';
+  }
+  .apl-icon-refresh:before {
+    content: '\F021';
+  }
+  .apl-icon-lock:before {
+    content: '\F023';
+  }
+  .apl-icon-flag:before {
+    content: '\F024';
+  }
+  .apl-icon-tag:before {
+    content: '\F02B';
+  }
+  .apl-icon-book:before {
+    content: '\F02D';
+  }
+  .apl-icon-bookmark:before {
+    content: '\F02E';
+  }
+  .apl-icon-print:before {
+    content: '\F02F';
+  }
+  .apl-icon-align-justify:before {
+    content: '\F039';
+  }
+  .apl-icon-list:before {
+    content: '\F03A';
+  }
+  .apl-icon-pencil:before {
+    content: '\F040';
+  }
+  .apl-icon-check:before {
+    content: '\F046';
+  }
+  .apl-icon-chevron-left:before {
+    content: '\F053';
+  }
+  .apl-icon-chevron-right:before {
+    content: '\F054';
+  }
+  .apl-icon-plus-sign:before {
+    content: '\F055';
+  }
+  .apl-icon-minus-sign:before {
+    content: '\F056';
+  }
+  .apl-icon-remove-sign:before {
+    content: '\F057';
+  }
+  .apl-icon-ok-sign:before {
+    content: '\F058';
+  }
+  .apl-icon-question-sign:before {
+    content: '\F059';
+  }
+  .apl-icon-info-sign:before {
+    content: '\F05A';
+  }
+  .apl-icon-ban-circle:before {
+    content: '\F05E';
+  }
+  .apl-icon-arrow-left:before {
+    content: '\F060';
+  }
+  .apl-icon-arrow-right:before {
+    content: '\F061';
+  }
+  .apl-icon-arrow-up:before {
+    content: '\F062';
+  }
+  .apl-icon-arrow-down:before {
+    content: '\F063';
+  }
+  .apl-icon-plus:before {
+    content: '\F067';
+  }
+  .apl-icon-minus:before {
+    content: '\F068';
+  }
+  .apl-icon-asterisk:before {
+    content: '\F069';
+  }
+  .apl-icon-exclamation-sign:before {
+    content: '\F06A';
+  }
+  .apl-icon-eye-open:before {
+    content: '\F06E';
+  }
+  .apl-icon-eye-close:before {
+    content: '\F070';
+  }
+  .apl-icon-warning-sign:before {
+    content: '\F071';
+  }
+  .apl-icon-comment:before {
+    content: '\F075';
+  }
+  .apl-icon-chevron-up:before {
+    content: '\F077';
+  }
+  .apl-icon-chevron-down:before {
+    content: '\F078';
+  }
+  .apl-icon-folder-close:before {
+    content: '\F07B';
+  }
+  .apl-icon-bar-chart:before {
+    content: '\F080';
+  }
+  .apl-icon-heart-empty:before {
+    content: '\F08A';
+  }
+  .apl-icon-signout:before {
+    content: '\F08B';
+  }
+  .apl-icon-external-link:before {
+    content: '\F08E';
+  }
+  .apl-icon-signin:before {
+    content: '\F090';
+  }
+  .apl-icon-upload-alt:before {
+    content: '\F093';
+  }
+  .apl-icon-check-empty:before {
+    content: '\F096';
+  }
+  .apl-icon-bookmark-empty:before {
+    content: '\F097';
+  }
+  .apl-icon-unlock:before {
+    content: '\F09C';
+  }
+  .apl-icon-rss:before {
+    content: '\F09E';
+  }
+  .apl-icon-bell:before {
+    content: '\F0A2';
+  }
+  .apl-icon-circle-arrow-left:before {
+    content: '\F0A8';
+  }
+  .apl-icon-circle-arrow-right:before {
+    content: '\F0A9';
+  }
+  .apl-icon-circle-arrow-up:before {
+    content: '\F0AA';
+  }
+  .apl-icon-circle-arrow-down:before {
+    content: '\F0AB';
+  }
+  .apl-icon-globe:before {
+    content: '\F0AC';
+  }
+  .apl-icon-wrench:before {
+    content: '\F0AD';
+  }
+  .apl-icon-cloud:before {
+    content: '\F0C2';
+  }
+  .apl-icon-reorder:before {
+    content: '\F0C9';
+  }
+  .apl-icon-money:before {
+    content: '\F0D6';
+  }
+  .apl-icon-caret-down:before {
+    content: '\F0D7';
+  }
+  .apl-icon-caret-up:before {
+    content: '\F0D8';
+  }
+  .apl-icon-caret-left:before {
+    content: '\F0D9';
+  }
+  .apl-icon-caret-right:before {
+    content: '\F0DA';
+  }
+  .apl-icon-sort:before {
+    content: '\F0DC';
+  }
+  .apl-icon-sort-down:before {
+    content: '\F0DD';
+  }
+  .apl-icon-sort-up:before {
+    content: '\F0DE';
+  }
+  .apl-icon-undo:before {
+    content: '\F0E2';
+  }
+  .apl-icon-comment-alt:before {
+    content: '\F0E5';
+  }
+  .apl-icon-sitemap:before {
+    content: '\F0E8';
+  }
+  .apl-icon-bell-alt:before {
+    content: '\F0F3';
+  }
+  .apl-icon-angle-double-left:before {
+    content: '\F100';
+  }
+  .apl-icon-angle-double-right:before {
+    content: '\F101';
+  }
+  .apl-icon-angle-left:before {
+    content: '\F104';
+  }
+  .apl-icon-angle-right:before {
+    content: '\F105';
+  }
+  .apl-icon-angle-up:before {
+    content: '\F106';
+  }
+  .apl-icon-angle-down:before {
+    content: '\F107';
+  }
+  .apl-icon-spinner:before {
+    content: '\F110';
+  }
+  .apl-icon-reply:before {
+    content: '\F112';
+  }
+  .apl-icon-flag-alt:before {
+    content: '\F11D';
+  }
+  .apl-icon-question:before {
+    content: '\F128';
+  }
+  .apl-icon-info:before {
+    content: '\F129';
+  }
+  .apl-icon-exclamation:before {
+    content: '\F12A';
+  }
+  .apl-icon-chevron-sign-left:before {
+    content: '\F137';
+  }
+  .apl-icon-chevron-sign-right:before {
+    content: '\F138';
+  }
+  .apl-icon-chevron-sign-up:before {
+    content: '\F139';
+  }
+  .apl-icon-chevron-sign-down:before {
+    content: '\F13A';
+  }
+  .apl-icon-unlock-alt:before {
+    content: '\F13E';
+  }
+  .apl-icon-bullseye:before {
+    content: '\F140';
+  }
+  .apl-icon-ellipsis-horizontal:before {
+    content: '\F141';
+  }
+  .apl-icon-ellipsis-vertical:before {
+    content: '\F142';
+  }
+  .apl-icon-play-sign:before {
+    content: '\F144';
+  }
+  .apl-icon-check-sign:before {
+    content: '\F14A';
+  }
+  .apl-icon-long-arrow-down:before {
+    content: '\F175';
+  }
+  .apl-icon-long-arrow-up:before {
+    content: '\F176';
+  }
+  .apl-icon-long-arrow-left:before {
+    content: '\F177';
+  }
+  .apl-icon-long-arrow-right:before {
+    content: '\F178';
+  }
+  .apl-icon-plus-square-o:before {
+    content: '\F196';
+  }
+  .apl-icon-university:before {
+    content: '\F19C';
+  }
+  [class*='apl-icon-'] {
+    display: inline-block;
+    font: normal normal normal 16px/1 Apollo;
+    font-size: 16px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }

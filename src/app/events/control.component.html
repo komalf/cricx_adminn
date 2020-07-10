@@ -1,0 +1,871 @@
+<style>
+    input[type=checkbox],
+    input[type=radio] {
+        margin: 8px;
+    }
+
+    .tbody:hover {
+        background-color: #139993;
+        cursor: pointer;
+    }
+
+    .subfeature {
+        padding-left: 20px !important;
+
+    }
+
+    .subfeaturesub {
+        padding-left: 32px !important;
+
+    }
+
+    .subfeaturesubmenu {
+        padding-left: 40px !important;
+
+    }
+
+    .table td {
+        border: none;
+    }
+
+    .checkboxtable {
+        color: #fff;
+        box-shadow: 0 0.2em 1rem rgba(0, 0, 0, 0.5);
+        /* background-color: #67abef;*/
+        margin-bottom: 6px;
+        font-size: 14px;
+        /*font-weight: 700;*/
+
+    }
+
+    .checkboxtable td {
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+    }
+
+    .maintable {
+        background-color: rgb(16, 64, 61);
+        font-size: 14px;
+        /* font-weight: 500;*/
+        /*  color: #545456;*/
+    }
+
+    .maintable tr {
+        border-top: 1px solid #1876d4;
+        ;
+        border-bottom: 1px solid #1876d4;
+        ;
+    }
+
+    .maintable td {
+        border: none;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .thead {
+        /*background-color: #67b0da;*/
+    }
+
+    .table tbody+tbody {
+        border: none !important;
+    }
+
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 3px solid #1876d4;
+        color: #4a4141;
+        /* font-weight: 800;*/
+    }
+
+    input[type=checkbox] {
+        margin-left: 5px;
+    }
+
+    .card-block,
+    .card-footer,
+    .card-header {
+        padding: 0.1rem;
+    }
+
+
+    [ng\:cloak],
+    [ng-cloak],
+    .ng-cloak {
+        display: none !important;
+    }
+
+    @media (min-width: 320px) and (max-width:414px) {
+
+        .card-block,
+        .card-footer,
+        .card-header {
+
+            padding: 0.0rem !important;
+
+        }
+
+        .card-block,
+        .card-footer,
+        .card-header {
+            padding: 0.1rem;
+        }
+
+        .card-body {
+
+            display: block !important;
+
+        }
+
+        .form-group {
+
+            margin-left: 0px !important
+        }
+
+
+
+    }
+
+    @media (min-width:800px) {
+        .option {
+            display: inline-flex;
+        }
+    }
+
+    @media (max-width:800px) {
+        .option {
+            display: initial;
+
+        }
+
+        .form-group {
+            margin-left: 0px !important
+        }
+
+
+    }
+</style>
+
+
+
+<div>
+    <div>
+
+
+
+        <!--    <td><input type="checkbox" name="admin" value="Bike">Admin</td>
+          <td><input type="checkbox" name="whitelabel" value="Bike">Whitelabel</td>
+          <td><input type="checkbox" name="seniorsuper" value="Bike">Senior Super</td>
+          <td><input type="checkbox" name="supermaster" value="Bike">SuperMaster</td>
+          <td><input type="checkbox">Master</td>
+        </tr>
+      </tbody></table> -->
+
+
+        <div class="card-body collapse in">
+
+            <div class="card-block card-dashboard">
+
+                <div class="table-responsive">
+
+                    <table class="table checkboxtable">
+                        <tbody>
+                            <tr>
+                                <td style="vertical-align: top;">
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox"
+                                                class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                                [(ngModel)]="admin">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description"><b>Admin</b></span>
+                                        </label>
+                                    </div>
+                                </td>
+
+                                <td style="vertical-align: top;">
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox"
+                                                class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                                [(ngModel)]="whitelabel">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description"><b>Whitelabel</b></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td style="vertical-align: top;">
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox"
+                                                class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                                [(ngModel)]="seniorsuper">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description"><b>Senior Super</b></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td style="vertical-align: top;">
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox"
+                                                class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                                [(ngModel)]="supermaster">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description"><b>Super Master</b></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td style="vertical-align: top;">
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox"
+                                                class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                                [(ngModel)]="master">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description"><b>Master</b></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card-body collapse in ">
+            <div class="card-block card-dashboard option">
+
+                <div class="form-group" *ngIf="admin">
+                    <select data-chosen=""
+                        class="form-control ng-valid localytics-chosen ng-touched ng-dirty ng-valid-parse ng-pristine ng-untouched ng-empty"
+                        [(ngModel)]="myVar"  >
+                        <option value="" class="" selected="selected">--Select Admin--</option>
+                        <option value="admin1">Admin 1</option>
+                        <option value="admin1">Admin 2</option>
+                        <option value="admin1">Admin 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group ng-hide" *ngIf="whitelabel" style="margin-left: 50px">
+                    <select data-chosen=""
+                        class="form-control ng-valid localytics-chosen ng-touched ng-dirty ng-valid-parse ng-pristine ng-untouched ng-empty"
+                        [(ngModel)]="myVar">
+                        <option value="" class="" selected="selected">--Select Whitelabel--</option>
+                        <option value="admin1">whitelabel 1
+                        </option>
+                        <option value="admin1">whitelabel 2</option>
+                        <option value="admin1">whitelabel 3</option>
+                    </select>
+                </div>
+                <div class="form-group" *ngIf="seniorsuper" style="margin-left: 50px">
+                    <select data-chosen=""
+                        class="form-control ng-valid localytics-chosen ng-touched ng-dirty ng-valid-parse ng-pristine ng-untouched ng-empty"
+                        [(ngModel)]="myVar">
+
+
+                        <option value="" class="" selected="selected">--Select Senior Super Master--</option>
+                        <option value="admin1">Senior Super 1
+                        </option>
+                        <option value="admin1">Senior Super 2</option>
+                        <option value="admin1">Senior Super 3</option>
+                    </select>
+                </div>
+                <div class="form-group" *ngIf="supermaster" style="margin-left: 50px">
+                    <select data-chosen=""
+                        class="form-control ng-valid localytics-chosen ng-touched ng-dirty ng-valid-parse ng-pristine ng-untouched ng-empty"
+                        [(ngModel)]="myVar">
+                        <option value="" class="" selected="selected">--Select Super Master--</option>
+                        <option value="admin1">Super Master 1
+                        </option>
+                        <option value="admin1"> Super Master 2</option>
+                        <option value="admin1"> Super Master 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group" *ngIf="master" style="margin-left: 50px">
+                    <select data-chosen=""
+                        class="form-control ng-valid localytics-chosen ng-touched ng-dirty ng-valid-parse ng-pristine ng-untouched ng-empty"
+                        [(ngModel)]="myVar">
+                        <option value="" class="" selected="selected">--Select Master--</option>
+                        <option value="admin1">Master 1</option>
+                        <option value="admin1">Master 2</option>
+                        <option value="admin1">Master 3</option>
+                    </select>
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+        <div class="card-body" id="button">
+
+            <div class="card-block">
+
+                <div class="card-body " *ngIf="myVar === 'admin1'">
+
+                    <button class="mr-1 mb-1 btn btn-outline-primary btn-min-width ng-scope"
+                        (click)="showAlert()"><span>Global Settings</span>
+                    </button>
+                    <button class="mr-1 mb-1 btn btn-outline-danger btn-min-width"
+                        (click)="ShowHide()"><span>Custom Settings</span>
+                    </button>
+
+
+                </div>
+
+                <div class="card-body" *ngIf="myvalue">
+                    <button class="mr-1 mb-1 btn btn-outline-primary btn-min-width ng-scope"
+                        data-ng-click="showtoast()"><span>Save as Global Settings</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="Custom" *ngIf="IsVisible">
+
+                <div class="table-responsive">
+
+                    <table class="table maintable">
+                        <thead class="thead">
+                            <tr>
+                                <th>Features</th>
+                                <th>Expand</th>
+                                <th>Can View</th>
+                                <th>Can Edit</th>
+                                <th>Both</th>
+                                <th>Don't Show</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Dashboard</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </tbody>
+
+                    <tbody class="tbody">
+                            <tr>
+                                <td>Create User</td>
+                                <td><a data-value="Add New">
+                                        <i *ngIf="plus" class="fa fa-plus-circle fa-2x" aria-hidden="true"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"
+                                            (click)="showRow1(1)"></i>
+                                        <i *ngIf="minus" class="fa fa-minus-circle fa-2x"
+                                            (click)="showRow1(0)"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"></i></a></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                        <tbody class="tbody" *ngIf="myrow1">
+
+                            <tr>
+                                <td class="subfeature">Can Only Create Lower hierarchy</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Volume change</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Is Market Wise</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Volume Check</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                          
+                        </tbody>
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Event</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </tbody>
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Analysis</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </tbody>
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Fancy </td>
+                                <td><a data-value="Add New">
+                                        <i *ngIf="plus0" class="fa fa-plus-circle fa-2x" aria-hidden="true"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"
+                                            (click)="showRow(1)"></i>
+                                        <i *ngIf="minus0" class="fa fa-minus-circle fa-2x"
+                                            (click)="showRow(0)"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"></i></a></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        <tbody class="tbody" *ngIf="myrow">
+                            <tr>
+                                <td class="subfeature">Mannual Settling</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Import TV</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Cancel Fancy</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Fancy Activation</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Can Edit Fancy</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        
+                    </tbody>
+
+
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Book Making</td>
+                                <td> <a data-value="Add New">
+                                        <i *ngIf="plus4" class="fa fa-plus-circle fa-2x"
+                                            (click)="showRow4(1)" aria-hidden="true"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"></i>
+                                        <i *ngIf="minus4" class="fa fa-minus-circle fa-2x"
+                                            (click)="showRow4(0)"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"></i></a></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        <tbody class="tbody" *ngIf="myrow4">
+                            <tr>
+                                <td class="subfeature">Can Edit</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Active/InActive</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Allow/Disallow Bets</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Can Add New</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        
+
+                        </tbody>
+
+
+
+
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Ticker</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </tbody>
+
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Commentary</td>
+                                <td><a data-value="Add New"><i *ngIf="plus5"
+                                            class="fa fa-plus-circle fa-2x" aria-hidden="true"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"
+                                            (click)="showRow5(1)"></i>
+                                        <i *ngIf="minus5" class="fa fa-minus-circle fa-2x"
+                                            (click)="showRow5(0)"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"></i></a>
+                                </td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        <tbody class="tbody" *ngIf="myrow5">
+                            <tr>
+                                <td class="subfeature">Can Edit</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Active/InActive</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Allow/Disallow Commentary </td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Can Add New</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        
+
+                        </tbody>
+
+
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Reports</td>
+                                <td><a data-value="Add New"><i *ngIf="plus2"
+                                            class="fa fa-plus-circle fa-2x" aria-hidden="true"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"
+                                            (click)="showRow2(1)"></i>
+                                        <i *ngIf="minus2" class="fa fa-minus-circle fa-2x"
+                                            (click)="showRow2(0)"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"></i></a></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+
+                        <tbody class="tbody" *ngIf="myrow2">
+
+                            <tr>
+                                <td class="subfeature">LogIn LogOut</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="subfeature">P&amp;L Report by Market</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="subfeature">P&amp;L Report by Agent</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="subfeature">Bet List</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="subfeature">Transfer Statement</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="subfeature">Chips Summary</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="subfeature">Reject Bet History</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Void Bets</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="subfeature">Settling</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        
+                        </tbody>
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Maintanance</td>
+                                <td><a data-value="Add New">
+                                        <i *ngIf="plus3" class="fa fa-plus-circle fa-2x"
+                                            (click)="showRow3(1)" aria-hidden="true"
+                                            style="color: white;font-size: 1.3rem;padding-left: 15px;"></i>
+                                        <i *ngIf="minus3" class="fa fa-minus-circle fa-2x"
+                                            (click)="showRow3(0)"style="color: white;font-size: 1.3rem;padding-left: 15px;"></i></a></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                        <tbody class="tbody" *ngIf="myrow3">
+
+                            <tr>
+                                <td class="subfeature">HubConfig</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="subfeature">Services</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Rules</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Global Management</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Import Market</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Data & Services</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Fancy Settlement</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">Sportmode</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="subfeature">BF Data Magmnt</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                        
+                        </tbody>
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Settings</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </tbody>
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Control Panel</td>
+                                <td></td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </tbody>
+
+                        <tbody class="tbody">
+                            <tr>
+                                <td>Logs</td>
+                                <td></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+
+                        </tbody>
+
+
+
+                    </table>
+                </div>
+                <div class="form-actions">
+                    <div class="text-xs-center">
+                        <!-- ngIf: uid==undefined -->
+                        <button type="submit" class="btn btn-outline-success btn-min-width ng-scope"
+                            data-ng-click="showtoast()">Save</button><!-- end ngIf: uid==undefined -->
+                        <!-- ngIf: uid==undefined -->
+                        <!-- <button   type="submit" class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope">Save &amp; Add New</button> -->
+                        <!-- end ngIf: uid==undefined -->
+                        <!-- ngIf: uid!=undefined -->
+                        <button type="button" class="btn btn-outline-danger btn-min-width"
+                            data-ng-click="ShowHide()">Cancel</button>
+                        <!-- <a href="" type="button" class="btn btn-outline-danger btn-min-width"  ng-click="ShowHide()">Cancel</a> -->
+                        <!-- <button type="reset" class="mr-1 mb-1 btn btn-outline-danger btn-min-width">Reset</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

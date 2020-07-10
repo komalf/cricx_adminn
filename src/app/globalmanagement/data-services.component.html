@@ -1,0 +1,513 @@
+<style>
+    .customRow {
+        display: -webkit-inline-box;
+
+        flex-wrap: wrap;
+    }
+
+    .card-block {
+        padding: 0
+    }
+
+    .mb-0 {
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        height: 15px;
+        border: none;
+        float: inherit;
+    }
+
+    .mb-0 input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #e82929;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 14px;
+        left: -5px;
+        /*bottom: 4px;*/
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #00dc61;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /*/ Rounded sliders /*/
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .noWhiteSpace {
+        background-color: transparent !important
+    }
+</style>
+<div class="card-body collapse in">
+    <div class="card-block card-dashboard">
+        <div class="table-responsive">
+            <table id="testttt" class="table table-striped table-bordered noWhiteSpace">
+                <thead>
+                    <tr>
+                        <th>Site Name</th>
+                        <th>Bet Status</th>
+                        <th>Data Mode</th>
+                    </tr>
+                </thead>
+
+                <tbody class="text-center ng-scope">
+                    <tr>
+                        <td class="font-weight-bold ng-binding" data-toggle="collapse" data-target="#site0"
+                            data-ng-click="getServices(site.siteName, 'services')" style="cursor: pointer;">SatBet</td>
+                        <td>
+                            <label class="switch mb-0" id="SatBet">
+                                <input type="checkbox" checked><span class="slider round"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <form class="customRow ng-pristine ng-valid">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="bfRadio0" name="dataModeSatBet" value="bf"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="bfRadio0">Betfair</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="lotusRadio0" name="dataModeSatBet" value="lotus"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="lotusRadio0">Lotus</label>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr id="site0" class="collapse">
+                        <td colspan="3">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered noWhiteSpace">
+                                    <thead class="text-center thead-dark">
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Name</th>
+                                            <th>State</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tr class="ng-scope">
+                                        <td class="font-weight-bold ng-binding">Bet execution service, excutes unmatched
+                                            bets</td>
+                                        <td class="ng-binding">SatExecutionEngine</td>
+                                        <td class="ng-binding">Running</td>
+                                        <td><button type="button"
+                                                class="btn btn-sm btn-success tableBtn ng-binding">Restart</button></td>
+                                    </tr>
+                                    <tr class="ng-scope">
+                                        <td class="font-weight-bold ng-binding">Bet settlement service, Processes
+                                            settlement for result declared events</td>
+                                        <td class="ng-binding">SatSettlementService</td>
+                                        <td class="ng-binding">Running</td>
+                                        <td><button type="button"
+                                                class="btn btn-sm btn-success tableBtn ng-binding">Restart</button></td>
+                                    </tr>
+                                    <tr class="ng-scope">
+                                        <td class="font-weight-bold ng-binding">Fancy bets signalr hub service,
+                                            Broadcasts fancy bets for fancy rates page</td>
+                                        <td class="ng-binding">SatFBetsHubService</td>
+                                        <td class="ng-binding">Running</td>
+                                        <td><button type="button"
+                                                class="btn btn-sm btn-success tableBtn ng-binding">Restart</button></td>
+                                    </tr>
+
+
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="text-center ng-scope">
+                    <tr>
+                        <td class="font-weight-bold ng-binding" data-toggle="collapse" data-target="#site1"
+                            data-ng-click="getServices(site.siteName, 'services')" style="cursor: pointer;">5Star</td>
+                        <td>
+                            <label class="switch mb-0">
+                                <input type="checkbox" id="5Star">
+                                <span class="slider round"
+                                    data-ng-click="getServices(site.siteName, 'betStatus')"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <form class="customRow ng-pristine ng-valid">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="bfRadio1" name="dataMode5Star" value="bf"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="bfRadio1">Betfair</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="lotusRadio1" name="dataMode5Star" value="lotus"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="lotusRadio1">Lotus</label>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr id="site1" class="collapse">
+                        <td colspan="3">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered noWhiteSpace">
+                                    <thead class="text-center thead-dark">
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Name</th>
+                                            <th>State</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="text-center ng-scope">
+                    <tr>
+                        <td class="font-weight-bold ng-binding" data-toggle="collapse" data-target="#site2"
+                            data-ng-click="getServices(site.siteName, 'services')" style="cursor: pointer;">Indian09
+                        </td>
+                        <td>
+                            <label class="switch mb-0">
+                                <input type="checkbox" id="Indian09">
+                                <span class="slider round"
+                                    data-ng-click="getServices(site.siteName, 'betStatus')"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <form class="customRow ng-pristine ng-valid">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="bfRadio2" name="dataModeIndian09" value="bf"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="bfRadio2">Betfair</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="lotusRadio2" name="dataModeIndian09" value="lotus"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="lotusRadio2">Lotus</label>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr id="site2" class="collapse">
+                        <td colspan="3">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered noWhiteSpace">
+                                    <thead class="text-center thead-dark">
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Name</th>
+                                            <th>State</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="text-center ng-scope">
+                    <td class="font-weight-bold ng-binding" data-toggle="collapse" data-target="#site3"
+                        data-ng-click="getServices(site.siteName, 'services')" style="cursor: pointer;">KingdomExch</td>
+                    <td>
+                        <label class="switch mb-0">
+                            <input type="checkbox" id="KingdomExch">
+                            <span class="slider round" data-ng-click="getServices(site.siteName, 'betStatus')"></span>
+                        </label>
+                    </td>
+                    <td>
+                        <form class="customRow ng-pristine ng-valid">
+                            <div class="custom-control custom-radio">
+                                <input type="radio"
+                                    class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                    id="bfRadio3" name="dataModeKingdomExch" value="bf"
+                                    data-ng-change="getServices(site.siteName, 'dataMode')">
+                                <label class="custom-control-label" for="bfRadio3">Betfair</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio"
+                                    class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                    id="lotusRadio3" name="dataModeKingdomExch" value="lotus"
+                                    data-ng-change="getServices(site.siteName, 'dataMode')">
+                                <label class="custom-control-label" for="lotusRadio3">Lotus</label>
+                            </div>
+                        </form>
+                    </td>
+                    <tr id="site3" class="collapse">
+                        <td colspan="3">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered noWhiteSpace">
+                                    <thead class="text-center thead-dark">
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Name</th>
+                                            <th>State</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="text-center ng-scope">
+                    <tr>
+                        <td class="font-weight-bold ng-binding" data-toggle="collapse" data-target="#site4"
+                            data-ng-click="getServices(site.siteName, 'services')" style="cursor: pointer;">BetBuzz</td>
+                        <td>
+                            <label class="switch mb-0">
+                                <input type="checkbox" id="BetBuzz">
+                                <span class="slider round"
+                                    data-ng-click="getServices(site.siteName, 'betStatus')"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <form class="customRow ng-pristine ng-valid">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="bfRadio4" name="dataModeBetBuzz" value="bf"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="bfRadio4">Betfair</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="lotusRadio4" name="dataModeBetBuzz" value="lotus"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="lotusRadio4">Lotus</label>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr id="site4" class="collapse">
+                        <td colspan="3">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered noWhiteSpace">
+                                    <thead class="text-center thead-dark">
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Name</th>
+                                            <th>State</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="text-center ng-scope">
+                    <tr>
+                        <td class="font-weight-bold ng-binding" data-toggle="collapse" data-target="#site5"
+                            data-ng-click="getServices(site.siteName, 'services')" style="cursor: pointer;">RBEXCH</td>
+                        <td>
+                            <label class="switch mb-0">
+                                <input type="checkbox" id="RBEXCH">
+                                <span class="slider round"
+                                    data-ng-click="getServices(site.siteName, 'betStatus')"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <form class="customRow ng-pristine ng-valid">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="bfRadio5" name="dataModeRBEXCH" value="bf"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="bfRadio5">Betfair</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="lotusRadio5" name="dataModeRBEXCH" value="lotus"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="lotusRadio5">Lotus</label>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr id="site5" class="collapse">
+                        <td colspan="3">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered noWhiteSpace">
+                                    <thead class="text-center thead-dark">
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Name</th>
+                                            <th>State</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="text-center ng-scope">
+                    <tr>
+                        <td class="font-weight-bold ng-binding" data-toggle="collapse" data-target="#site6"
+                            data-ng-click="getServices(site.siteName, 'services')" style="cursor: pointer;">PLAY7X</td>
+                        <td>
+                            <label class="switch mb-0">
+                                <input type="checkbox" id="PLAY7X">
+                                <span class="slider round"
+                                    data-ng-click="getServices(site.siteName, 'betStatus')"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <form class="customRow ng-pristine ng-valid">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="bfRadio6" name="dataModePLAY7X" value="bf"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="bfRadio6">Betfair</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        id="lotusRadio6" name="dataModePLAY7X" value="lotus"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="lotusRadio6">Lotus</label>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr id="site6" class="collapse">
+                        <td colspan="3">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered noWhiteSpace">
+                                    <thead class="text-center thead-dark">
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Name</th>
+                                            <th>State</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="text-center ng-scope">
+                    <tr>
+                        <td class="font-weight-bold ng-binding" data-toggle="collapse" data-target="#site7"
+                            data-ng-click="getServices(site.siteName, 'services')" style="cursor: pointer;">DREAM</td>
+                        <td>
+                            <label class="switch mb-0">
+                                <input type="checkbox" id="DREAM">
+                                <span class="slider round"
+                                    data-ng-click="getServices(site.siteName, 'betStatus')"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <form class="customRow ng-pristine ng-valid">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                        id="bfRadio7" name="dataModeDREAM" value="bf"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="bfRadio7">Betfair</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                        id="lotusRadio7" name="dataModeDREAM" value="lotus"
+                                        data-ng-change="getServices(site.siteName, 'dataMode')">
+                                    <label class="custom-control-label" for="lotusRadio7">Lotus</label>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr id="site7" class="collapse">
+                        <td colspan="3">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered noWhiteSpace">
+                                    <thead class="text-center thead-dark">
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Name</th>
+                                            <th>State</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

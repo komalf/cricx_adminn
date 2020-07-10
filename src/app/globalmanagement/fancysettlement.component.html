@@ -1,0 +1,901 @@
+<style>
+    .ajax_loader {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, .5);
+    }
+
+    .ajax_loader.hidden {
+        display: block;
+        visibility: hidden;
+    }
+
+    .ajax_loader i {
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        color: white;
+        font-size: 25px;
+    }
+
+    .loader_spinner {
+        position: absolute;
+        left: 45%;
+        top: 50%;
+        font-size: 32px;
+        color: white;
+    }
+
+    .project-tab {}
+
+    .thcenter {
+        text-align: center;
+    }
+
+    .project-tab #tabs {
+        background: #007b5e;
+        color: #eee;
+    }
+
+    .project-tab #tabs h6.section-title {
+        color: #eee;
+    }
+
+    .project-tab .nav-link {
+        border: 1px solid transparent;
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+        color: #0062cc;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .project-tab .nav-link:hover {
+        border: none;
+    }
+
+    .project-tab a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+    }
+</style>
+<div id="tabs" class="project-tab">
+    <div class="">
+        <div class="row">
+            <div class="col-md-12">
+                <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist" style="cursor: pointer;">
+
+                        <a class="nav-item nav-link " id="nav-contact-tab1" data-toggle="tab" data-target="#tab4"
+                            role="tab" aria-controls="nav-contact" [ngClass]="(isActive==1)?'active':''"
+                            (click)="ApplicationTab(1)" aria-selected="false">BB</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab2" data-toggle="tab" data-target="#tab7"
+                            role="tab" aria-controls="nav-contact" [ngClass]="(isActive==2)?'active':''"
+                            (click)="ApplicationTab(2)" aria-selected="false">5Star</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab3" data-toggle="tab" data-target="#tab9"
+                            role="tab" data-aria-controls="nav-contact" [ngClass]="(isActive==3)?'active':''"
+                            (click)="ApplicationTab(3)" aria-selected="false">DREAM</a>
+                        <a class="nav-item nav-link " id="nav-contact-tab4" data-toggle="tab" data-target="#tab1"
+                            role="tab" data-aria-controls="nav-contact" [ngClass]="(isActive==4)?'active':''"
+                            (click)="ApplicationTab(4)" aria-selected="false">SATBET</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#tab2"
+                            role="tab" aria-controls="nav-contact" [ngClass]="(isActive==5)?'active':''"
+                            (click)="ApplicationTab(5)" aria-selected="false">INDIAN</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab5" data-toggle="tab" data-target="#tab3"
+                            role="tab" aria-controls="nav-contact" [ngClass]="(isActive==6)?'active':''"
+                            (click)="ApplicationTab(6)" aria-selected="false">KING</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab6" data-toggle="tab" data-target="#tab5"
+                            role="tab" aria-controls="nav-contact" [ngClass]="(isActive==7)?'active':''"
+                            (click)="ApplicationTab(7)" aria-selected="false">RB</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab7" data-toggle="tab" data-target="#tab6"
+                            role="tab" aria-controls="nav-contact" [ngClass]="(isActive==8)?'active':''"
+                            (click)="ApplicationTab(8)" aria-selected="false">PLAY7X</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab8" data-toggle="tab" data-target="#tab8"
+                            role="tab" aria-controls="nav-contact" [ngClass]="(isActive==9)?'active':''"
+                            (click)="ApplicationTab(9)" aria-selected="false">SAI</a>
+
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div data-ng-cloak class="ajax_loader hidden" style="z-index: 10000000000;"><span
+                            class="loader_spinner">Please wait...</span> <i class="fa fa-spinner fa-spin"></i></div>
+                    <div class="col-sm-4">
+
+                        <select class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty"
+                            aria-label="match">
+                            <option value="" class="" selected="selected">Select Match</option>
+                            <option value="2">1. Barbora Strycova v Sofia Kenin
+                            </option>
+                            <option value="3">2. Katerina Siniakova v Alison Riske
+                            </option>
+                            <option value="4">3. Katerina Siniakova v Sofia Kenin
+                            </option>
+                            <option value="5">4. Barbora Strycova v Alison Riske</option>
+                        </select>
+                        <div class="chosen-container chosen-container-single chosen-disabled" title=""><a
+                                class="chosen-single" tabindex="-1">
+                                <div><b></b></div>
+                            </a>
+                            <div class="chosen-drop">
+
+                                <ul class="chosen-results"></ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane" id="tab1" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div style="padding-top: 10px">
+                            <label class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input " [(ngModel)]="Settled"
+                                    data-ng-click="ApplicationTab('SATBET')">&nbsp;
+                                <span class="custom-control-indicator"></span>
+                                Settled
+                            </label>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="thcenter">SATBET FANCY SETTLEMENT&nbsp;<button
+                                            data-ng-click="ApplicationTab('SATBET')" type="button" title="Refresh"
+                                            class="btn btn-outline-danger"><i class="fa fa-refresh fa-spin"
+                                                style="font-size:12px"></i></button></th>
+                                </tr>
+                            </thead>
+
+                        </table>
+
+
+                        <div class="table-responsive">
+                            <table id="testttt1" class="table table-striped table-bordered noWhiteSpace">
+                                <thead>
+                                    <tr>
+                                        <th>Fancy Name</th>
+                                        <th>Match</th>
+                                        <th>MAtchDate</th>
+                                        <th>Active</th>
+                                        <th>Betallow</th>
+                                        <th *ngIf="!Settled">Settle</th>
+                                        <th *ngIf="Settled">Result</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tr class="text-center" *ngFor="let fancylist of fancylistdata">
+                                    <td title="'Fancy Name'" data-filter="{ betName: 'text'}" data-sortable="'betName'">
+                                        {{fancylist.betName}}</td>
+                                    <td title="'Match'" data-filter="{ match: 'text'}" data-sortable="'match'">
+                                        {{fancylist.match}}</td>
+                                    <td title="'MAtchDate'" data-filter="{ matchDate: 'number'}"
+                                        data-sortable="'matchDate'"><span
+                                            style="font-weight: bolder">{{fancylist.matchDate}}</span></td>
+                                    <td title="'Active'">
+                                        <a data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,0,'SATBET')"
+                                            href="javascript:void(0);" class="ng-scope">
+
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isActive==0"
+                                            data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,1,'SATBET')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                    </td>
+                                    <td title="'Betallow'">
+                                        <a data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,0,'SATBET')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isBetAllow==0"
+                                            data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,1,'SATBET')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td *ngIf="!Settled" title="'Settle'"><button
+                                            data-ng-click="SettleFancymodal(fancylist.betName,fancylist.fancyCode,fancylist.matchId,'SATBET')"
+                                            class="btn btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#settle-sessin-modal">Settle Session</button></td>
+                                    <td *ngIf="Settled" title="'Result'">{{fancylist.result}}
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab7" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div style="padding-top: 10px">
+                            <label class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input " [(ngModel)]="Settled"
+                                    data-ng-click="ApplicationTab('5STAR')">&nbsp;
+                                <span class="custom-control-indicator"></span>
+                                Settled
+                            </label></div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="thcenter">5STAR FANCY SETTLEMENTT&nbsp;&nbsp;<button
+                                            data-ng-click="ApplicationTab('5STAR')" type="button" title="Refresh"
+                                            class="btn btn-outline-danger"><i class="fa fa-refresh fa-spin"
+                                                style="font-size:12px"></i></button></th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                        <div class="table-responsive">
+                            <table id="testttt2" class="table table-striped table-bordered noWhiteSpace">
+                                <thead>
+                                    <tr>
+                                        <th>Fancy Name</th>
+                                        <th>Match</th>
+                                        <th>MAtchDate</th>
+                                        <th>Active</th>
+                                        <th>Betallow</th>
+                                        <th *ngIf="!Settled">Settle</th>
+                                        <th *ngIf="Settled">Result</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tr class="text-center" *ngFor="let fancylist of fancylistdata">
+                                    <td title="'Fancy Name'" data-sortable="'sessionName'">{{fancylist.sessionName}}
+                                    </td>
+                                    <td title="'Match'" data-filter="{ match: 'text'}" data-sortable="'match'">
+                                        {{fancylist.match}}</td>
+                                    <td title="'MAtchDate'" data-filter="{ matchDate: 'number'}"
+                                        data-sortable="'matchDate'"><span
+                                            style="font-weight: bolder">{{fancylist.matchDate}}</span></td>
+                                    <td title="'Active'">
+                                        <a data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,0,'5STAR')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isActive==0"
+                                            data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,1,'5STAR')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td title="'BetAllow'">
+                                        <a data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,0,'5STAR')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isBetAllow==0"
+                                            data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,1,'5STAR')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td *ngIf="!Settled" title="'Settle'"><button
+                                            data-ng-click="SettleFancymodal(fancylist.sessionName,fancylist.fancyCode,fancylist.matchId,'5STAR')"
+                                            class="btn btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#settle-sessin-modal">Settle Session</button></td>
+                                    <td *ngIf="Settled" title="'Result'"
+                                        >{{fancylist.result}}</td>
+
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div style="padding-top: 10px">
+                            <label class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input " [(ngModel)]="Settled"
+                                    data-ng-click="ApplicationTab('INDIAN09')">&nbsp;
+                                <span class="custom-control-indicator"></span>
+                                Settled
+                            </label></div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="thcenter">INDIAN09 FANCY SETTLEMENTT&nbsp;&nbsp;<button
+                                            data-ng-click="ApplicationTab('INDIAN09')" type="button" title="Refresh"
+                                            class="btn btn-outline-danger"><i class="fa fa-refresh fa-spin"
+                                                style="font-size:12px"></i></button></th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                        <div class="table-responsive">
+                            <table id="testttt3" class="table table-striped table-bordered noWhiteSpace">
+                                <thead>
+                                    <tr>
+                                        <th>Fancy Name</th>
+                                        <th>Match</th>
+                                        <th>MAtchDate</th>
+                                        <th>Active</th>
+                                        <th>Betallow</th>
+                                        <th *ngIf="!Settled">Settle</th>
+                                        <th *ngIf="Settled">Result</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tr class="text-center" *ngFor="let fancylist of fancylistdata">
+                                    <td title="'Fancy Name'" data-filter="{ betName: 'text'}" data-sortable="'betName'">
+                                        {{fancylist.betName}}</td>
+                                    <td title="'Match'" data-filter="{ match: 'text'}" data-sortable="'match'">
+                                        {{fancylist.match}}</td>
+                                    <td title="'MAtchDate'" data-filter="{ matchDate: 'number'}"
+                                        data-sortable="'matchDate'"><span
+                                            style="font-weight: bolder">{{fancylist.matchDate}}</span></td>
+                                    <td title="'Active'">
+                                        <a data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,0,'INDIAN09')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,1,'INDIAN09')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td title="'BetAllow'">
+                                        <a data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,0,'INDIAN09')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isBetAllow==0"
+                                            data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,1,'INDIAN09')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td *ngIf="!Settled" title="'Settle'"><button
+                                            data-ng-click="SettleFancymodal(fancylist.betName,fancylist.fancyCode,fancylist.matchId,'INDIAN09')"
+                                            class="btn btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#settle-sessin-modal">Settle Session</button></td>
+                                    <td *ngIf="Settled" title="'Result'"
+                                        >{{fancylist.result}}</td>
+
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="nav-contact-tab9">
+                        <div style="padding-top: 10px">
+                            <label class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input " [(ngModel)]="Settled"
+                                    data-ng-click="ApplicationTab('KINGDOM')">&nbsp;
+                                <span class="custom-control-indicator"></span>
+                                Settled
+                            </label></div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="thcenter">KINGDOM FANCY SETTLEMENTT&nbsp;&nbsp;<button
+                                            data-ng-click="ApplicationTab('KINGDOM')" type="button" title="Refresh"
+                                            class="btn btn-outline-danger"><i class="fa fa-refresh fa-spin"
+                                                style="font-size:12px"></i></button></th>
+                                </tr>
+                            </thead>
+
+
+                        </table>
+                        <div class="table-responsive">
+                            <table id="testttt4" class="table table-striped table-bordered noWhiteSpace">
+                                <thead>
+                                    <tr>
+                                        <th>Fancy Name</th>
+                                        <th>Match</th>
+                                        <th>MAtchDate</th>
+                                        <th>Active</th>
+                                        <th>Betallow</th>
+                                        <th *ngIf="!Settled">Settle</th>
+                                        <th *ngIf="Settled">Result</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tr class="text-center" *ngFor="let fancylist of fancylistdata">
+                                    <td title="'Fancy Name'" data-filter="{ betName: 'text'}" data-sortable="'betName'">
+                                        {{fancylist.betName}}</td>
+                                    <td title="'Match'" data-filter="{ match: 'text'}" data-sortable="'match'">
+                                        {{fancylist.match}}</td>
+                                    <td title="'MAtchDate'" data-filter="{ matchDate: 'number'}"
+                                        data-sortable="'matchDate'"><span
+                                            style="font-weight: bolder">{{fancylist.matchDate}}</span></td>
+                                    <td title="'Active'">
+                                        <a data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,0,'KINGDOM')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isActive==0"
+                                            data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,1,'KINGDOM')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td title="'BetAllow'">
+                                        <a data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,0,'KINGDOM')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isBetAllow==0"
+                                            data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,1,'KINGDOM')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td *ngIf="!Settled" title="'Settle'"><button
+                                            data-ng-click="SettleFancymodal(fancylist.betName,fancylist.fancyCode,fancylist.matchId,'KINGDOM')"
+                                            class="btn btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#settle-sessin-modal">Settle Session</button></td>
+                                    <td *ngIf="Settled" title="'Result'"
+                                        >{{fancylist.result}}</td>
+
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane active in" id="tab4" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div style="padding-top: 10px">
+                            <label class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input " [(ngModel)]="Settled"
+                                    data-ng-click="ApplicationTab('BB')">&nbsp;
+                                <span class="custom-control-indicator"></span>
+                                Settled
+                            </label>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="thcenter">BETBUZZ FANCY SETTLEMENT&nbsp;&nbsp;<button
+                                            data-ng-click="ApplicationTab('BB')" type="button" title="Refresh"
+                                            class="btn btn-outline-danger"><i class="fa fa-refresh fa-spin"
+                                                style="font-size:12px"></i></button></th>
+                                </tr>
+                            </thead>
+
+
+                        </table>
+                        <div class="table-responsive">
+                            <table id="testttt5" class="table table-striped table-bordered noWhiteSpace">
+                                <thead>
+                                    <tr>
+                                        <th>Fancy Name</th>
+                                        <th>Match</th>
+                                        <th>MAtchDate</th>
+                                        <th>Active</th>
+                                        <th>Betallow</th>
+                                        <th *ngIf="!Settled">Settle</th>
+                                        <th *ngIf="Settled">Result</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tr class="text-center" *ngFor="let fancylist of fancylistdata">
+                                    <td title="'Fancy Name'" data-filter="{ betName: 'text'}" data-sortable="'betName'">
+                                        {{fancylist.betName}}</td>
+                                    <td title="'Match'" data-filter="{ match: 'text'}" data-sortable="'match'">
+                                        {{fancylist.match}}</td>
+                                    <td title="'MAtchDate'" data-filter="{ matchDate: 'number'}"
+                                        data-sortable="'matchDate'"><span
+                                            style="font-weight: bolder">{{fancylist.matchDate}}</span></td>
+                                    <td title="'Active'">
+                                        <a data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,0,'BB')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isActive==0"
+                                            data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,1,'BB')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td title="'BetAllow'">
+                                        <a data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,0,'BB')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isBetAllow==0"
+                                            data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,1,'BB')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td *ngIf="!Settled" title="'Settle'"><button
+                                            data-ng-click="SettleFancymodal(fancylist.betName,fancylist.fancyCode,fancylist.matchId,'BB')"
+                                            class="btn btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#settle-sessin-modal">Settle Session</button></td>
+                                    <td *ngIf="Settled" title="'Result'"
+                                        >{{fancylist.result}}</td>
+
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab5" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div style="padding-top: 10px">
+                            <label class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input " [(ngModel)]="Settled"
+                                    data-ng-click="ApplicationTab('RBEXCH')">&nbsp;
+                                <span class="custom-control-indicator"></span>
+                                Settled
+                            </label>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="thcenter">RB EXCH FANCY SETTLEMENT&nbsp;&nbsp;<button
+                                            data-ng-click="ApplicationTab('RBEXCH')" type="button" title="Refresh"
+                                            class="btn btn-outline-danger"><i class="fa fa-refresh fa-spin"
+                                                style="font-size:12px"></i></button></th>
+                                </tr>
+                            </thead>
+
+
+                        </table>
+                        <div class="table-responsive">
+                            <table id="testttt6" class="table table-striped table-bordered noWhiteSpace">
+                                <thead>
+                                    <tr>
+                                        <th>Fancy Name</th>
+                                        <th>Match</th>
+                                        <th>MAtchDate</th>
+                                        <th>Active</th>
+                                        <th>Betallow</th>
+                                        <th *ngIf="!Settled">Settle</th>
+                                        <th *ngIf="Settled">Result</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tr class="text-center" *ngFor="let fancylist of fancylistdata">
+                                    <td title="'Fancy Name'" data-filter="{ betName: 'text'}" data-sortable="'betName'">
+                                        {{fancylist.betName}}</td>
+                                    <td title="'Match'" data-filter="{ match: 'text'}" data-sortable="'match'">
+                                        {{fancylist.match}}</td>
+                                    <td title="'MAtchDate'" data-filter="{ matchDate: 'number'}"
+                                        data-sortable="'matchDate'"><span
+                                            style="font-weight: bolder">{{fancylist.matchDate}}</span></td>
+                                    <td title="'Active'">
+                                        <a data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,0,'RBEXCH')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isActive==0"
+                                            data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,1,'RBEXCH')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td title="'BetAllow'">
+                                        <a data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,0,'RBEXCH')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isBetAllow==0"
+                                            data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,1,'RBEXCH')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td *ngIf="!Settled" title="'Settle'"><button
+                                            data-ng-click="SettleFancymodal(fancylist.betName,fancylist.fancyCode,fancylist.matchId,'RBEXCH')"
+                                            class="btn btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#settle-sessin-modal">Settle Session</button></td>
+                                    <td *ngIf="Settled" title="'Result'"
+                                        >{{fancylist.result}}</td>
+
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab6" role="tabpanel" data-aria-labelledby="nav-home-tab">
+                        <div style="padding-top: 10px">
+                            <label class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input " [(ngModel)]="Settled"
+                                    data-ng-click="ApplicationTab('PLAY7X')">&nbsp;
+                                <span class="custom-control-indicator"></span>
+                                Settled
+                            </label></div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="thcenter">PLAY 7X FANCY SETTLEMENT&nbsp;&nbsp;<button
+                                            data-ng-click="ApplicationTab('PLAY7X')" type="button" title="Refresh"
+                                            class="btn btn-outline-danger"><i class="fa fa-refresh fa-spin"
+                                                style="font-size:12px"></i></button></th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                        <div class="table-responsive">
+                            <table id="testttt7" class="table table-striped table-bordered noWhiteSpace">
+                                <thead>
+                                    <tr>
+                                        <th>Fancy Name</th>
+                                        <th>Match</th>
+                                        <th>MAtchDate</th>
+                                        <th>Active</th>
+                                        <th>Betallow</th>
+                                        <th *ngIf="!Settled">Settle</th>
+                                        <th *ngIf="Settled">Result</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tr class="text-center" *ngFor="let fancylist of fancylistdata">
+                                    <td title="'Fancy Name'" data-filter="{ betName: 'text'}" data-sortable="'betName'">
+                                        {{fancylist.betName}}</td>
+                                    <td title="'Match'" data-filter="{ match: 'text'}" data-sortable="'match'">
+                                        {{fancylist.match}}</td>
+                                    <td title="'MAtchDate'" data-filter="{ matchDate: 'number'}"
+                                        data-sortable="'matchDate'"><span
+                                            style="font-weight: bolder">{{fancylist.matchDate}}</span></td>
+                                    <td title="'Active'">
+                                        <a data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,0,'PLAY7X')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isActive==0"
+                                            data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,1,'PLAY7X')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td title="'BetAllow'">
+                                        <a data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,0,'PLAY7X')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isBetAllow==0"
+                                            data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,1,'PLAY7X')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td *ngIf="!Settled" title="'Settle'"><button
+                                            data-ng-click="SettleFancymodal(fancylist.betName,fancylist.fancyCode,fancylist.matchId,'PLAY7X')"
+                                            class="btn btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#settle-sessin-modal">Settle Session</button></td>
+                                    <td *ngIf="Settled" title="'Result'"
+                                        >{{fancylist.result}}</td>
+
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab8" role="tabpanel" data-aria-labelledby="nav-home-tab">
+                        <div style="padding-top: 10px">
+                            <label class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input " [(ngModel)]="Settled"
+                                    data-ng-click="ApplicationTab('SAI')">&nbsp;
+                                <span class="custom-control-indicator"></span>
+                                Settled
+                            </label></div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="thcenter">SAIEXCH FANCY SETTLEMENT&nbsp;&nbsp;<button
+                                            data-ng-click="ApplicationTab('SAI')" type="button" title="Refresh"
+                                            class="btn btn-outline-danger"><i class="fa fa-refresh fa-spin"
+                                                style="font-size:12px"></i></button></th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                        <div class="table-responsive">
+                            <table id="testttt8" class="table table-striped table-bordered noWhiteSpace">
+                                <thead>
+                                    <tr>
+                                        <th>Fancy Name</th>
+                                        <th>Match</th>
+                                        <th>MAtchDate</th>
+                                        <th>Active</th>
+                                        <th>Betallow</th>
+                                        <th *ngIf="!Settled">Settle</th>
+                                        <th *ngIf="Settled">Result</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tr class="text-center" *ngFor="let fancylist of fancylistdata">
+                                    <td title="'Fancy Name'" data-filter="{ betName: 'text'}" data-sortable="'betName'">
+                                        {{fancylist.betName}}</td>
+                                    <td title="'Match'" data-filter="{ match: 'text'}" data-sortable="'match'">
+                                        {{fancylist.match}}</td>
+                                    <td title="'MAtchDate'" data-filter="{ matchDate: 'number'}"
+                                        data-sortable="'matchDate'"><span
+                                            style="font-weight: bolder">{{fancylist.matchDate}}</span></td>
+                                    <td title="'Active'">
+                                        <a data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,0,'SAI')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isActive==0"
+                                            data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,1,'SAI')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td title="'BetAllow'">
+                                        <a data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,0,'SAI')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isBetAllow==0"
+                                            data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,1,'SAI')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td *ngIf="!Settled" title="'Settle'"><button
+                                            data-ng-click="SettleFancymodal(fancylist.betName,fancylist.fancyCode,fancylist.matchId,'SAI')"
+                                            class="btn btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#settle-sessin-modal">Settle Session</button></td>
+                                    <td *ngIf="Settled" title="'Result'"
+                                       >{{fancylist.result}}</td>
+
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab9" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div style="padding-top: 10px">
+                            <label class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input " [(ngModel)]="Settled"
+                                    data-ng-click="ApplicationTab('DREAM')">&nbsp;
+                                <span class="custom-control-indicator"></span>
+                                Settled
+                            </label></div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="thcenter">DREAM24 FANCY SETTLEMENT&nbsp;&nbsp;<button
+                                            data-ng-click="ApplicationTab('DREAM')" type="button" title="Refresh"
+                                            class="btn btn-outline-danger"><i class="fa fa-refresh fa-spin"
+                                                style="font-size:12px"></i></button></th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                        <div class="table-responsive">
+                            <table id="testttt9" class="table table-striped table-bordered noWhiteSpace">
+                                <thead>
+                                    <tr>
+                                        <th>Fancy Name</th>
+                                        <th>Match</th>
+                                        <th>MAtchDate</th>
+                                        <th>Active</th>
+                                        <th>Betallow</th>
+                                        <th *ngIf="!Settled">Settle</th>
+                                        <th *ngIf="Settled">Result</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tr class="text-center" *ngFor="let fancylist of fancylistdata">
+                                    <td title="'Fancy Name'" data-filter="{ betName: 'text'}" data-sortable="'betName'">
+                                        {{fancylist.betName}}</td>
+                                    <td title="'Match'" data-filter="{ match: 'text'}" data-sortable="'match'">
+                                        {{fancylist.match}}</td>
+                                    <td title="'MAtchDate'" data-filter="{ matchDate: 'number'}"
+                                        data-sortable="'matchDate'"><span
+                                            style="font-weight: bolder">{{fancylist.matchDate}}</span></td>
+                                    <td title="'Active'">
+                                        <a data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,0,'DREAM')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isActive==0"
+                                            data-ng-click="UpdateFancyStatus2(fancylist.fancyCode,1,'DREAM')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td title="'BetAllow'">
+                                        <a data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,0,'DREAM')"
+                                            href="javascript:void(0);" class="ng-scope">
+                                            <img title="Active" data-ng-src="checkmark.png"
+                                                style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                src="assets/checkmark.png">
+                                        </a>
+                                        <a data-ng-if="fancylist.isBetAllow==0"
+                                            data-ng-click="UpdateFancyBetStatus2(fancylist.fancyCode,1,'DREAM')"
+                                            href="javascript:void(0);" class="ng-scope"><i
+                                                class="fa fa-window-close fa-2x" style="color: red" aria-hidden="true"
+                                                title="Inactive"></i></a>
+                                    </td>
+                                    <td *ngIf="!Settled" title="'Settle'"><button
+                                            data-ng-click="SettleFancymodal(fancylist.betName,fancylist.fancyCode,fancylist.matchId,'DREAM')"
+                                            class="btn btn-warning btn-sm" data-toggle="modal"
+                                            data-target="#settle-sessin-modal">Settle Session</button></td>
+                                    <td *ngIf="Settled" title="'Result'"
+                                        >{{fancylist.result}}</td>
+
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal in ng-scope" id="settle-sessin-modal" role="dialog">
+    <div class="modal-dialog" role="document" style="max-width: 500px">
+        <div class="modal-content" style="margin-top: 100px;">
+            <div class="modal-header">
+                <h6 id="settle-session-title" class="modal-title ng-binding">{{fancyname}}</h6>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="margin: 0">
+                    <div class="alert alert-success" style="padding: 0; margin: 0;border: 0;margin-bottom: 10px;"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="hidden" [(ngModel)]="Fancycod"
+                            class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="fid">
+                        <input type="hidden" [(ngModel)]="matchid"
+                            class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="mtid">
+                        <input type="hidden" [(ngModel)]="appname"
+                            class="form-control ng-pristine ng-untouched ng-valid ng-empty" name="application">
+                        <input type="text" [(ngModel)]="settleRate"
+                            class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                            placeholder="Enter Settlement Score" name="settleRate">
+
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-warning" data-ng-disabled="settlesessionbtn"
+                            data-ng-click="SettleFancy2(appname)" style="width: inherit;">Settle</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

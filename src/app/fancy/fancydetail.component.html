@@ -1,0 +1,282 @@
+<style>
+    @media (min-width: 320px) and (max-width:414px) {
+        .col-xs-12 {
+            padding: 0px !important;
+        }
+
+        .check {
+            display: -webkit-box;
+        }
+
+        button {
+            width: -webkit-fill-available;
+        }
+
+        [type=button] {
+            width: -webkit-fill-available;
+        }
+    }
+</style>
+<div class="app-content content container-fluid ng-scope">
+    <div class="content-wrapper">
+        <div class="content-body">
+
+            <section>
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <form class="ng-pristine ng-valid">
+                            <div class="header _clearfix">
+
+                                <h1 class="ng-binding ng-scope">FANCY DETAIL</h1>
+                            </div>
+
+                            <hr>
+                            <div class="card-block">
+                                <div class="form form-horizontal">
+                                    <div class="form-body">
+                                        <div class="form-group row">
+                                            <label class="col-md-2 label-control">Fancy Type <span
+                                                    class="danger">*</span></label>
+                                            <div class="col-md-3">
+                                                <select
+                                                    class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty"
+                                                    aria-label="fancytype">
+                                                    <option value="" class="" selected="selected">Select Fancy Type
+                                                    </option>
+                                                    <option label="AdvanceSession" value="string:AdvanceSession">
+                                                        AdvanceSession</option>
+                                                    <option label="Session" value="string:Session">Session</option>
+                                                </select>
+                                                <div class="chosen-container chosen-container-single"
+                                                    style="width: 281px;" title=""><a class="chosen-single"
+                                                        tabindex="-1">
+                                                        <div><b></b></div>
+                                                    </a>
+                                                    <div class="chosen-drop">
+
+                                                        <ul class="chosen-results"></ul>
+                                                    </div>
+                                                </div>
+                                                <input type="text" hidden="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2 label-control">Sport Name <span
+                                                    class="danger">*</span></label>
+                                            <div class="col-md-3">
+                                                <select
+                                                    class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty"
+                                                    aria-label="Sport">
+                                                    <option value="" class="" selected="selected">Select Sport</option>
+                                                    <option label="Soccer" value="object:1422">Soccer</option>
+                                                    <option label="Election" value="object:1423">Election</option>
+                                                    <option label="Tennis" value="object:1424">Tennis</option>
+                                                    <option label="Cricket" value="object:1425">Cricket</option>
+                                                </select>
+                                                <div class="chosen-container chosen-container-single"
+                                                    style="width: 281px;" title=""><a class="chosen-single"
+                                                        tabindex="-1">
+                                                        <div><b></b></div>
+                                                    </a>
+                                                    <div class="chosen-drop">
+
+                                                        <ul class="chosen-results"></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 top_marg">
+                                                <select
+                                                    class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty"
+                                                    aria-label="Tournaments">
+                                                    <option value="" class="" selected="selected">Select Tournaments
+                                                    </option>
+                                                    <option value="2">ITF Chiswick</option>
+                                                    <option value="3">Davis Cup 2018</option>
+                                                    <option value="4">Fed Cup 2018</option>
+                                                    <option value="5">Pullach Challenger 2018</option>
+                                                    <option value="6">WTA Rogers Cup 2018</option>
+                                                    <option value="7">ATP Rogers Cup 2018</option>
+                                                    <option value="7">Gwangju Challenger 2018</option>
+                                                    <option value="7">Meerbusch Challenger 2018</option>
+
+                                                </select>
+                                                <div class="chosen-container chosen-container-single chosen-disabled"
+                                                    style="width: 281px;" title="" id="tournament_chosen">
+                                                    <a class="chosen-single" tabindex="-1">
+                                                        <div><b></b></div>
+                                                    </a>
+                                                    <div class="chosen-drop">
+
+                                                        <ul class="chosen-results"></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 top_marg">
+                                                <select
+                                                    class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty"
+                                                    aria-label="Match">
+                                                    <option value="" class="" selected="selected">Select Match</option>
+                                                    <option value="2">1. Barbora Strycova v Sofia Kenin-2018-11-10
+                                                        18:30:00</option>
+                                                    <option value="3">2. Katerina Siniakova v Alison Riske-2018-11-10
+                                                        20:00:00</option>
+                                                    <option value="4">3. Katerina Siniakova v Sofia Kenin-2018-11-11
+                                                        16:30:00</option>
+                                                    <option value="5">4. Barbora Strycova v Alison Riske-2018-11-11
+                                                        18:00:00</option>
+                                                </select>
+                                                <div class="chosen-container chosen-container-single chosen-disabled"
+                                                    style="width: 281px;" title="" id="match_chosen">
+                                                    <a class="chosen-single" tabindex="-1">
+                                                        <div><b></b></div>
+                                                    </a>
+                                                    <div class="chosen-drop">
+
+                                                        <ul class="chosen-results"></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-2 label-control">Fancy Name <span
+                                                    class="danger">*</span></label>
+                                            <div class="col-md-3">
+                                                <input type="text" maxlength="20"
+                                                    onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
+                                                    class="form-control ng-pristine ng-untouched ng-valid ng-empty">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-2 label-control">Min Stake <span
+                                                    class="danger">*</span></label>
+                                            <div class="col-md-3">
+                                                <input type="number" min="0"
+                                                    class="form-control ng-pristine ng-untouched ng-valid ng-not-empty">
+                                            </div>
+                                            <label class="col-md-2 label-control">Max Stake <span
+                                                    class="danger">*</span></label>
+                                            <div class="col-md-3">
+                                                <input type="number" min="0"
+                                                    class="form-control ng-pristine ng-untouched ng-valid ng-not-empty">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-2  label-control">Max Profit <span
+                                                    class="danger">*</span></label>
+                                            <div class="col-md-3">
+                                                <input type="number" min="0"
+                                                    class="form-control ng-pristine ng-untouched ng-valid ng-not-empty">
+                                            </div>
+                                            <label class="col-md-2 label-control">Max Loss <span
+                                                    class="danger">*</span></label>
+                                            <div class="col-md-3">
+                                                <input type="number" min="0"
+                                                    class="form-control ng-pristine ng-untouched ng-valid ng-not-empty">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-2 label-control">Note</label>
+                                            <div class="col-md-3">
+                                                <textarea rows="3"
+                                                    class="form-control col-md-9 ng-pristine ng-untouched ng-valid ng-empty"
+                                                    placeholder="Fancy Note"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-2 label-control">Position<span
+                                                    class="danger">*</span></label>
+                                            <div class="col-md-3">
+                                                <input type="number" min="0"
+                                                    class="form-control ng-pristine ng-untouched ng-valid ng-not-empty">
+                                            </div>
+                                        </div>
+
+                                        <div class="  check">
+                                            <div class="">
+                                                <label class="display-inline-block custom-control custom-checkbox">
+                                                    <input type="checkbox"
+                                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                                        style="position: initial;">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description"></span>
+                                                </label>
+
+                                                <label class="label-control">Is Active </label>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="  check">
+                                            <div class="">
+                                                <label class="display-inline-block custom-control custom-checkbox">
+                                                    <input type="checkbox"
+                                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                                        style="position: initial;">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description"></span>
+                                                </label>
+                                                <label class="label-control">Is Apply Commision </label>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 label-control">Rates Different<span
+                                                class="danger">*</span></label>
+                                        <div class="col-md-3">
+                                            <input type="number" min="0"
+                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-2 label-control">Rate Range<span
+                                                class="danger">*</span></label>
+                                        <div class="col-md-3">
+                                            <input type="number" min="0"
+                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-2 label-control">maxStakePerRate<span
+                                                class="danger">*</span></label>
+                                        <div class="col-md-3">
+                                            <input type="number" min="0"
+                                                class="form-control ng-pristine ng-untouched ng-valid ng-not-empty">
+                                        </div>
+                                    </div>
+
+                                    <hr>
+                                    <div class="col-md-12 down_marg" style="text-align: center;">
+
+                                        <button type="button"
+                                            class="mr-1 mb-1 btn btn-outline-primary btn-min-width ng-scope">Save &amp;
+                                            Close</button>
+
+                                        <button type="button"
+                                            class="mr-1 mb-1 btn btn-outline-primary btn-min-width ng-scope">Save &amp;
+                                            Add New</button>
+
+                                        <button type="button" onclick="location.href='#!/fancylist'"
+                                            class="mr-1 mb-1 btn btn-outline-danger btn-min-width">Cancel</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</div>

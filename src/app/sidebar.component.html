@@ -1,0 +1,178 @@
+<style>
+.submenulist > a::after, .submenulistsub > a::after{
+         content: "\F0DE";
+         animation: contentRotationOpen 0.5s ease both;
+         transition: top 0.5s;
+         font-family: 'Apollo', Arial, sans-serif;
+         font-style: normal;
+         display: inline-block;
+         position: absolute;
+         right: 10px;
+         top: 22px;
+         margin-top: -13px;
+         }
+         .submenulist.-active > a::after, .submenulistsub.-active > a::after{
+         content: "\F0DE";
+         animation: contentRotationClose 0.5s ease both;
+         transition: top 0.5s;
+         font-family: 'Apollo', Arial, sans-serif;
+         font-style: normal;
+         display: inline-block;
+         position: absolute;
+         right: 10px;
+         top: 24px;
+         margin-top: -12px;       
+         }
+         .submenulist > a:hover,.submenulistsub > a:hover {
+         background: rgba(255, 255, 255, 0.1);
+         }         
+         .submenulist > a, .submenulistcommentry > a, .submenulistsub > a{
+         position: relative;
+         display: block;
+         box-sizing: border-box;
+         width: 100%;
+         padding: 10px;
+         text-decoration: none;
+         background: rgba(255, 255, 255, 0.15);
+         }
+         .submenulist.-inactive > ul, .submenulistsub.-inactive > ul{
+         display: none;
+         animation: slideToTop 0.3s ease both;
+         }
+         .submenulist.-active > ul, .submenulistsub.-active > ul{
+         display: block;
+         animation: slideFromTop 0.3s ease both;
+         }
+         .submenulist > ul,.submenulistsub > ul{
+         width: 100%;
+         transform-origin: center top;
+         }
+         .submenulist > ul > li > a{
+         display: block;
+         width: 100%;
+         padding: 10px 10px 10px 20px;
+         text-decoration: none;
+         /*margin-left: 12px*/
+         }
+         .submenulistsub > ul > li > a{
+         display: block;
+         width: 100%;
+         padding: 10px 10px 10px 20px;
+         text-decoration: none;
+         /*margin-left: 14px*/
+         }
+
+
+
+</style>
+<nav class="menu ng-isolate-scope" [ngClass]="{'-collapsed': isCollapsed}">
+      <ul>
+         <li id="dash1" class="rootMenu ng-scope -inactive -has-children" [ngClass]="(currenttab==0)? '-active' : '-inactive' " (click)="tabmenu(0)">
+            <a [routerLink]="['/dashboard']" class="ng-binding">Dashboard</a>
+         </li>
+         <li id="dash2" class="rootMenu ng-scope -inactive -has-children" [ngClass]="(currenttab==1)? '-active' : '-inactive' " (click)="tabmenu(1)">
+            <a [routerLink]="['/user']" class="ng-binding">Create User </a>
+         </li>
+         <li id="dash3" class="rootMenu ng-scope -inactive -has-children" [ngClass]="(currenttab==0)? '-active' : '-inactive' " (click)="tabmenu(0)">
+            <a [routerLink]="['/event']" class="ng-binding">Event</a>
+         </li>
+         <li id="dash4" class="rootMenu ng-scope -inactive -has-children" [ngClass]="(currenttab==12)? '-active' : '-inactive' " (click)="tabmenu(12)">
+            <a [routerLink]="['/analysis']" class="ng-binding">Analysis</a>
+         </li>
+         <li id="dash5" class="rootMenu ng-scope -inactive -has-children"  [ngClass]="(currenttab==2)? '-active' : '-inactive' " (click)="tabmenu(2)">
+            <a [routerLink]="['/fancy']" class="ng-binding">Fancy </a>
+         </li>
+         <li id="dash6" class="rootMenu ng-scope -inactive -has-children"  [ngClass]="(currenttab==3)? '-active' : '-inactive' " (click)="tabmenu(3)">
+            <a [routerLink]="['/book']" class="ng-binding">Book making </a>
+         </li>
+         <li id="dash7" class="rootMenu ng-scope -active -has-children"  [ngClass]="(currenttab==4)? '-active' : '-inactive' " (click)="tabmenu(4)">
+            <a [routerLink]="['/ticker']" class="ng-binding">Ticker</a>
+         </li>
+         <li id="dash8" class="rootMenu ng-scope -inactive -has-children"  [ngClass]="(currenttab==5)? '-active' : '-inactive' " (click)="tabmenu(5)">
+            <a  [routerLink]="['/commentary']" class="ng-binding">Commentary</a>
+         </li>
+         <li class="rootMenu ng-scope -inactive -has-children"  [ngClass]="(currenttab==6)? '-active' : '-inactive' " (click)="tabmenu(6)">
+            <a class="ng-binding">Reports</a>
+            <ul>
+               <li class="ng-scope" [ngClass]="(currentli==17)? '-active' : '' " (click)="selectsub(7);">
+                  <a [routerLink]="['/login']"class="ng-binding">Login Logout</a>
+               </li>
+               <li class="ng-scope" [ngClass]="(currentli==15)? '-active' : '' " (click)="selectsub(7);">
+                  <a [routerLink]="['/pnlbymark']" class="ng-binding">pnl-by-market</a>
+               </li>
+               <li class="ng-scope" [ngClass]="(currentli==16)? '-active' : '' " (click)="selectsub(7);">
+                  <a [routerLink]="['/pnlbyagency']" class="ng-binding">pnl-by-agency</a>
+               </li>
+               <li class="ng-scope" [ngClass]="(currentli==7)? '-active' : '' " (click)="selectsub(7);">
+                  <a [routerLink]="['/betlist']" class="ng-binding">Bet List</a>
+               </li>
+               <li class="ng-scope" [ngClass]="(currentli==8)? '-active' : '' " (click)="selectsub(8);">
+                  <a [routerLink]="['/transfer']" class="ng-binding">Transfer Statement</a>
+               </li>
+               <li class="ng-scope" [ngClass]="(currentli==9)? '-active' : '' " (click)="selectsub(9);">
+                  <a [routerLink]="['/chipsum']" class="ng-binding">Chips Summary</a>
+               </li>
+               <li class="ng-scope" [ngClass]="(currentli==10)? '-active' : '' " (click)="selectsub(10);">
+                  <a [routerLink]="['/rejectbet']" class="ng-binding">Reject Bet History</a>
+               </li>
+               <li class="ng-scope" [ngClass]="(currentli==11)? '-active' : '' " (click)="selectsub(11);">
+                  <a [routerLink]="['/voidbet']" class="ng-binding">Void Bets</a>
+               </li>
+               <li class="ng-scope" [ngClass]="(currentli==12)? '-active' : '' " (click)="selectsub(12);">
+                  <a [routerLink]="['/settling']" class="ng-binding">Settling</a>
+               </li>
+               <li class="ng-scope" [ngClass]="(currentli==13)? '-active' : '' " (click)="selectsub(13);">
+                  <a [routerLink]="['/topprofit']" class="ng-binding">Top Profitable Clients</a>
+               </li>
+               <li class="ng-scope" [ngClass]="(currentli==14)? '-active' : '' " (click)="selectsub(14);">
+                  <a [routerLink]="['/recentlycreat']" class="ng-binding">Recently Created Account</a>
+               </li>
+            </ul>
+         </li>
+         <li class="rootMenu ng-scope -inactive -has-children"  [ngClass]="(currenttab==7)? '-active' : '-inactive' " (click)="tabmenu(7)">
+            <a class="ng-binding">Maintenance</a>
+            <ul class="">
+               <li  class="ng-scope" [ngClass]="(currentli==19)? '-active' : '' " (click)="selectsub(19);">
+                  <a [routerLink]="['/service']" class="ng-binding">services</a>
+               </li>
+               <li  class="ng-scope" [ngClass]="(currentli==20)? '-active' : '' " (click)="selectsub(20);">
+                  <a [routerLink]="['/rules']" class="ng-binding">Rules</a>
+               </li>
+               <li  class="submenulistsub ng-scope -inactive -has-children" [ngClass]="(subcurrenttablist==0)? '-active' : '-inactive' " (click)="subtabmenulist(0);">
+                  <a [routerLink]="['/globalmanage']" class="ng-binding">Global Management</a>
+                  <ul class="">
+                     <li  class="ng-scope" [ngClass]="(currentli==21)? '-active' : '' " (click)="selectsub(21);">
+                        <a [routerLink]="['/importmarket']" class="ng-binding">Import Market</a>
+                     </li>
+                     <li  class="ng-scope" [ngClass]="(currentli==22)? '-active' : '' " (click)="selectsub(22);">
+                        <a [routerLink]="['/dataservices']" class="ng-binding">Data & Services</a>
+                     </li>
+                     <li  class="ng-scope" [ngClass]="(currentli==23)? '-active' : '' " (click)="selectsub(23);">
+                        <a [routerLink]="['/fancysettle']" class="ng-binding">Fancy Settlement</a>
+                     </li>
+                     <li  class="ng-scope" [ngClass]="(currentli==24)? '-active' : '' " (click)="selectsub(24);">
+                        <a [routerLink]="['/sportmode']" class="ng-binding">Sportmode</a>
+                     </li>
+                     <li  class="ng-scope" [ngClass]="(currentli==25)? '-active' : '' " (click)="selectsub(25);">
+                        <a [routerLink]="['/hubconfig']" class="ng-binding">HubConfig</a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+         <li class="rootMenu ng-scope -inactive -has-children"  [ngClass]="(currenttab==8)? '-active' : '-inactive' " (click)="tabmenu(8)">
+            <a [routerLink]="['/setting']" class="ng-binding">Settings</a>
+            <ul>
+               <li  class="ng-scope" [ngClass]="(currentli==26)? '-active' : '' " (click)="selectsub(26);">
+                  <a [routerLink]="['/delay']" class="ng-binding">Delay</a>
+               </li>
+            </ul>
+         </li>
+         <li id="analysis" class="rootMenu ng-scope -inactive -has-children" [ngClass]="(currenttab==9)? '-active' : '-inactive' " (click)="tabmenu(9)">
+            <a [routerLink]="['/control-panel']" class="ng-binding">Control Panel</a>
+         </li>
+         <li id="dash9" class="rootMenu ng-scope -inactive -has-children"  [ngClass]="(currenttab==10)? '-active' : '-inactive' " (click)="tabmenu(10)">
+            <a [routerLink]="['/logs']" class="ng-binding">Logs</a>
+         </li>
+      </ul>
+   </nav>

@@ -1,0 +1,164 @@
+<style class="ng-scope">
+   table {
+      border-collapse: collapse;
+      width: 100%;
+   }
+
+   /*.col-xs-8{
+    height: 9.5%;
+    }*/
+   .match-label {
+      font-weight: bold;
+      vertical-align: middle;
+      background: #27EBFA;
+      padding: 10px;
+      margin: 0px;
+      border-radius: 10px 10px 0px 0px;
+      cursor: pointer;
+   }
+
+   .Runner {
+      color: #f5f5f5;
+      font-weight: bold;
+      background-color: #167F92;
+      text-align: center;
+      vertical-align: middle;
+      border-radius: 0px 0px 0px 10px;
+   }
+
+   .Runner1 {
+      color: #f5f5f5;
+      font-weight: bold;
+      background-color: #167F92;
+      text-align: center;
+      vertical-align: middle;
+   }
+
+   .Back {
+      color: #f5f5f5;
+      font-weight: bold;
+      background-color: rgb(24, 159, 255);
+      padding: 10px;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 13px;
+   }
+
+   .Lay {
+      color: #f5f5f5;
+      font-weight: bold;
+      background-color: #ff6e8b;
+      padding: 10px;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 13px;
+   }
+
+   .totalbets {
+      color: #f5f5f5;
+      font-weight: bold;
+      background-color: #6d6262;
+      padding: 10px;
+      text-align: center;
+      vertical-align: middle;
+      border-radius: 0px 0px 10px 0px;
+   }
+
+   .totalbetsText {
+      color: #f5f5f5;
+      font-weight: bold;
+      background-color: #167F92;
+      padding: 10px;
+      text-align: center;
+      vertical-align: middle;
+   }
+
+   .no-padding {
+      padding: 0px;
+   }
+
+   td,
+   th {
+      border: 1px solid #0e86cc;
+      text-align: left;
+      padding: 8px;
+   }
+
+   .tdfilledtext,
+   .tdfilledtext1 {
+      background: gainsboro;
+      font-weight: bold;
+   }
+
+   .tdfilledtext2 {
+      background: #7EC0EE;
+   }
+
+   .tdfilledtext3 {
+      background: #ee7ebc;
+   }
+</style>
+<div class="app-content content container-fluid ng-scope">
+   <div class="content-wrapper">
+      <div class="content-body">
+         <!-- Form repeater section start -->
+         <section id="form-repeater">
+            <h2 style="display: none;">sajkfsf</h2>
+            <div class="row">
+               <div class="col-xs-12">
+                  <div class="card">
+                     <!-- <div class="card-header"> -->
+                     <form class="ng-pristine ng-valid">
+                        <div class="row">
+                           <div class="col-xs-12 ng-scope" style="margin-top: 10px">
+                              <div class="row">
+                                 <a [routerLink]="['/reportbet']">
+                                    <label class="label-control match-label ng-binding"
+                                       style="text-align: center;">Western Sydney Wanderers v Brisbane Roar - Match
+                                       Odds</label>
+                                 </a>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-3 no-padding">
+                                    <div class="col-xs-8 Runner no-padding ng-binding">Western Sydney Wande...
+                                       <br><span
+                                          data-ng-style="runnerData.runnersData.runner1Book>0 &amp;&amp; {'color':'#11e811'}  || runnerData.runnersData.runner1Book<0 &amp;&amp; {'color':'#ef86ac'}"
+                                          class="ng-binding" style="color: rgb(17, 232, 17);">27,542.27</span>
+                                    </div>
+                                    <div class="col-xs-2 Back  ng-binding" id="runner1Back_">2.68</div>
+                                    <div class="col-xs-2 Lay  ng-binding" id="runner1Lay_">2.72</div>
+                                 </div>
+                                 <div class="col-md-3 no-padding">
+                                    <div class="col-xs-8 Runner1 no-padding ng-binding">Brisbane Roar
+                                       <br><span
+                                          data-ng-style="runnerData.runnersData.runner2Book>0 &amp;&amp; {'color':'#11e811'}  || runnerData.runnersData.runner2Book<0 &amp;&amp; {'color':'#ef86ac'}"
+                                          class="ng-binding" style="color: rgb(239, 134, 172);">-112,308.65</span>
+                                    </div>
+                                    <div class="col-xs-2 Back  ng-binding" id="runner1Back_">4</div>
+                                    <div class="col-xs-2 Lay  ng-binding" id="runner1Lay_">4.1</div>
+                                 </div>
+                                 <div class="col-md-3 no-padding">
+                                    <div class="col-xs-8 Runner1 no-padding ng-binding">The Draw
+                                       <br><span
+                                          data-ng-style="runnerData.runnersData.runner3Book>0 &amp;&amp; {'color':'#11e811'}  || runnerData.runnersData.runner3Book<0 &amp;&amp; {'color':'#ef86ac'}"
+                                          class="ng-binding" style="color: rgb(17, 232, 17);">9914.14999999999</span>
+                                    </div>
+                                    <div class="col-xs-2 Back  ng-binding" id="runner1Back_">2.58</div>
+                                    <div class="col-xs-2 Lay  ng-binding" id="runner1Lay_">2.6</div>
+                                 </div>
+                                 <div class="col-md-3 no-padding">
+                                    <div class="col-xs-8 totalbetsText">Total Bets</div>
+                                    <div class="col-xs-4 totalbets  ng-binding">20</div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+
+         </section>
+      </div>
+   </div>
+</div>

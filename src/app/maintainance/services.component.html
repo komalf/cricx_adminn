@@ -1,0 +1,945 @@
+<style>
+    .btn-group-xs>.btn,
+    .btn-xs {
+
+        line-height: 1;
+
+    }
+
+    input[type=number] {
+        width: 55px;
+        height: 20px;
+
+    }
+
+    #Services,
+    #Services1,
+    #Services2,
+    #Services3,
+    #Services4,
+    #Services5 {
+        border: none;
+        padding: 0px;
+    }
+
+    .material-icons {
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    table {
+        font-size: 13px
+    }
+
+    @media (min-width: 1200px) {}
+
+    .container {
+        width: 100%;
+    }
+
+    /*span{margin-right: 15px;}*/
+    table {
+
+        border: 1px solid #e3ebf3;
+        margin-bottom: 4px !important;
+    }
+
+
+    td,
+    th {
+
+        padding: 8px;
+        text-align: center;
+    }
+
+    td {
+        padding: 2px
+    }
+
+    .btn-success {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+    }
+
+    .btn-success:hover {
+        color: #fff;
+        background-color: #449d44;
+        border-color: #398439;
+    }
+
+    .btn-danger {
+        color: #fff;
+        background-color: #d9534f;
+        border-color: #d43f3a;
+    }
+
+    .btn-danger:hover {
+        color: #fff;
+        background-color: #c9302c;
+        border-color: #ac2925;
+    }
+
+    .text-danger {
+        color: #ffffff !important;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    .tableBtn {
+        font-size: 12px;
+    }
+
+    i {
+        cursor: pointer;
+    }
+
+    .shadow-custom {
+        box-shadow: 0 0.2em 1rem rgba(0, 0, 0, 0.5) !important
+    }
+
+    .card-header {
+        cursor: pointer;
+    }
+
+    .mb-0>a {
+        display: block;
+        position: relative;
+    }
+
+    .mb-0>a:after {
+        content: "\f078";
+        /* fa-chevron-down */
+        font-family: 'FontAwesome';
+        position: absolute;
+        right: 0;
+    }
+
+    .mb-0>a[aria-expanded="true"]:after {
+        content: "\f077";
+        /* fa-chevron-up */
+    }
+
+    .card-body i {
+        float: right;
+    }
+
+    .customRow {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .customRCB::before {
+        left: 11.5rem
+    }
+
+    .customRCB::after {
+        left: 11.5rem
+    }
+
+    .card-header-p {
+        padding: 8px 10px 8px 15px;
+    }
+
+    .card-body-p {
+        padding: 6px 20px 6px 20px;
+    }
+
+    .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite;
+        /* Safari */
+        animation: spin 2s linear infinite;
+        margin: auto;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .marketTitle {
+        border-bottom: 1px solid #cfcfcf;
+    }
+
+    /* The switch1 - the box around the slider1 */
+    .switch1 {
+        position: relative;
+        display: inline-block;
+        width: 46px;
+        height: 16px;
+    }
+
+    label {
+
+        margin-bottom: 0px !important;
+
+    }
+
+    /* Hide default HTML checkbox */
+    .switch1 input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider1 */
+    .slider1 {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 5px;
+        right: 3px;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider1:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        left: 0px;
+        bottom: 0px;
+        top: 0px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider1 {
+        background-color: #2196F3;
+    }
+
+    input:focus+.slider1 {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider1:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded slider1s */
+    .slider1.round {
+        border-radius: 34px;
+    }
+
+    .slider1.round:before {
+        border-radius: 50%;
+    }
+
+    .noWhiteSpace {
+        white-space: nowrap;
+    }
+
+    #Services td,
+    .table th {
+        border-bottom: none !important;
+        border-top: none !important;
+    }
+
+    #Services1 td,
+    .table th {
+        border-bottom: none !important;
+        border-top: none !important;
+    }
+
+    #Services2 td,
+    .table th {
+        border-bottom: none !important;
+        border-top: none !important;
+    }
+
+    #Services3 td,
+    .table th {
+        border-bottom: none !important;
+        border-top: none !important;
+    }
+
+    #Services4 td,
+    .table th {
+        border-bottom: none !important;
+        border-top: none !important;
+    }
+
+    #Services5 td,
+    .table th {
+        border-bottom: none !important;
+        border-top: none !important;
+    }
+
+    .switch1 {
+        vertical-align: middle;
+    }
+</style>
+
+    <div class="content">
+        <section>
+            <div class="table-responsive">
+                <table class="table ">
+                    <thead>
+
+                        <tr>
+                            <th>
+                                <label class="switch1 mb-0">
+                                    <input type="checkbox">
+                                    <span class="slider1 round"></span>
+                                </label>
+                                <span>Restart stop Monitor Lotus Fancy</span>
+                            </th>
+
+                            <th>
+                                <label class="switch1 mb-0">
+                                    <input type="checkbox">
+                                    <span class="slider1 round"></span>
+                                </label>
+                                <span>Restart stop Satfancy</span>
+                            </th>
+
+
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="table-responsive">
+                <table id="testttt" class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 10px"><input type="checkbox" class="custom-control-input"></th>
+                            <th style="width: 10px">Site</th>
+                            <th>Server</th>
+                            <th>Hosting</th>
+                            <th>No of Events</th>
+                            <th>Services</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" class="custom-control-input"></td>
+                            <td>Satbet</td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td> <span style="display: inline-flex;">
+                                    <input type="number" min="0">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span></td>
+                            <td>
+                                <table id="Services">
+                                    <tr>
+                                        <td>Lotus Fancy restart</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>Settlement Engine</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Watchdog Service</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>BF Market Data Status Manager</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Betfair Data Broadcast Server 3</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="custom-control-input"></td>
+                            <td>Betbuzz</td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td> <span style="display: inline-flex;">
+                                    <input type="number" min="0">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span></td>
+                            <td>
+                                <table id="Services1">
+                                    <tr>
+                                        <td>Lotus Fancy restart</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>Settlement Engine</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Watchdog Service</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>BF Market Data Status Manager</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Betfair Data Broadcast Server 3</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="custom-control-input"></td>
+                            <td>play7x</td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td> <span style="display: inline-flex;">
+                                    <input type="number" min="0">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span></td>
+                            <td>
+                                <table id="Services2">
+                                    <tr>
+                                        <td>Lotus Fancy restart</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>Settlement Engine</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Watchdog Service</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>BF Market Data Status Manager</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Betfair Data Broadcast Server 3</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="custom-control-input"></td>
+                            <td>Dak19 </td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td> <span style="display: inline-flex;">
+                                    <input type="number" min="0">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span></td>
+                            <td>
+                                <table id="Services3">
+                                    <tr>
+                                        <td>Lotus Fancy restart</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>Settlement Engine</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Watchdog Service</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>BF Market Data Status Manager</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Betfair Data Broadcast Server 3</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="custom-control-input"></td>
+                            <td>5star</td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td> <span style="display: inline-flex;">
+                                    <input type="number" min="0">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span></td>
+                            <td>
+                                <table id="Services4">
+                                    <tr>
+                                        <td>Lotus Fancy restart</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>Settlement Engine</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>Watchdog Service</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>BF Market Data Status Manager</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Betfair Data Broadcast Server 3</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="custom-control-input"></td>
+                            <td>RB</td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td>
+                                <span style="display: inline-flex;">
+                                    <input type="text" placeholder="id">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span><br>
+                                <span style="display: inline-flex;margin-top: 5px;">
+                                    <input type="password" placeholder="pass">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span>
+                            </td>
+                            <td> <span style="display: inline-flex;">
+                                    <input type="number" min="0">
+                                    <button class="btn-xs btn-success">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">check</i>
+                                    </button>
+                                    <button class="btn-xs btn-danger">
+                                        <i class="material-icons text-danger font-weight-bold ng-scope">close</i>
+                                    </button>
+                                </span></td>
+                            <td>
+                                <table id="Services5">
+                                    <tr>
+                                        <td>Lotus Fancy restart</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>Settlement Engine</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Watchdog Service</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                        <td>BF Market Data Status Manager</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Betfair Data Broadcast Server 3</td>
+                                        <td>
+                                            <label class="switch1 mb-0">
+                                                <input type="checkbox">
+                                                <span class="slider1 round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>

@@ -1,0 +1,388 @@
+<style>
+    .marketTitle {
+        border-bottom: 1px solid #cfcfcf;
+    }
+
+    .card-body-p {
+        padding: 6px 20px 6px 20px;
+    }
+
+    .card-body i {
+        float: right;
+    }
+
+    .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .marketTitle {
+        border-bottom: 1px solid #cfcfcf;
+    }
+
+    .card-header:first-child {
+        border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    }
+
+    .mb-0>a:after {
+        content: "\f078";
+        font-family: 'FontAwesome';
+        position: absolute;
+        right: 0;
+    }
+
+    .mb-0>a {
+        display: block;
+        position: relative;
+    }
+
+    .mb-0,
+    .my-0 {
+        margin-bottom: 0 !important;
+    }
+
+    .h5,
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: .5rem;
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.2;
+        color: inherit;
+    }
+
+    .h6,
+    h6 {
+        font-size: 1rem;
+    }
+
+    @media (min-width: 576px) {
+        .checkcol-sm-2 {
+            -ms-flex: 0 0 16.666667%;
+            flex: 0 0 16.666667%;
+            max-width: 12%;
+        }
+    }
+
+    .custom-control {
+        position: relative;
+        display: block;
+        min-height: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .p-2 {
+        padding: .5rem !important;
+    }
+
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .custom-control-input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .custom-control-label {
+        position: relative;
+        margin-bottom: 0;
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: .5rem;
+    }
+</style>
+
+
+
+<form class="row pl-3 mt-1 ng-pristine ng-valid ng-scope">
+    <div class="custom-control custom-checkbox col-12 col-sm-2 checkcol-sm-2 ng-scope">
+        <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="SatBet" value="SatBet">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description" data-for="SatBet"><b>SatBet</b></span>
+        </label>
+    </div>
+    <div class="custom-control custom-checkbox col-12 col-sm-2 checkcol-sm-2 ng-scope">
+        <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="5Star" value="5Star"
+                data-ng-click="selectSite(site.siteName)">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description" data-for="5Star"><b>5Star</b></span>
+        </label>
+    </div>
+    <div class="custom-control custom-checkbox col-12 col-sm-2 checkcol-sm-2 ng-scope">
+        <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="Indian09" value="Indian09"
+                data-ng-click="selectSite(site.siteName)">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description" data-for="Indian09"><b>Indian09</b></span>
+        </label>
+    </div>
+    <div class="custom-control custom-checkbox col-12 col-sm-2 checkcol-sm-2 ng-scope">
+        <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="KingdomExch" value="KingdomExch"
+                data-ng-click="selectSite(site.siteName)">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description" data-for="KingdomExch"><b>KingdomExch</b></span>
+        </label>
+    </div>
+    <div class="custom-control custom-checkbox col-12 col-sm-2 checkcol-sm-2 ng-scope">
+        <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="BetBuzz" value="BetBuzz"
+                data-ng-click="selectSite(site.siteName)">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description" data-for="BetBuzz"><b>BetBuzz</b></span>
+        </label>
+    </div>
+    <div class="custom-control custom-checkbox col-12 col-sm-2 checkcol-sm-2 ng-scope">
+        <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="RBEXCH" value="RBEXCH"
+                data-ng-click="selectSite(site.siteName)">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description" data-for="RBEXCH"><b>RBEXCH</b></span>
+        </label>
+    </div>
+    <div class="custom-control custom-checkbox col-12 col-sm-2 checkcol-sm-2 ng-scope">
+        <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="PLAY7X" value="PLAY7X"
+                data-ng-click="selectSite(site.siteName)">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description" data-for="PLAY7X"><b>PLAY7X</b></span>
+        </label>
+    </div>
+    <div class="custom-control custom-checkbox col-12 col-sm-2 checkcol-sm-2 ng-scope">
+        <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="DREAM" value="DREAM"
+                data-ng-click="selectSite(site.siteName)">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description" data-for="DREAM"><b>DREAM</b></span>
+        </label>
+    </div>
+</form>
+<hr class="mt-1">
+
+
+<div id="accordion" class="ng-scope">
+    <div class="card">
+        <div class="card-header card-header-p bg-success text-light" id="heading-4">
+            <h5 class="mb-0">
+                <a role="button" data-toggle="collapse" data-target="#s-4" aria-expanded="true" aria-controls="s-4"
+                    class="ng-binding">
+                    Cricket
+                </a>
+            </h5>
+        </div>
+        <div id="s-4" class="ng-scope collapse show" data-parent="#accordion" aria-labelledby="heading-4" style="">
+            <div class="card-body card-body-p">
+
+                <div id="accordion-4">
+                    <div class="card">
+                        <div class="card-header card-header-p bg-secondary text-light" id="heading-4-12161756">
+                            <h6 class="mb-0">
+                                <a class="ng-binding" role="button" data-toggle="collapse" data-target="#t-4-12161756"
+                                    aria-expanded="true" aria-controls="t-4-12161756">
+                                    Bangladesh Premier League
+                                </a>
+                            </h6>
+                        </div>
+
+                        <div id="t-4-12161756" class="ng-scope collapse show" data-parent="#accordion-4"
+                            aria-labelledby="heading-4-12161756" style="">
+                            <div class="card-body card-body-p">
+
+                                <div id="accordion-4-12161756">
+                                    <div class="card">
+                                        <div class="card-header card-header-p bg-secondary text-light"
+                                            id="heading-4-12161756-29060943">
+                                            <h6 class="mb-0">
+                                                <a class="ng-binding" role="button" data-toggle="collapse"
+                                                    data-target="#m-4-12161756-29060943" aria-expanded="true"
+                                                    aria-controls="m-4-12161756-29060943">
+                                                    Chittagong Vikings v Rangpur Riders [2019-01-05 12:00:00]
+                                                </a>
+                                            </h6>
+                                        </div>
+
+                                        <div id="m-4-12161756-29060943" class="ng-scope collapse show"
+                                            data-parent="#accordion-4-12161756"
+                                            aria-labelledby="heading-4-12161756-29060943" style="">
+                                            <div class="card-body card-body-p marketTitle ng-binding">
+                                                Match Odds
+                                                <i class="material-icons text-success font-weight-bold">add_circle</i>
+                                            </div>
+                                        </div>
+                                        <div id="m-4-12161756-29060943" class="ng-scope collapse show"
+                                            data-parent="#accordion-4-12161756"
+                                            aria-labelledby="heading-4-12161756-29060943" style="">
+                                            <div class="card-body card-body-p marketTitle ng-binding">
+                                                To Win the Toss
+                                                <i class="material-icons text-success font-weight-bold">add_circle</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade ng-scope" id="matchSettingsModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+
+            <div class="modal-body">
+                <form class="row ng-pristine ng-valid">
+                    <div class="form-group col-lg-6 col-12 customRow">
+                        <label for="volInto" class="col-lg-6 col-12">Market Volume Into</label>
+                        <input type="text"
+                            class="form-control col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-not-empty"
+                            id="volInto" data-ng-model="volInto">
+                    </div>
+                    <div class="form-group col-lg-6 col-12 customRow">
+                        <label for="betDelay" class="col-lg-6 col-12">Bet Delay</label>
+                        <input type="text"
+                            class="form-control col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-not-empty"
+                            id="betDelay" data-ng-model="betDelay">
+                    </div>
+                    <div class="form-group col-lg-6 col-12 customRow">
+                        <label for="minRate" class="col-lg-6 col-12">Min Rate</label>
+                        <input type="text"
+                            class="form-control col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-not-empty"
+                            id="minRate" data-ng-model="minRate">
+                    </div>
+                    <div class="form-group col-lg-6 col-12 customRow">
+                        <label for="maxRate" class="col-lg-6 col-12">Max Rate</label>
+                        <input type="text"
+                            class="form-control col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-not-empty"
+                            id="maxRate" data-ng-model="maxRate">
+                    </div>
+                    <div class="form-group col-lg-6 col-12 customRow">
+                        <label for="minStake" class="col-lg-6 col-12">Min Stake</label>
+                        <input type="text"
+                            class="form-control col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-not-empty"
+                            id="minStake" data-ng-model="minStake">
+                    </div>
+                    <div class="form-group col-lg-6 col-12 customRow">
+                        <label for="maxStake" class="col-lg-6 col-12">Max Stake</label>
+                        <input type="text"
+                            class="form-control col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-not-empty"
+                            id="maxStake" data-ng-model="maxStake">
+                    </div>
+                    <div class="form-group col-lg-6 col-12 customRow">
+                        <label for="maxProfit" class="col-lg-6 col-12">Max Profit</label>
+                        <input type="text"
+                            class="form-control col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-not-empty"
+                            id="maxProfit" data-ng-model="maxProfit">
+                    </div>
+                    <div class="form-group col-lg-6 col-12 customRow">
+                        <label for="maxLoss" class="col-lg-6 col-12">Max Loss</label>
+                        <input type="text"
+                            class="form-control col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-not-empty"
+                            id="maxLoss" data-ng-model="maxLoss">
+                    </div>
+                    <div class="form-group col-lg-6 col-12 customRow">
+                        <label for="beforeInplayLt" class="col-lg-6 col-12">Market Before Inplay Limit</label>
+                        <input type="text"
+                            class="form-control col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-not-empty"
+                            id="beforeInplayLt" data-ng-model="beforeInplayLt">
+                    </div>
+                    <div class="custom-checkbox col-lg-6 col-12 customRow">
+                        <input type="checkbox"
+                            class="custom-control-input col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-empty"
+                            id="chkVol" data-ng-model="chkVol" name="example1">
+                        <label class="custom-control-label col-lg-6 col-12 customRCB" for="chkVol">Is Check
+                            Volume</label>
+                    </div>
+                    <div class="custom-checkbox col-lg-6 col-12 customRow">
+                        <input type="checkbox"
+                            class="custom-control-input col-lg-6 col-12 ng-pristine ng-untouched ng-valid ng-empty"
+                            id="umAllowed" data-ng-model="umAllowed" name="example1">
+                        <label class="custom-control-label col-lg-6 col-12 customRCB" for="umAllowed">Is Unmatched
+                            Allowed</label>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-ng-click="importMarket()">Import</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade ng-scope" id="noSettingsModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+
+            <div class="modal-body">
+                <h5>Are you sure you want to Import this market?</h5>
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-ng-click="importMarket()">Import</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>

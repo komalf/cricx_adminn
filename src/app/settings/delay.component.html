@@ -1,0 +1,315 @@
+<style>
+    .data-ng-table-filters {
+        display: none;
+    }
+
+    .pull-right {
+        float: left !important;
+    }
+
+    .card-block {
+        padding: 0px !important;
+    }
+
+    .col-xs-12 {
+        padding: 0px !important;
+    }
+
+    .btn {
+        padding: 0.50rem 1rem;
+    }
+
+    @media (min-width:800px) {
+        .option {
+            display: inline-flex;
+        }
+    }
+
+    @media (max-width:800px) {
+        .option {
+            display: initial;
+
+        }
+
+        .form-group {
+            margin-left: 0px !important
+        }
+
+
+    }
+</style>
+
+<div class="app-content content container-fluid ng-scope">
+    <div class="content-wrapper">
+        <div class="content-body">
+
+            <div class="card">
+                <div class="content pnl-by-agency ng-scope agentView">
+                    <div class="col-xs-12">
+                        <div class="header _clearfix">
+                            <h1 translate="" class="ng-scope">Delay Settings</h1>
+
+                        </div>
+                    </div>
+                    <div class="card-body"
+                        style="display: inline-flex;border: 10px solid rgba(0, 0, 0, 0.1);width: -webkit-fill-available;">
+                        <div class="card-block card-dashboard option">
+                            <div class="form-group" style="margin-left: 10px;">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        [(ngModel)]="isSportswise">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description"><b>Sports Wise</b></span>
+                                </label>
+                            </div>
+
+                            <div class="form-group" style="margin-left: 10px;">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        [(ngModel)]="isEventwise">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description"><b>Event Wise</b></span>
+                                </label>
+                            </div>
+                            <div class="form-group" style="margin-left: 10px;">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        [(ngModel)]="isTournamentwise">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description"><b>Tournament Wise</b></span>
+                                </label>
+                            </div>
+                            <div class="form-group" style="margin-left: 10px;">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        [(ngModel)]="isRunnerwise">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description"><b>Runner Wise</b></span>
+                                </label>
+                            </div>
+                            <div class="form-group" style="margin-left: 10px;">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                        [(ngModel)]="isHierarchywise">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description"><b>User Wise </b></span>
+                                </label>
+                            </div>
+                            <!-- <div class="form-group" style="margin-left: 10px;">
+                                               <label class="custom-control custom-checkbox">
+                                               <input type="checkbox" class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty" ng-model="isClienttwise">
+                                               <span class="custom-control-indicator"></span>
+                                               <span class="custom-control-description"><b>Client Wise</b></span>
+                                               </label>
+                                            </div>
+        
+                                             <div class="form-group" style="margin-left: 10px;">
+                                               <label class="custom-control custom-checkbox">
+                                               <input type="checkbox" class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty" ng-model="isDefaultwise">
+                                               <span class="custom-control-indicator"></span>
+                                               <span class="custom-control-description"><b>Default</b></span>
+                                               </label>
+                                            </div>  -->
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-body option">
+                            <div class="form-group" *ngIf="isSportswise">
+                                <span class="danger">*</span>
+                                <label><b>Select Sport Wise</b></label>
+                                <select data-chosen=""
+                                    class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse"
+                                    >
+                                    <option value="" class="" selected="selected">--Select Sport--</option>
+                                    <option value="object:113">Cricket </option>
+                                    <option value="object:114">Soccer</option>
+                                    <option value="object:115">Tennis </option>
+
+                                </select>
+                            </div>
+                            <div class="form-group" *ngIf="isRunnerwise">
+                                <span class="danger">*</span>
+                                <label><b>Select Fancy Wise</b></label>
+                                <select data-chosen=""
+                                    class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse"
+                                    >
+                                    <option value="" class="" selected="selected">--Select Fancy--</option>
+                                    <option value="object:113">6 OVER RUN CV (CV VS RGR)ADV</option>
+                                    <option value="object:114">20 OVER RUN CV (CV VS RGR)ADV</option>
+                                    <option value="object:115">Fall of 1st Wicket</option>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group ng-hide" *ngIf="isEventwise">
+                                <span class="danger">*</span>
+                                <label><b>Select Event Wise</b></label>
+                                <select data-chosen=""
+                                    class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse"
+                                    >
+                                    <option value="" class="" selected="selected">--Select Event--</option>
+                                    <option value="object:113">India Vs Pakistan(Match Odds)
+                                    </option>
+                                    <option value="object:114">India Vs South Africa(Match Odds)</option>
+                                    <option value="object:115">Tennis (match Odds) </option>
+
+                                </select>
+                            </div>
+                            <div class="form-group ng-hide" *ngIf="isTournamentwise">
+                                <span class="danger">*</span>
+                                <label><b>Select Tournament Wise</b></label>
+                                <select data-chosen=""
+                                    class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse"
+                                    >
+                                    <option value="" class="" selected="selected">--Select Tournament--</option>
+                                    <option value="object:113">Barclays premiere League
+                                    </option>
+                                    <option value="object:114">La Liga Santander </option>
+                                    <option value="object:115">Test Series</option>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group option" *ngIf="isHierarchywise">
+                                <div class="form-group">
+                                    <span class="danger">*</span>
+                                    <label><b>Select Senior Super Master Wise</b></label>
+                                    <select data-chosen=""
+                                        class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse"
+                                        >
+                                        <option value="" class="" selected="selected">--Select Senior Super Master--
+                                        </option>
+                                        <option value="object:113">demomdl
+                                        </option>
+                                        <option value="object:114">don</option>
+                                        <option value="object:115">jmd123</option>
+
+                                    </select>
+                                </div>
+
+
+
+
+                                <div class="form-group">
+                                    <span class="danger">*</span>
+                                    <label><b>Select Super Master Wise</b></label>
+                                    <select data-chosen=""
+                                        class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse"
+                                        >
+                                        <option value="" class="" selected="selected">--Select Super Master--</option>
+                                        <option value="object:113">demomdl
+                                        </option>
+                                        <option value="object:114">ivory100</option>
+                                        <option value="object:115">jmd100</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <span class="danger">*</span>
+                                    <label><b>Select Master Wise</b></label>
+                                    <select data-chosen=""
+                                        class="form-control ng-valid localytics-chosen ng-touched ng-not-empty ng-dirty ng-valid-parse"
+                                        >
+                                        <option value="" class="" selected="selected">--Select Master--</option>
+                                        <option value="object:113">Master 1
+                                        </option>
+                                        <option value="object:114">Master 2</option>
+                                        <option value="object:115">Master 3</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <span class="danger">*</span>
+                                    <label><b>Client Wise</b></label>
+                                    <select data-chosen=""
+                                        class="form-control ng-pristine ng-valid localytics-chosen ng-empty ng-touched">
+                                        <option value="" class="" selected="selected">--Select Client--</option>
+                                        <option value="object:113">Client 1</option>
+                                        <option value="object:114">Client 2</option>
+                                        <option value="object:115">Client 3</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body" style="text-align: -webkit-center" *ngIf="IsVisible">
+                        <div class="form-group">
+                            <label><b>Delay :</b>[Second]</label>
+                            <input type="number" name="betDelay" [(ngModel)]="betDelay" min="0"
+                                data-ng-change="betDelayChange()" placeholder="Enter Fancy bet delay"
+                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength"
+                                style="width: auto;" aria-label="delay">
+                        </div>
+
+                        <div class="form-actions">
+                            <div class="text-xs-center">
+
+                                <button type="submit" class="mr-1 mb-1 btn btn-outline-success btn-min-width ng-scope"
+                                    (click)="ShowHide()">Save &amp; Close</button>
+                                <button type="button" class="mr-1 mb-1 btn btn-outline-danger btn-min-width"
+                                   (click)="ShowHide()">Cancel</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-body collapse in">
+                        <div class="card-block card-dashboard">
+
+                            <div class="table-responsive">
+                                <table id="testttt"
+                                    class="table table-striped table-bordered"
+                                    style="text-align: center; white-space: nowrap;">
+                                    <thead>
+                                        <tr>
+                                          <th>Edit</th>
+                                          <th>Delays Given To Perticulars</th>
+                                          <th>Delay:[Seconds]</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="ng-scope" *ngFor="let Delay of Delaydata">
+                                            <td title="'Edit'">
+                                                <a class="ng-scope">
+                                                    <img src="assets/editpen.png"
+                                                        style="cursor:pointer;width:20px; height:20px;"
+                                                        alt="editpen"
+                                                        (click)="ShowHide()"></a>
+                                            </td>
+                                            <td title=" 'Delays Given to Perticulars' " class="ng-binding ">{{Delay.Category}}</td>
+                                            <td title=" 'Delay:[Seconds]' "
+                                                data-title-text="Delay In Seconds" class="ng-binding">{{Delay.Seconds}}
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

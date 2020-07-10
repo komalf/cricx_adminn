@@ -1,0 +1,292 @@
+<div class="app-content content container-fluid ng-scope">
+    <div class="content-wrapper">
+        <div class="content-body">
+
+            <section id="file-export">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="header _clearfix">
+
+                            <h1 class="ng-binding ng-scope">FANCY LIST</h1>
+                            <div class="downld">
+                                <a id="pdf"><img title="pdf" class="ng-scope" src="assets/pdf.png"></a>
+                                <a id="excel"><img title="Excel" class="ng-scope" src="assets/excel.png"></a>
+                                <a id="csv"><img title="csv" class="ng-scope" src="assets/csv.png"></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <br>
+                    <form class="form form-horizontal ng-pristine ng-valid ng-valid-maxlength">
+                        <div class="form-body form-group">
+                            <div class="col-md-3">
+                                <select
+                                    class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty"
+                                    aria-label="Sport">
+                                    <option value="" class="" selected="selected">Select Sport</option>
+                                    <option label="Soccer" value="string:Soccer">Soccer</option>
+                                    <option label="Election" value="string:Election">Election</option>
+                                    <option label="Tennis" value="string:Tennis">Tennis</option>
+                                    <option label="Cricket" value="string:Cricket">Cricket</option>
+                                </select>
+                                <div class="chosen-container chosen-container-single" title="">
+                                    <a class="chosen-single" tabindex="-1">
+                                        <div><b></b></div>
+                                    </a>
+                                    <div class="chosen-drop">
+
+                                        <ul class="chosen-results"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 top_marg">
+                                <select
+                                    class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty"
+                                    aria-label="Tournament">
+                                    <option value="" class="" selected="selected">Select Tournament</option>
+                                    <option label="ITF Chiswick" value="2">ITF Chiswick</option>
+                                    <option label="Davis Cup 2018" value="3">Davis Cup 2018</option>
+                                    <option label="Fed Cup 2018" value="4">Fed Cup 2018</option>
+                                    <option label="Pullach Challenger 2018" value="5">Pullach Challenger 2018</option>
+                                    <option label="WTA Rogers Cup 2018" value="6">WTA Rogers Cup 2018</option>
+                                    <option label="ATP Rogers Cup 2018" value="7">ATP Rogers Cup 2018</option>
+                                    <option label="Gwangju Challenger 2018" value="8">Gwangju Challenger 2018</option>
+                                    <option label="Meerbusch Challenger 2018" value="9">Meerbusch Challenger 2018
+                                    </option>
+
+                                </select>
+                                <div class="chosen-container chosen-container-single chosen-disabled" title=""><a
+                                        class="chosen-single" tabindex="-1">
+                                        <div><b></b></div>
+                                    </a>
+                                    <div class="chosen-drop">
+
+                                        <ul class="chosen-results"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 top_marg">
+                                <select
+                                    class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty"
+                                    aria-label="Match">
+                                    <option value="" class="" selected="selected">Select Match</option>
+                                    <option value="2">1. Barbora Strycova v Sofia Kenin-2018-11-10 18:30:00
+                                    </option>
+                                    <option value="3">2. Katerina Siniakova v Alison Riske-2018-11-10 20:00:00
+                                    </option>
+                                    <option value="4">3. Katerina Siniakova v Sofia Kenin-2018-11-11 16:30:00
+                                    </option>
+                                    <option value="5">4. Barbora Strycova v Alison Riske-2018-11-11 18:00:00</option>
+                                </select>
+                                <div class="chosen-container chosen-container-single chosen-disabled" title=""><a
+                                        class="chosen-single" tabindex="-1">
+                                        <div><b></b></div>
+                                    </a>
+                                    <div class="chosen-drop">
+
+                                        <ul class="chosen-results"></ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 top_marg">
+                                <select
+                                    class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty"
+                                    aria-label="fancy_status" id="fancy_status">
+                                    <option value="">---Select Status---</option>
+                                    <option value="1">Open</option>
+                                    <option value="2">Inactive</option>
+                                    <option value="4">Settled</option>
+
+                                    <option value="6">Closed</option>
+                                </select>
+                                <div class="chosen-container chosen-container-single" title="" id="fancy_status_chosen">
+                                    <a class="chosen-single" tabindex="-1">
+                                        <div><b></b></div>
+                                    </a>
+                                    <div class="chosen-drop">
+
+                                        <ul class="chosen-results"></ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-body form-group">
+                            <div class="col-md-2 top_marg">
+                                <button type="button" onclick="location.href='#!/fancydetails'"
+                                    class="mr-1 mb-1 btn btn-outline-primary btn-min-width ng-scope"
+                                    style="width:100%">Add New</button>
+
+                            </div>
+                            <div class="col-md-2 top_marg">
+                                <button type="button" class="mr-1 mb-1 btn btn-outline-danger btn-min-width"
+                                    style="width:100%">Set Close</button>
+                            </div>
+                            <div class="col-md-2 top_marg" style="margin-top: 10px;">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox"
+                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty"
+                                        aria-label="checkbox">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description"><b>Settled</b></span>
+                                </label>
+                            </div>
+
+                            <div class="col-md-2 top_marg">
+                                <input type="number" class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                    min="0" placeholder="Enter Result" id="Result" aria-label="Result"
+                                    aria-labelledby="Result">
+                            </div>
+                            <div class="col-md-2 top_marg">
+                                <button type="button" class="mr-1 mb-1 btn btn-outline-success btn-min-width"
+                                    style="width:100%">Set Result</button>
+                            </div>
+
+                            <div class="col-md-2">
+                                <label class="">
+                                    <b>Total Records : </b>971
+                                </label>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div class="card-body collapse in">
+                        <div class="card-block card-dashboard">
+                            <div class="table-responsive">
+                                <table data-ng-table="tableParams" id="testttt"
+                                    class="table table-striped table-bordered" data-show-filter="true"
+                                    style="text-align: center; white-space: nowrap;">
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" data-ng-model="checkboxes.items[fancy.id]"
+                                                    data-ng-class="checkAll" aria-label="checkbox"> </th>
+                                            <th>Edit</th>
+                                            <th>Fancy Type</th>
+                                            <th>Fancy Code</th>
+                                            <th>Bet Name</th>
+                                            <th>Match</th>
+                                            <th>Status</th>
+                                            <th>Mode Rate</th>
+                                            <th>Rate</th>
+                                            <th>Active</th>
+                                            <th>AllowBet</th>
+                                            <th>Commission</th>
+                                            <th>Cancel</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="ng-scope" *ngFor="let fancy of fancydata">
+                                            <td class="ng-binding">
+                                                <input type="checkbox" 
+                                                    value="{{fancy.id}}" aria-label="checkbox">
+                                            </td>
+                                            <td title="'Edit'" data-title-text="Edit">
+                                                <a [routerLink]="['/fancydetail']"
+                                                    class="ng-scope ">
+                                                    <img src="assets/editpen.png " style="cursor:pointer" width="20"
+                                                        height="20" alt="editpen"></a>
+                                            </td>
+                                            <td title=" 'Fancy Type' "
+                                                data-title-text="Fancy Type " class="ng-binding ">{{fancy.fancyType}}
+                                            </td>
+                                            <td title=" 'Fancy Code' "
+                                                data-title-text="Fancy Code " class="ng-binding ">{{fancy.fancyCode}}
+                                            </td>
+                                            <td title=" 'Bet Name' "
+                                                data-title-text="Bet Name " class="ng-binding ">{{fancy.betName}}</td>
+                                            <td title=" 'Match' " data-sortable=" 'match' " data-title-text="Match "><b
+                                                    style="font-weight: bold "
+                                                    class="ng-binding ">{{fancy.match}}</b><br><span
+                                                    style="font-size: 12px "
+                                                    class="ng-binding ">{{fancy.matchtime}}</span></td>
+
+                                            <td title=" 'Status' " data-sortable=" 'betStatus' "
+                                                data-title-text="Status " class="ng-binding ">{{fancy.betStatus}}</td>
+                                            <td title=" 'Mode Rate' " style="width: 150px;display: inline-flex; "
+                                                data-title-text="Mode Rate " class="ng-scope">
+                                                <div class="col-md-12" style="padding: 0 ">
+                                                    <div class="col-md-3 auto " style="padding: 0px; ">
+
+                                                        <input type="radio"
+                                                            class="ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                            name="Bookflt{{fancy.id}}" value="auto"
+                                                            data-ng-model="isManual" aria-label="radio1">
+
+                                                        <label>Auto</label>
+                                                    </div>
+
+                                                    <div class="col-md-3 manual">
+                                                        <input [(ngModel)]="isManual" type="radio"
+                                                            class="ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                            name="Bookflt{{fancy.id}}" value="manual" id="manual"
+                                                            aria-label="radio2">
+                                                        <label>Manual</label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td title=" 'Rate' " class="cursor-pointer ng-scope "
+                                                data-title-text="Rate ">
+                                                <a *ngIf="isManual== 'manual'"
+                                                    target="_blank" class="ng-scope"><i class="fa fa-plus-circle fa-2x"
+                                                        aria-hidden="true"></i></a>
+                                                <!-- <a data-ng-show="isManual == 'auto'" href="fancyrate.html"
+                                                    target="_blank" class="ng-scope" style="display: none;"><i
+                                                        class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+                                                </a> -->
+
+                                            </td>
+
+                                            <td title="'Active'" data-title-text="Active" class="ng-scope">
+
+                                                <img title="Active" data-ng-src="checkmark.png"
+                                                    style="cursor:pointer;width:20px;height:20px;" class="ng-scope"
+                                                    src="assets/checkmark.png">
+
+
+                                            </td>
+
+                                            <td title="'Allow Bet'" data-title-text="Allow Bet" class="ng-scope">
+
+                                                <img title="Allow Bet" data-ng-src="assets/checkmark.png"
+                                                    style="cursor:pointer;width:20px;height:20px;" src="assets/checkmark.png">
+
+                                                <!-- <img title="Don't Allow Bet" data-ng-src="close.png"
+                                                    style="cursor:pointer;width:20px;height:20px;" src="close.png"
+                                                    class="ng-hide"> -->
+
+                                            </td>
+
+                                            <td title="'commission'" data-title-text="commission" class="ng-scope">
+
+                                                <img title="commission" data-ng-src="checkmark.png"
+                                                    style="cursor:pointer;width:20px;height:20px;" src="assets/checkmark.png"
+                                                    class="ng-hide">
+
+                                                <!-- <img title="Not a commission" data-ng-src="close.png"
+                                                    style="cursor:pointer;width:20px;height:20px;" src="close.png"> -->
+
+                                            </td>
+
+                                            <td title="'Cancel'" data-title-text="Cancel" class="ng-scope">
+                                                <button class="btn-danger btn-xs" title="Cancel Bet">cancel</button>
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+        </div>
+    </div>
+</div>

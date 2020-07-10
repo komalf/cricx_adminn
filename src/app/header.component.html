@@ -1,0 +1,132 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<header class="header _clearfix">
+   <div class="logo-area col-xl-1">
+      <a aria-label="home">
+         <div class="logo">
+         </div>
+      </a>
+   </div>
+   <div class="clock col-xl-3">
+      <time timestamp="timestamp" class="ng-binding ng-isolate-scope">{{ now | date:'yyyy  MMM, dd '}}</time>
+      <time timestamp="timestamp" class="time ng-binding ng-isolate-scope">{{ clock | date:'HH:mm:ss'}}</time>
+      <div class="clock-timezone-settings">
+         (
+         <div class="wrap-dd-menu ng-scope" (click)="showgmt()" [ngClass]="{'active' : isactive}">
+            <a dropdown-menu="timezones" dropdown-model="selectedZone" dropdown-onchange="changeTimezone(selected)"
+               class="ng-isolate-scope">
+               <span class="ng-binding">+05:30 <i class="apl-icon-angle-down"></i></span>
+            </a>
+            <ul class="dropdown ng-scope">
+               <li class="dropdown-item ng-isolate-scope" dropdown-item-label="labelField" dropdown-menu-item="item">
+                  <a class="dropdown-item ng-binding ng-scope">System time - (GMT +00:00)</a>
+               </li>
+               <li class="dropdown-item ng-isolate-scope" dropdown-item-label="labelField" dropdown-menu-item="item">
+                  <a class="dropdown-item ng-binding ng-scope">Your computer time - (GMT +05:30)</a>
+               </li>
+               <li class="dropdown-item ng-isolate-scope" dropdown-item-label="labelField" dropdown-menu-item="item">
+                  <a class="dropdown-item ng-binding ng-scope">India Standard time - (GMT +05:30)</a>
+               </li>
+            </ul>
+         </div>
+         )
+      </div>
+   </div>
+   <div class="col-xl-4">
+      <ul class="marquee__list marquee__list--scroll">
+         <li class="marquee__list-item ng-binding ng-scope">Welcome to cricexch admin..</li>
+      </ul>
+   </div>
+   <div class="col-xl-2 find">
+      <input type="text" id="myInput" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength"
+         placeholder="Search" style="height: calc(2.25rem + 2px);">
+   </div>
+   <div class="infobar col-xl-2">
+      <ul class="linkbar">
+         <li>
+            <p class="ng-binding" style="padding-right: 20%;">superinr</p>
+
+         </li>
+         <li class="setting">
+            <div class="wrap-dd-menu ng-scope">
+               <a (click)="dialogOpen()" dropdown-menu="ddMenuOptions" dropdown-model="ddMenuSelected"
+                  data-analytics-on="" data-analytics-event="Navigation" class="ng-isolate-scope">
+                  <i class="apl-icon-cog" :before></i>
+                  <span>Settings</span>
+               </a>
+               <ul class="dropdown ng-scope" style="font-size: 14px;position: absolute;width: 225%;left: -94%;top: 92%;"
+                  [ngClass]="{'active' : showpasswordmodal}">
+                  <li class="dropdown-item ng-scope ng-isolate-scope" dropdown-item-label="labelField"
+                     dropdown-menu-item="item" data-toggle="modal" data-target="#ngdialog">
+                     <a class="dropdown-item ng-binding ng-scope"><span>Change Password</span></a>
+                  </li>
+
+                  <div class="content" id="ngdialog" style="display: none;">
+                     <form novalidate="" class="apl-form-stacked apl-form ng-pristine ng-valid ng-isolate-scope"
+                        data-enabled="vm.submitEnabled" data-callback="vm.submit">
+                        <section class="ng-scope">
+                           <h2 style="display: none;">jbjjh</h2>
+                           <div class="apl-section-inner"
+                              style="background: rgba(255, 255, 255, 0.07);float: left;margin: 0 20px 0px 0;padding: 0px;margin-top: -34px;">
+                              &lt;
+                              <div class="apl-form-row" style="margin-top: 14px;">
+                                 <div class="apl-form-controls">
+                                    <input placeholder="Old Password" type="password" autocomplete="off"
+                                       ng-model="value" tooltips="" tooltip-content="" tooltip-show-trigger="void"
+                                       tooltip-hide-trigger="void" tooltip-visible="false" id="apl-form-old-password"
+                                       class="qa-password apl-form-large -full-size ng-isolate-scope ng-pristine ng-untouched ng-valid ng-scope ng-empty"
+                                       tabindex="1">
+                                 </div>
+                              </div>
+                              <div class="apl-form-row" style="margin-top: 14px;">
+
+                                 <div class="apl-form-controls">
+                                    <input placeholder="New Password" type="password" autocomplete="off" tooltips=""
+                                       tooltip-content="" tooltip-show-trigger="void" tooltip-hide-trigger="void"
+                                       tooltip-visible="false" id="apl-form-new-password"
+                                       class="qa-password apl-form-large -full-size ng-isolate-scope ng-pristine ng-untouched ng-valid ng-scope ng-empty"
+                                       tabindex="2">
+                                 </div>
+                              </div>
+                              <div class="apl-form-row" style="margin-top: 14px;">
+
+                                 <div class="apl-form-controls">
+                                    <input placeholder="Repeat Password" type="password" autocomplete="off" tooltips=""
+                                       tooltip-content="" tooltip-show-trigger="void" tooltip-hide-trigger="void"
+                                       tooltip-visible="false" id="apl-form-repeat-new-password"
+                                       class="qa-password-verify apl-form-large -full-size ng-isolate-scope ng-pristine ng-untouched ng-valid ng-scope ng-empty"
+                                       tabindex="3">
+                                 </div>
+                              </div>
+                              <div class="form-controls"
+                                 style="display: inline-flex;text-align: right;padding: 10px 0;">
+                                 <button type="button"
+                                    class="apl-btn apl-btn-large apl-btn-link qa-cancel-button ng-binding"
+                                    data-dismiss="modal" tabindex="5"
+                                    style="background-color: #139993;height: 33px;margin-left: 0px;font-size: 12px">Cancel</button>
+                                 <button type="submit"
+                                    class="-action qa-submit-button apl-btn apl-btn-large apl-btn-update ng-binding"
+                                    tabindex="4" style="background-color: #139993;font-size: 12px">Save</button>
+                              </div>
+                           </div>
+                        </section>
+                     </form>
+                  </div>
+
+                  <li class="help">
+                     <a data-apl-on-click-popup="" data-popup-width="950" data-popup-height="600">
+                        <span>Help <i class="apl-icon-info" style="margin-right: 12px"></i> </span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="" class="logout-link" data-analytics-on="" data-analytics-event="Navigation"
+                        data-analytics-category="Logout" data-analytics-label="MA">
+                        <i class="apl-icon-signout"></i>
+                        <span>Logout</span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </li>
+      </ul>
+   </div>
+</header>

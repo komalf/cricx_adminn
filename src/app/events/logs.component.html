@@ -1,0 +1,85 @@
+
+<style>
+
+        .data-ng-table-filters{display: none;}
+        .data-ng-table-counts {float: left;}
+        
+      </style>
+      <div class="app-content content container-fluid ng-scope">
+          <div class="content-wrapper">
+              <div class="content-body">
+                  <section id="file-export">
+                    <div class="row">
+                          <div class="col-xs-12">
+                              <div class="header _clearfix">
+                                  
+                                  <h1 class="ng-binding ng-scope">LOGS</h1>
+                                   <div class="downld">
+                                <a href="" id="pdf"><img title="pdf" class="ng-scope" src="assets/pdf.png"></a>
+                                  <a href="" id="excel"><img title="Excel" class="ng-scope" src="assets/excel.png"></a>
+                                      <a href="" id="csv"><img title="csv" class="ng-scope" src="assets/csv.png"></a>
+                                  </div>
+      
+                              </div>
+                             
+                          </div>
+                          <div class="col-md-2 top_marg">
+                              <button type="button" class="mr-1 mb-1 btn btn-outline-success btn-min-width" style="width:100%">Block</button> </div>
+                                 
+                          <div class="card-body collapse in">
+                              <div class="card-block card-dashboard">
+                                    <div class="table-responsive">
+                                    <table id="testttt" class="table table-striped table-bordered" style="text-align: center; white-space: nowrap;">
+                                      <thead>
+                                        <tr>
+                                          <th><input type="checkbox"></th>
+                                          <th>User Id</th>
+                                          <th>User Name</th>
+                                          <th>Description</th>
+                                          <th>Date</th>
+                                          <th>Activity Time</th>
+                                          <th>IP Address</th>
+                                          <th>VPN/PROXY Ip</th>
+                                          <th>Action</th>
+                                        </tr>
+                                      </thead>
+                                    
+                                     <tbody>
+                                    <tr class="ng-scope" *ngFor="let logs of logsdata">
+                                     <td data-header="'ng-table/headers/checkbox.html'" class="ng-binding" >
+                                      <input type="checkbox"> 
+                                      </td>
+                                      <td title="'User Id'" data-title-text="User Id" class="ng-binding">{{logs.UserId}}</td>
+                                      <td title="'User Name'" data-title-text="User Name" class="ng-binding">{{logs.UserName}}</td>
+                                      <td title="'Description'" data-title-text="'Description'" class="ng-binding ">{{logs.Description}}</td>
+                                       <td title="'Date'" data-title-text="'Date'" data-sortable="'Date'" class="ng-binding">{{logs.Date}}</td>
+                                      <td title="'Activity Time'" data-title-text="'Activity Time'" class="ng-binding ">{{logs.ActivityTime}}</td>
+                                      <td title="'IP Address'" data-title-text="'IP Address'" class="ng-binding ">{{logs.IPAddress}}</td>
+                                      <td title="'VPN/PROXY iP'" data-title-text="'VPN/PROXY iP'" class="ng-binding ">{{logs.vpnproxy}}</td>
+                                       <td title="'Action'" data-title-text="'Action'"  class="ng-binding ">
+                                                          <img title="commission" data-ng-src="checkmark.png" style="cursor:pointer;width:20px;height:20px;" src="assets/checkmark.png" class="ng-hide">
+      
+                                                          <!-- <img title="Not a commission" data-ng-src="close.png" style="cursor:pointer;width:20px;height:20px;" src="assets/close.png">
+                                                      </td>        -->
+      
+                                    </tr>
+      
+                                    </tbody>
+      
+                                  </table>
+                                  </div>
+                                </div>
+                              </div>
+      
+                                  </div>
+                                  </section>
+                                  </div>
+                                  </div>
+                                  </div>
+      
+                             <script type="text/ng-template" id="ng-table/headers/checkbox.html">
+                                     <input type="checkbox" data-ng-model="checkboxes.checked" id="select_all" name="filter-checkbox" value="" />
+                                   </script>
+      
+      
+      

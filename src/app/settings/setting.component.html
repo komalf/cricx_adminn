@@ -1,0 +1,167 @@
+<style>
+    .card-block {
+        padding: 0;
+    }
+</style>
+<section>
+
+    <div class="content pnl-by-market ng-scope">
+        <div class="header _clearfix advanced-filtering ng-scope">
+            <h1 translate="" class="ng-scope">MATCH LIST</h1>
+            <div class="downld">
+                <a href="" id="pdf"><img title="pdf" class="ng-scope" src="assets/pdf.png"></a>
+                <a href="" id="excel"><img title="Excel" class="ng-scope" src="assets/excel.png"></a>
+                <a href="" id="csv"><img title="csv" class="ng-scope" src="assets/csv.png"></a>
+            </div>
+
+        </div>
+    </div>
+    <div class="top_marg">
+
+        <div class="current-profile-info row">
+            <div class="col-md-3">
+                <select data-chosen=""
+                    class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty">
+                    <option value="" class="" selected="selected">Select Sport</option>
+                    <option label="Soccer" value="string:Soccer">Soccer</option>
+                    <option label="Election" value="string:Election">Election</option>
+                    <option label="Tennis" value="string:Tennis">Tennis</option>
+                    <option label="Cricket" value="string:Cricket">Cricket</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control" data-ng-model="selectedComp"
+                    data-ng-options="comp.competitonName for comp in getCompetitionData"
+                    data-ng-change="getEvents(selectedSport,selectedComp);getImportRateList(selectedSport,selectedComp)">
+                    <option value="">Select Competition</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control" data-ng-model="selectedMatch"
+                    data-ng-options="event.eventName for event in getEventsData"
+                    data-ng-change="getImportRateList(selectedSport,selectedComp,selectedMatch)">
+                    <option value="">Select Event</option>
+                </select>
+            </div>
+            <div class="col-md-3 butn"> <button type="button" data-toggle="modal" data-target="#myModal1"
+                    class="mr-1 mb-1 btn btn-outline-success btn-min-width" data-ng-click="getLiveTv()">Live
+                    Video</button> </div>
+            <br><br>
+            <div class="col-md-3 channel"> <input type="text" id="setch_no" data-ng-model="$parent.setchno"
+                    class="form-control" placeholder="Enter Channel no."> </div>
+            <div class="col-md-3 set"> <button type="button" class="mr-1 mb-1 btn btn-outline-primary btn-min-width"
+                    data-ng-model="channel" data-ng-click="UpdTvChannelNoBulk(matchRate.chanelNo)" title="Channel no."
+                    data-ng-disabled="pending_UpdTvChannelNoBulk"><i class=""></i>Set Ch.No</button> </div>
+            <div class="col-xs-3">
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</section>
+
+<div class="card-body collapse in">
+
+    <div class="card-block card-dashboard">
+        <div class="table-responsive">
+
+
+            <table id="testttt" class="table table-striped table-bordered file-export dataTable ng-scope"
+                style="text-align: center; white-space: nowrap;">
+                  <thead>
+                      <tr>
+                          <th><input type="checkbox"></th>
+                          <th>ID</th>
+                          <th>Market Type</th>
+                          <th>Market Info</th>
+                          <th>Match Status</th>
+                          <th>Channel No</th>
+                          <th>Active</th>
+                          <th>Bet Allow</th>
+                          <th>Cancel</th>
+                      </tr>
+                  </thead>
+                <tr class="ng-scope" *ngFor="let setting of settingdata">
+                    <td data-header="'ng-table/headers/checkbox.html'" class="ng-binding">
+                        <input type="checkbox" data-ng-model="checkboxes.items[setting.id]" value="{{setting.id}}"
+                            data-ng-class="checkAll">
+                    </td>
+                    <td title="'ID'" data-sortable=" 'ID' " data-title-text="ID" class="ng-binding ">{{setting.ID}}</td>
+                    <td title="'Market Type'" data-sortable=" 'MarketType' " data-title-text="MarketType"
+                        class="ng-binding ">{{setting.MarketType}}</td>
+                    <td title="'Market Info'" data-sortable=" 'MarketInfo' " data-title-text="Market Info"
+                        class="ng-binding ">{{setting.MarketInfo}}</td>
+                    <td title="'Match Status'" data-sortable=" 'MatchStatus' " data-title-text="Match Status"
+                        class="ng-binding ">{{setting.MatchStatus}}</td>
+                    <td title="'Channel No'" data-sortable=" 'Channel' " data-title-text="Channel No"
+                        class="ng-binding ">{{setting.Channel}}</td>
+                    <td title="'Active'" data-title-text="Active" class="ng-binding ">
+                        <img title="Active" data-ng-src="checkmark.png" style="cursor:pointer;width:20px;height:20px;"
+                            class="ng-scope" src="assets/checkmark.png">
+                    </td>
+                    <td title="'Bet Allow'" data-title-text="Bet Allow" class="ng-binding ">
+                        <img title="Not a commission" data-ng-src="close.png"
+                            style="cursor:pointer;width:20px;height:20px;" src="assets/close.png"></td>
+                    <td title="'Cancel'" data-title-text="Cancel" class="ng-binding "><button
+                            data-ng-click="cancelMOMarket(matchRate.matchId,matchRate.id)"
+                            class="btn btn-danger btn-sm">Cancel Bet</button></td>
+                </tr>
+
+
+            </table>
+
+
+
+
+        </div>
+        <script type="text/ng-template" id="ng-table/headers/checkbox.html">
+                                       <input type="checkbox" data-ng-model="checkboxes.checked" id="select_all" name="filter-checkbox" value="" />
+                                     </script>
+    </div>
+</div>
+
+<div id="myModal1" class="modal" role="dialog">
+    <div class="modal-dialog" style="max-width: 500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"><b>LIVE TV</b></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body row">
+                <div class="divvideochanel">
+                    <div class="channelvideoInner"> <span data-ng-repeat="item in liveTvList"
+                            data-ng-if="item.channelNo!=0" id="channel_{{$index}}" class="spanchannel"
+                            data-ng-click="setchannel(item.channelIp,item.channelNo,item.program,item.hdmi);">{{$index}}</span>
+                    </div>
+                </div>
+                <div style="padding-top: 10px;padding-bottom: 10px" class="col-xs-12">
+                    <div class="col-xs-6"> <input data-ng-model="channelIp" type="text" name="channelIp"
+                            placeholder="Channel Ip Address" class="form-control"> </div>
+                    <div class="col-xs-6"> <input data-ng-model="program" type="text" name="program"
+                            data-placeholder="Channel programe" class="form-control"> <input data-ng-model="channelno"
+                            type="hidden" name="channelNo" data-placeholder="Channel channelNo" class="form-control">
+                    </div>
+                    <div class="col-xs-6" style="margin-top: 10px"> <input data-ng-model="hdmi" type="text" name="hdmi"
+                            placeholder="Channel hdmi" class="form-control" style="text-transform: uppercase;"> </div>
+                    <div class="col-xs-6" style="margin-top: 10px"> <button
+                            class="mr-1 mb-1 btn btn-outline-success btn-min-width" data-ng-disabled="isDisabled"
+                            data-ng-click="saveLiveTv(channelIp,hdmi,program,channelno)"
+                            style="width: 70px;float: left;margin-left: 1px">Save</button> </div>
+                </div>
+                <div id="player_preview" style="margin-top: 10px;">
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

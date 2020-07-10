@@ -1,0 +1,42 @@
+<div class="ng-scope">
+    <div class="balance ng-scope">
+       <div class="status" style="margin-left: -19px; font-size: 12px;">
+          <dl class="status-list">
+             <dt class="ng-binding">Balance Down:</dt>
+             <dd class="ng-binding -positive">0.00</dd>
+             <dt class="ng-binding">Balance Up:</dt>
+             <dd class="ng-binding -positive">0.00</dd>
+             <dt class="ng-binding">Net Exposure:</dt>
+             <dd class="ng-binding -positive">0.00</dd>
+             <dt class="ng-binding">Available Credit:</dt>
+             <dd class="ng-binding">5,000.00</dd>
+             <dt class="ng-binding">Credit Limit:</dt>
+             <dd class="ng-binding -positive"> 5,000.00</dd>
+             <dt class="ng-binding">Total credit given to :</dt>
+             <dd class="ng-binding -positive">0.00</dd>
+             <dt class="ng-binding">Total credit distributed by Agents:</dt>
+             <dd class="ng-binding -positive">0.00</dd>
+             <dd class="ng-binding">
+                <div class="agency-settings">
+                   <div class="position-settings-wrapper ng-scope" >
+                      <label class="toggle-label ng-scope" translate="">Position Taking:</label>
+                      <div class="toggle-wrap _clearfix">
+                           <div class="position-taking-switch ng-isolate-scope" data-settings="agencySettings">
+                                 <div class="toggle-bg toggle-alternate off" [ngClass]="ptSwitch ? 'on' : 'off'">
+                                    <label class="off" [ngClass]="ptSwitch ? 'on' : 'off'">
+                                    <span *ngIf="ptSwitch" translate="" class="ng-scope ng-hide">ON</span>
+                                    <span *ngIf="!ptSwitch" translate="" class="ng-scope">OFF</span>
+                                    </label>
+                                    <input type="radio" name="toggle" (click)="On()" class="ng-valid ng-not-empty ng-dirty ng-touched" value="false" [ngModel]="ptSwitch">
+                                    <input type="radio" name="toggle" [ngModel]="ptSwitch" class="ng-valid ng-not-empty ng-dirty ng-touched" value="true">
+                                    <span class="switch off" [ngClass]="ptSwitch ? 'on' : 'off'"></span>
+                                 </div>
+                              </div>
+                      </div>
+                   </div>
+                </div>
+             </dd>
+          </dl>
+       </div>
+    </div>
+ </div>

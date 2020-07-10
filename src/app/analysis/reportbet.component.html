@@ -1,0 +1,1653 @@
+
+
+
+<style>
+    .btn-outline-primary {
+    color:#fff !important;
+    background-image: none  !important;
+    background-color: #10827d !important;
+    }
+    .ng-table-counts{
+    display:none;
+    }
+    .switch1 {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 15px;
+    }
+    .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+    }
+    .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bf4a76;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+    .slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 13px;
+    left: -3px;
+    /* bottom: 4px; */
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+    input:checked + .slider {
+    background-color: #1d6ba2;
+    }
+    input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+    }
+    input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    }
+    /* Rounded sliders */
+    .slider.round {
+    border-radius: 34px;
+    }
+    .slider.round:before {
+    border-radius: 50%;
+    }
+    .ng-table th.sortable .sort-indicator::before {
+    margin-top: 2px;
+    border-bottom: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px rgb(255, 255, 255) transparent;
+    }
+    #main-menu-navigation{
+    margin-top: 25px !important;
+    }
+    #userList_chosen{
+    width: 200px;
+    margin-bottom: 10px;
+    }
+    /*.navbar-header {
+    height: 50px !important;
+    }*/
+    .card {
+    position: relative;
+    display: block;
+    }
+    html body .content {
+    padding: 0;
+    position: relative;
+    transition: .3s ease all;
+    backface-visibility: hidden;
+    min-height: calc(100% - 32px);
+    }
+    .navbar {
+    border: 0 !important;
+    }
+    .card-title{
+    font-size: 14px !important;
+    }
+    body.vertical-layout.vertical-menu.menu-expanded .main-menu .navigation > li > a > i:before {
+    font-size: 1.6rem !important;
+    }
+    body.vertical-layout.vertical-menu.menu-expanded .main-menu .navigation li.has-sub > a:not(.mm-next):after{
+    font-size: 14px !important;
+    }
+    body.vertical-layout.vertical-menu.menu-collapsed .main-menu .navigation > li > a > i{
+    font-size: 1.6rem !important;
+    }
+    .main-menu.menu-light .navigation > li ul {
+    font-size: 14px !important;
+    }
+    .navigation{
+    font-size: 14px !important;
+    }
+    .custom-control-indicator {
+    top: 0.085rem;
+    }
+    .custom-control {
+    position: relative;
+    display: inline-block;
+    padding-left: 1.7rem;
+    cursor: pointer;
+    }
+    .no-padding{
+    padding: 0px;
+    }
+    .chosen-container.chosen-container-single{
+    width: 150px !important;
+    }
+    .blink {
+    /*background-color: rgba(237, 214, 91, 1.0);*/
+    -webkit-animation: blink 1s linear infinite;
+    -moz-animation: blink 1s linear infinite;
+    -ms-animation: blink 1s linear infinite;
+    animation: blink 1s linear infinite;
+    }
+    .greenclass{
+    color:green;
+    }
+    .redclass{
+    color: red;
+    }
+    thead{
+    color: white;
+    background-color: #10403d;
+    }
+    @keyframes blink {
+    0% {
+    background-color: rgba(237, 214, 91, 1.0);
+    }
+    90% {
+    background-color: rgba(237, 214, 91, 0.0);
+    }
+    100% {
+    background-color: rgba(237, 214, 91, 1.0);
+    }
+    }
+    @-moz-keyframes blink {
+    0% {
+    background-color: rgba(237, 214, 91, 1.0);
+    }
+    90% {
+    background-color: rgba(237, 214, 91, 0.0);
+    }
+    100% {
+    background-color: rgba(237, 214, 91, 1.0);
+    }
+    }
+    @-webkit-keyframes "blink" {
+    0% {
+    background-color: rgba(237, 214, 91, 1.0);
+    }
+    50% {
+    background-color: rgba(237, 214, 91, 0.0);
+    }
+    100% {
+    background-color: rgba(237, 214, 91, 1.0);
+    }
+    }
+    .YES{
+    background: #7cc4f7;
+    }
+    .NO{
+    background: #FFCAD5;
+    }
+    .BACK{
+    background: #7cc4f7;
+    }
+    .LAY{
+    background: #FFCAD5;
+    }
+    .secction{
+    display: block;
+    }
+    .float-e-margins .btn {
+    /* margin-bottom: 5px; */
+    }
+    .fa {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    .fa-close:before, 
+    .fa-remove:before, 
+    .fa-times:before {
+    content: "\2613" !important;
+    }
+    :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* box-sizing: border-box; */
+    }
+    .fa, .fa-stack {
+    display: inline-block;
+    }
+    /* .tbl{
+    color: #333!important;
+    } */
+    table td[class*="col-"], table th[class*="col-"] {
+    position: static;
+    display: table-cell;
+    float: none;
+    }
+    .backheader {
+    border-bottom: 2px solid #0973BD !important;
+    color: #fff !important;
+    background-color: #7cc4f7 !important;
+    font-size: 14px;
+    letter-spacing: 1px;
+    }
+    .layheader {
+    border-bottom: 2px solid #FE597B !important;
+    color: #fff !important;
+    background-color: #fca4b7 !important;
+    font-size: 14px;
+    letter-spacing: 1px;
+    }
+    button .btn-dnager {
+    width: 60px !important;
+    }
+    .btn-group-xs>.btn, .btn-xs {
+    padding: 1px 5px !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+    }
+    input[type="checkbox"],
+    input[type="radio"] {
+    margin: 4px 0 0 !important;
+    margin-top: 0.111px !important;
+    line-height: normal!important;
+    }
+    input[type="radio"], 
+    input[type="checkbox"] {
+    background-color: initial !important;
+    cursor: default !important;
+    margin: 3px 0.5ex !important;
+    padding: initial !important;
+    border: initial !important;
+    }
+    .avatar, 
+    .btn-social, 
+    .btn-social-icon, 
+    .navigation li, td, th {
+    white-space: nowrap;
+    }
+    .table {
+    width: 100%;
+    max-width: 100%;
+    }
+    table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    }
+    .col-xs-6 {
+    width: 50% !important;
+    }
+    .table-bordered, 
+    .table-bordered td, 
+    .table-bordered th {
+    border: 1px solid #98A4B8;
+    }
+    .table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+    }
+    .table-responsive {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    overflow-x: auto;
+    }
+    thead {
+    display: table-header-group !important;
+    vertical-align: middle!important;
+    border-color: inherit !important;
+    }
+    .table-bordered {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(88, 41, 133) !important;
+    border-image: initial !important;
+    }
+    /* .row {
+    margin-right: -15px;
+    margin-left: -15px; 
+    }*/
+    .ibox {
+    clear: both;
+    /* margin-bottom: 25px; */
+    margin-top: 0;
+    padding: 0;
+    }
+    .fa-television:before, .fa-tv:before {
+    content: "\f108";
+    }
+    .fa-mobile-phone:before, .fa-mobile:before {
+    content: "\f10b";
+    }
+    tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    }
+    .table>tbody>tr>td, 
+    .table>tbody>tr>th, 
+    .table>tfoot>tr>td, 
+    .table>tfoot>tr>th, 
+    .table>thead>tr>td, 
+    .table>thead>tr>th {
+    /*  padding: 8px;*/
+    line-height: 1.0;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    }
+    @media (min-width: 992px){
+    .col-md-6 {
+    width: 50%;
+    }
+ }
+ 
+    .btn-danger {
+    color: #fff;
+    background-color: #10827d;
+    border-color: #10827d;
+    }
+    .btn-danger.focus, .btn-danger:focus, .btn-danger:hover {
+    color: #fff;
+    background-color:#139993;
+    }
+    .btn-danger.active.focus, 
+    .btn-danger.active:focus, 
+    .btn-danger.active:hover, 
+    .btn-danger:active.focus, 
+    .btn-danger:active:focus, 
+    .btn-danger:active:hover, 
+    .open>.btn-danger.dropdown-toggle.focus, 
+    .open>.btn-danger.dropdown-toggle:focus, 
+    .open>.btn-danger.dropdown-toggle:hover {
+    color: #fff;
+    background-color: #139993;
+    border-color: #139993;
+    }
+    .btn-danger.active.focus, .btn-danger.active:focus, .btn-danger.active:hover, .btn-danger:active.focus, .btn-danger:active:focus, .btn-danger:active:hover, .open>.btn-danger.dropdown-toggle.focus, .open>.btn-danger.dropdown-toggle:focus, .open>.btn-danger.dropdown-toggle:hover {
+    color: #fff;
+    background-color: #139993;
+    /* border-color: #f50022; */
+    }
+    .btn-danger.focus, .btn-danger:focus, .btn-danger:hover {
+    color: #fff;
+    background-color: #139993;
+    border-color: #139993;
+    }
+    .rad{margin-right: 3%;}
+    .back{
+    background-color: #72bbef;
+    }
+    .lay{
+    background-color: #f994ba;
+    }
+    @media only screen and (max-width: 600px) {
+    .hidden-xs{
+    display: none !important;
+    }
+    }
+    tfoot{background-color:#fff!important;}
+    .cursor-pointer{cursor: pointer;}
+    @media (min-width: 320px) and (max-width:850px){
+    /*.sports{display: initial !important;*/
+    /*}*/
+    .modal-title{
+    text-align: center !important;
+    }
+    }
+    .btn-danger:not(:disabled):not(.disabled).active, .btn-danger:not(:disabled):not(.disabled):active, .show>.btn-danger.dropdown-toggle{
+    background-color: #139993!important;
+    border-color: #139993!important;
+    color: #fff!important;
+    box-shadow: none!important;
+    }
+    .btn-danger.focus, .btn-danger:focus, .btn-danger:hover {
+    background-color: #139993!important;  
+    }
+    .modal-title{text-align: center;}
+    .modal-header{display:block;}
+    .panel-group,
+    .panel {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #EEEEEE;
+    /*background-color: #FFDAB9;*/
+    }
+    .panel-default>.panel-heading {
+    padding: 0;
+    border-radius: 0;
+    color: #212121;
+    height: 40px;
+    background-color: #FAFAFA;
+    border-color: #EEEEEE;
+    background-color: #FFDAB9;
+    margin-top: 5px;
+    line-height: 2;
+    }
+    .panel-title {
+    font-size: 14px;
+    }
+    .panel-title>a {
+    display: block;
+    padding: 0px;
+    text-decoration: none;
+    }
+    .more-less {
+    float: right;
+    color: #212121;
+    }
+    .panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #EEEEEE;
+    }
+    /* ----- v CAN BE DELETED v ----- */
+    /*body {
+    background-color: #26a69a;
+    }*/
+    .demo {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    }
+    .subPanel {
+    padding: 0px 10px;
+    background: #c5c5c5;
+    margin-top: 4px;
+    }
+    .clpanel {
+    background: #d6a6a6
+    }
+    .subPanelContainer {
+    width: 97%;
+    margin: auto;
+    }
+ </style>
+ <div class="app-content content container-fluid ">
+    <div class="content-wrapper">
+       <div class="content-body">
+          <!-- DOM - jQuery events table -->
+             <!-- <div style="background-color: #10575b;padding-left: 2%"> -->
+             <div class="form-group row" >
+                <div class="col-md-12">
+                   <div class="sports" style="display: contents;">
+                      <label class="custom-control custom-checkbox ">
+                      <input type="checkbox" class="custom-control-input ">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description"><b>Soccer</b></span>
+                      </label>
+                      <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input ">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description"><b>Tennis</b></span>
+                      </label>
+                      <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input ">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description"><b>Cricket</b></span>
+                      </label>
+                      <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input ">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description"><b>Cricket/Fancy Bet</b></span>
+                      </label>
+                      <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input ">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description"><b>Election/Fancy Bet</b></span>
+                      </label>
+                      <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input ">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description"><b>Book Making</b></span>
+                      </label>
+                      <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input ">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description"><b>Multi Market</b></span>
+                      </label>
+                   </div>
+                </div>
+             </div>
+             <div class="form-group row matchrow" style="margin-top: -2%">
+                <div class="form-body form-group">
+                   <div class="col-md-2  " style="">
+                      <select class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty">
+                         <option value="" class="" selected>--Select Tournament--</option>
+                         <option value="2">ITF Chiswick</option>
+                         <option value="3">Davis Cup 2018</option>
+                         <option value="4">Fed Cup 2018</option>
+                         <option value="5">Pullach Challenger 2018</option>
+                         <option value="6">WTA Rogers Cup 2018</option>
+                         <option value="7">ATP Rogers Cup 2018</option>
+                         <option value="7">Gwangju Challenger 2018</option>
+                         <option value="7">Meerbusch Challenger 2018</option>
+                      </select>
+                   </div>
+                   <div class="col-md-2">
+                      <select  class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty">
+                         <option value="" class="" selected="selected">--Select Match--</option>
+                         <option value="2" >ITF Chiswick</option>
+                         <option value="3" >Davis Cup 2018</option>
+                         <option value="4" >Fed Cup 2018</option>
+                         <option value="5" >Pullach Challenger 2018</option>
+                         <option value="6" >WTA Rogers Cup 2018</option>
+                         <option value="7" >ATP Rogers Cup 2018</option>
+                         <option value="7" >Gwangju Challenger 2018</option>
+                         <option value="7" >Meerbusch Challenger 2018</option>
+                      </select>
+                   </div>
+                </div>
+             </div>
+             <div class="form-group row betstatus1">
+                <div class="col-md-2 " style="">
+                   <!-- <label class=" label-control " style="">Bet Status<span class="danger">:</span></label> -->
+                   <select class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty">
+                      <option value="" class="" selected>--Bet Status--</option>
+                      <option value="" class="">Unmatched</option>
+                      <option value="" class="">matched</option>
+                      <option value="" class="">Settled</option>
+                      <option value="" class="">Cancelled</option>
+                      <option value="" class="">Voided</option>
+                   </select>
+                </div>
+                <div class="col-md-7 top_marg" >
+                   <!-- <label class="label-control col-md-2">From<span class="danger">:</span></label> -->
+                   <div class="date-time-picker ng-isolate-scope" data-apl-auto-focus="" tabindex="-1" data-set-date-filter="filtersVm.setDateFilter(filters)" data-report-type="'pnl-by-market'" data-analytics-on="" 
+                   data-analytics-category="P&amp;L Report by Market" data-analytics-event="Date Filter" data-analytics-label="MA">
+                      <div class="col-md-4">
+                         <div class="input-group date" id="datetimepickerfrom">
+                            <input type="text" id="fromDate" class="form-control">
+                            <span class="input-group-addon">
+                            <span class="fa fa-calendar"></span>
+                            </span>
+                         </div>
+                      </div>
+                      <div class="col-md-4">
+                         <div class="input-group date" id="datetimepickerfrom1">
+                            <input type="text" id="toDate" class="form-control">
+                            <span class="input-group-addon">
+                            <span class="fa fa-calendar"></span>
+                            </span>
+                         </div>
+                      </div>
+                      <div class="col-md-2">
+                         <button class="mr-1 mb-1 btn btn-outline-primary btn-min-width ng-scope">Get History</button>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-xs-12">
+                   <div class="card" style="margin-top: -1%">
+                      <div class="card-header border-bottom no-padding">
+                         <!--  <div class="col-xs-12"> -->
+                         <!--   <div class="col-xs-2 no-padding"> -->
+                         <!--  </div> -->
+                         <div class="col-xs-12" style="text-align: center;">
+                            <span class="" style="font-size: 18px;font-weight: bolder;">Bangladesh vs Zimbabwe - Match Odds</span>
+                         </div>
+                         <!--  <div class="col-xs-2"></div> -->
+                         <!--  </div> -->
+                      </div>
+                      <div class="card-body collapse in">
+                         <div class="card-block card-dashboard" style="padding: 0px">
+                            <div class="col-xs-12 no-padding">
+                               <div class="col-xs-12 col-md-6 no-padding">
+                                  <div class="matchdiv ">
+                                     <div class="marketdivcontent col-xs-12 no-padding">
+                                        <div class="divmarketbody">
+                                           <div class="table-responsive">
+                                              <table class="table table-striped table-bordered table-hover" style="font-size: 12px">
+                                                 <thead>
+                                                    <tr>
+                                                       <th class="col-xs-3  bettitle runnertitle">
+                                                          <div class="col-xs-6 text-left no-padding"><span class="marketname" style="margin-left: 51%">Match Odds<span id="spanmarketallow3702" class="allowbet"></span></span>
+                                                          </div>
+                                                          <div class="col-xs-6 no-padding" style="">
+                                                             <!-- ngIf: isdashval==0 -->
+                                                          </div>
+                                                       </th>
+                                                       <th class="col-xs-1 no-padding hidden-xs"></th>
+                                                       <th class="col-xs-1 no-padding hidden-xs"></th>
+                                                       <th class="col-xs-1  backheader text-center ">Back</th>
+                                                       <th class="col-xs-1  layheader  text-center ">Lay</th>
+                                                       <th class="col-xs-1 no-padding hidden-xs"></th>
+                                                       <th class="col-xs-1 no-padding hidden-xs"></th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <!-- ngRepeat: runner in runnerData track by $index -->
+                                                    <!-- ngIf: matchStatus=='OPEN' -->
+                                                    <tr id="Bangladesh" class="">
+                                                       <td class="text-left"><b class="">Bangladesh</b>
+                                                          <br><b><span id="runnerpnl0" class=" text-danger">0.00</span></b>
+                                                       </td>
+                                                       <td  style="background-color: rgba(114, 187, 239, 0.46);" class="back3 d-head hidden-xs" id="runnerBack3-0"><b class="rateback3 ">1.2</b>
+                                                          <br><span class="backSize3 " style="font-size: 10px;">216</span>
+                                                       </td>
+                                                       <td  style="background-color: rgba(114, 187, 239, 0.71);" class="back2 d-head hidden-xs" id="runnerBack2-0"><b class="rateback2 ">1.21</b>
+                                                          <br><span class="backSize2 " style="font-size: 10px;">2467.75</span>
+                                                       </td>
+                                                       <td  style="background-color: #72bbef;" class="back1" id="runnerBack1-0"><b class="rateback1 ">1.22</b>
+                                                          <br><span class="backSize1 " style="font-size: 10px;">1277.98</span>
+                                                       </td>
+                                                       <td style="background-color: #f994ba;" class="lay1" id="runnerLay1-0"><b class="ratelay1 ">1.23</b>
+                                                          <br><span class="laySize1 " style="font-size: 10px;">28306.19</span>
+                                                       </td>
+                                                       <td style="background-color: rgba(249, 148, 186, 0.55);" class="lay2 d-head hidden-xs" id="runnerLay2-0"><b class="ratelay2 ">1.24</b>
+                                                          <br><span class="laySize2 " style="font-size: 10px;">7345.41</span>
+                                                       </td>
+                                                       <td style="background-color: rgba(249, 148, 186, 0.34);" class="lay3 d-head hidden-xs" id="runnerLay3-0"><b class="ratelay3 ">1.25</b>
+                                                          <br><span class="laySize3 " style="font-size: 10px;">10700.73</span>
+                                                       </td>
+                                                    </tr>
+                                                    <!-- end ngIf: matchStatus=='OPEN' -->
+                                                    <!-- end ngRepeat: runner in runnerData track by $index -->
+                                                    <!-- ngIf: matchStatus=='OPEN' -->
+                                                    <tr id="Zimbabwe" class="">
+                                                       <td class="text-left"><b class="">Zimbabwe</b>
+                                                          <br><b><span id="runnerpnl1" class=" text-danger">0.00</span></b>
+                                                       </td>
+                                                       <td style="background-color: rgba(114, 187, 239, 0.46);" class="back3 d-head hidden-xs" id="runnerBack3-1"><b class="rateback3 ">95</b>
+                                                          <br><span class="backSize3 " style="font-size: 10px;">23.57</span>
+                                                       </td>
+                                                       <td style="background-color: rgba(114, 187, 239, 0.71);" class="back2 d-head hidden-xs" id="runnerBack2-1"><b class="rateback2 ">100</b>
+                                                          <br><span class="backSize2 " style="font-size: 10px;">99.22</span>
+                                                       </td>
+                                                       <td style="background-color: #72bbef;" class="back1" id="runnerBack1-1"><b class="rateback1 ">110</b>
+                                                          <br><span class="backSize1 " style="font-size: 10px;">108.17</span>
+                                                       </td>
+                                                       <td style="background-color: #f994ba;" class="lay1" id="runnerLay1-1"><b class="ratelay1 ">120</b>
+                                                          <br><span class="laySize1 " style="font-size: 10px;">9.6</span>
+                                                       </td>
+                                                       <td style="background-color: rgba(249, 148, 186, 0.55);" class="lay2 d-head hidden-xs" id="runnerLay2-1"><b class="ratelay2 ">130</b>
+                                                          <br><span class="laySize2 " style="font-size: 10px;">2.47</span>
+                                                       </td>
+                                                       <td style="background-color: rgba(249, 148, 186, 0.34);" class="lay3 d-head hidden-xs" id="runnerLay3-1"><b class="ratelay3 ">140</b>
+                                                          <br><span class="laySize3 " style="font-size: 10px;">4.43</span>
+                                                       </td>
+                                                    </tr>
+                                                    <!-- end ngIf: matchStatus=='OPEN' -->
+                                                    <!-- end ngRepeat: runner in runnerData track by $index -->
+                                                    <!-- ngIf: matchStatus=='OPEN' -->
+                                                    <tr id="The_Draw" class="">
+                                                       <td class="text-left"><b class="">The Draw</b>
+                                                          <br><b><span id="runnerpnl2" class=" text-danger">0.00</span></b>
+                                                       </td>
+                                                       <td style="background-color: rgba(114, 187, 239, 0.46);" class="back3 d-head hidden-xs" id="runnerBack3-2"><b class="rateback3 ">5.3</b>
+                                                          <br><span class="backSize3 " style="font-size: 10px;">5</span>
+                                                       </td>
+                                                       <td style="background-color: rgba(114, 187, 239, 0.71);" class="back2 d-head hidden-xs" id="runnerBack2-2"><b class="rateback2 ">5.4</b>
+                                                          <br><span class="backSize2 " style="font-size: 10px;">5311.26</span>
+                                                       </td>
+                                                       <td style="background-color: #72bbef;" class="back1" id="runnerBack1-2"><b class="rateback1 ">5.5</b>
+                                                          <br><span class="backSize1 " style="font-size: 10px;">1245.29</span>
+                                                       </td>
+                                                       <td style="background-color: #f994ba;" class="lay1" id="runnerLay1-2"><b class="ratelay1 ">5.6</b>
+                                                          <br><span class="laySize1 " style="font-size: 10px;">222.83</span>
+                                                       </td>
+                                                       <td style="background-color: rgba(249, 148, 186, 0.55);" class="lay2 d-head hidden-xs" id="runnerLay2-2"><b class="ratelay2 ">5.9</b>
+                                                          <br><span class="laySize2 " style="font-size: 10px;">53.13</span>
+                                                       </td>
+                                                       <td style="background-color: rgba(249, 148, 186, 0.34);" class="lay3 d-head hidden-xs" id="runnerLay3-2"><b class="ratelay3 ">6</b>
+                                                          <br><span class="laySize3" style="font-size: 10px;">29.46</span>
+                                                       </td>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                           </div>
+                                        </div>
+                                        <div class="csslayer" style="display: none;"> </div>
+                                        <input type="hidden" value="3702" autocomplete="off">
+                                     </div>
+                                  </div>
+                               </div>
+                               <!--  <div class="col-xs-12 col-md-6 no-padding" style="margin-bottom: 10px">
+                                  <div class="ibox float-e-margins">
+                                     <div class="table-responsive" id="divMarektWiseProfitloss">
+                                        <table class="table table-striped table-bordered table-hover" >
+                                             <thead>
+                                                 <tr>
+                                                     <th class="text-center col-xs-8" style="">Book Makers</th>
+                                                     <th class="text-center col-xs-2 BACK">Back</th>
+                                                     <th class="text-center col-xs-2 LAY">Lay</th>
+                                                 </tr>
+                                             </thead>
+                                             <tbody style="overflow-y: auto !important; max-height: 200px !important; background-color: rgba(0, 0, 0, 0);" colorcode="rgba(0, 0, 0, 0)">
+                                                 <tr class="trMDl">
+                                                     <td class="text-left col-xs-8">India
+                                                         <br><span ng-style="bmBookData.runner1Book>0 ? { color:'green' } : { color:'red' }" style="color: red;">-2950</span>
+                                                     </td>
+                                                     <td  class="text-center col-xs-2 BACK">--<br>--</td><td  class="text-center col-xs-2 LAY">--<br>--</td>
+                                                 </tr>
+                                                 <tr class="trMDl">
+                                                     <td class="text-left col-xs-8">Afganistan
+                                                         <br>
+                                                         <span ng-style="bmBookData.runner2Book>0 ? { color:'green' } : { color:'red' }" style="color: green;">5000</span>
+                                                     </td>
+                                                     <td  bmBookData.runner2ballStatus!=''" colspan="2" class="col-xs-4 text-center" style="vertical-align: middle;"><b style="color: red">SUSPENDED</b>
+                                                     </td>
+                                  
+                                                 </tr>
+                                  
+                                             </tbody>
+                                         </table>
+                                  </div>
+                                  </div>
+                                  </div> -->
+                               <div class="col-xs-12 col-md-6">
+                                  <div class="ibox float-e-margins">
+                                     <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover" style="font-size: 12px;">
+                                           <thead>
+                                              <!-- ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                              <!-- ngIf: $index==0 -->
+                                              <tr class="">
+                                                 <th class="text-left"> MDL&nbsp;<small>[&nbsp;UserName&nbsp;]</small></th>
+                                                 <th class="text-center ">Bangladesh</th>
+                                                 <th class="text-center ">Zimbabwe</th>
+                                                 <!-- ngIf: MDLlist.runner3Name!=null -->
+                                                 <th class="text-center  ">The Draw</th>
+                                                 <!-- end ngIf: MDLlist.runner3Name!=null -->
+                                              </tr>
+                                              <!-- end ngIf: $index==0 -->
+                                              <!-- end ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                              <!-- ngIf: $index==0 -->
+                                              <!-- end ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                              <!-- ngIf: $index==0 -->
+                                              <!-- end ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                           </thead>
+                                           <tbody>
+                                              <!-- ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                              <!-- ngIf: $index==0 -->
+                                              <tr class="trMDl ">
+                                                 <td class="text-right"> <b>Admin P&amp;L</b></td>
+                                                 <td class="text-center greenclass"><b class="">0.00</b></td>
+                                                 <td class="text-center greenclass"><b class="">0.00</b></td>
+                                                 <!-- ngIf: MDLlist.runner3Name!=null -->
+                                                 <td class="text-center greenclass"><b class="">0.00</b></td>
+                                                 <!-- end ngIf: MDLlist.runner3Name!=null -->
+                                              </tr>
+                                              <!-- end ngIf: $index==0 -->
+                                              <!-- end ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                              <!-- ngIf: $index==0 -->
+                                              <!-- end ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                              <!-- ngIf: $index==0 -->
+                                              <!-- end ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                           </tbody>
+                                           <!-- ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                           <!-- end ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                           <tfoot class="">
+                                              <tr class="trMDl">
+                                                 <td style="width: 215px;color:#333;font-size: 12px;" class="text-left cursor-pointer" data-toggle="collapse" data-target="#MDLname-1" aria-expanded="true" role="main"><b class="">arjun[arjun123]</b>
+                                                 </td>
+                                                 <td class="text-center greenclass">0.00</td>
+                                                 <td class="text-center greenclass">0.00</td>
+                                                 <!-- ngIf: MDLlist.runner3Name!=null -->
+                                                 <td class="text-center greenclass">0.00</td>
+                                                 <!-- end ngIf: MDLlist.runner3Name!=null -->
+                                              </tr>
+                                              <tr id="MDLname-1" class="collapse in" aria-expanded="true" style="">
+                                                 <td colspan="4">
+                                                    <!-- <div  class="col-xs-12"> -->
+                                                    <table style="background: #d5f6f7;width: 100%" class="table-hover">
+                                                       <!-- ngRepeat: DLlist in MDLlist.dlBook track by DLlist.dlUsername -->
+                                                       <tbody class="">
+                                                          <tr>
+                                                             <td style="width:209px;color:#333;font-size: 10px;" class="text-left cursor-pointer" data-toggle="collapse" data-target="#DLname-0-1" aria-expanded="true" role="main"><b class="">TEAMSAGR[TEAMSAGR]</b></td>
+                                                             <td class="text-center  greenclass">0.00</td>
+                                                             <td class="text-center  greenclass">0.00</td>
+                                                             <!-- ngIf: DLlist.runner3Name!=null -->
+                                                             <td class="text-center greenclass">0.00</td>
+                                                             <!-- end ngIf: DLlist.runner3Name!=null -->
+                                                          </tr>
+                                                          <tr id="DLname-0-1" class="collapse in" aria-expanded="true" style="">
+                                                             <td colspan="4">
+                                                                <table style="background: honeydew;width: 100%" class="table-hover">
+                                                                   <!-- ngRepeat: CLlist in DLlist.clientBook track by CLlist.userName -->
+                                                                   <tbody class="">
+                                                                      <tr>
+                                                                         <td style="width:200px;color:#333;font-size: 10px" class="text-left"><b class="">SURAJ SIR[TS002]</b></td>
+                                                                         <td class="text-center  greenclass">100.00</td>
+                                                                         <td class="text-center  greenclass">100.00</td>
+                                                                         <!-- ngIf: CLlist.runner3Name!=null -->
+                                                                         <td class="text-center  greenclass">260.00</td>
+                                                                         <!-- end ngIf: CLlist.runner3Name!=null -->
+                                                                      </tr>
+                                                                   </tbody>
+                                                                   <!-- end ngRepeat: CLlist in DLlist.clientBook track by CLlist.userName -->
+                                                                </table>
+                                                             </td>
+                                                          </tr>
+                                                       </tbody>
+                                                       <!-- end ngRepeat: DLlist in MDLlist.dlBook track by DLlist.dlUsername -->
+                                                       <!-- end ngRepeat: DLlist in MDLlist.dlBook track by DLlist.dlUsername -->
+                                                    </table>
+                                                    <!-- </div> -->
+                                                 </td>
+                                              </tr>
+                                           </tfoot>
+                                           <!-- end ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                           <!-- end ngRepeat: MDLlist in MDLDataList track by MDLlist.mdlUsername -->
+                                        </table>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="col-xs-12 no-padding" style="margin-top: 10px">
+                               <div class="col-xs-12 col-md-6 no-padding" style="max-height: 300px;overflow-y: auto;margin-top: 10px;margin-bottom: 10px">
+                                  <div class="divmarketbody">
+                                     <div class="table-responsive">
+                                        <!-- ngIf: fancydata.length > 0 -->
+                                        <table class="table table-striped table-bordered table-hover " style="font-size: 12px">
+                                           <thead>
+                                              <tr>
+                                                 <th class="col-xs-6 text-center layheader">No [K]</th>
+                                                 <th class="col-xs-6 text-center backheader">Yes [L]</th>
+                                              </tr>
+                                           </thead>
+                                           <!-- ngRepeat: fancy in fancydata track by fancy.id -->
+                                           <tbody style="" class="">
+                                              <tr>
+                                                 <td colspan="2" style="background: #000;color: #fff;font-weight: bolder;" class="">B CHARI RUN (BAN VS ZIM)ADV</td>
+                                              </tr>
+                                              <!-- ngIf: fancy.ballStatus=='' -->
+                                              <tr class="">
+                                                 <td class="col-xs-6 text-center sessionbetbox Laycolor" style="background-color: rgb(255, 202, 213);">
+                                                    <a>
+                                                       <div class="col-xs-6 text-right price ">25</div>
+                                                       <span class="col-xs-4 text-center sessionpoint" style="display: block;">[&nbsp;<span style="display: inline;" class="">110</span>&nbsp;] </span>
+                                                    </a>
+                                                 </td>
+                                                 <td class="col-xs-6 text-center sessionbetbox BackColor" style="background-color: rgb(174, 219, 251);">
+                                                    <a>
+                                                       <div class="col-xs-6 text-right price ">25</div>
+                                                       <span class="col-xs-4 text-center sessionpoint" style="display: block;">[&nbsp;<span style="display: inline;" class="">90</span>&nbsp;] </span>
+                                                    </a>
+                                                 </td>
+                                              </tr>
+                                              <!-- end ngIf: fancy.ballStatus=='' -->
+                                              <!-- ngIf: fancy.ballStatus=='SUSPENDED' -->
+                                              <!-- ngIf: fancy.ballStatus=='INACTIVE' -->
+                                              <!-- ngIf: fancy.ballStatus=='BALL RUNNING...' -->
+                                              <tr>
+                                                 <td>
+                                                    <div class="col-xs-12 no-padding">
+                                                       <div class="col-xs-8 no-padding">
+                                                          <span class="sessionlibility no-padding" style="color: #ff0000;">Libility : <b id="fancy_book_13875028" style="color: red;">--</b></span>
+                                                       </div>
+                                                       <div class="col-xs-4 no-padding">
+                                                          <span class="label label-danger cursor-pointer" data-toggle="modal" data-target="#FancybookModal">Book</span>
+                                                       </div>
+                                                    </div>
+                                                 </td>
+                                                 <td>
+                                                    <div class="col-xs-12 no-padding">
+                                                       <div class="no-padding"><span class="">Min / Max:</span> <span class="label label-warning cursor-pointer ">500<b>-</b>100000</span></div>
+                                                    </div>
+                                                 </td>
+                                              </tr>
+                                           </tbody>
+                                           <!-- end ngRepeat: fancy in fancydata track by fancy.id -->
+                                           <tbody style="" class="">
+                                              <tr>
+                                                 <td colspan="2" style="background: #000;color: #fff;font-weight: bolder;" class="">FALL OF 2ND WKT ZIM</td>
+                                              </tr>
+                                              <!-- ngIf: fancy.ballStatus=='' -->
+                                              <tr class="">
+                                                 <td class="col-xs-6 text-center sessionbetbox Laycolor" style="background-color: rgb(255, 202, 213);">
+                                                    <a>
+                                                       <div class="col-xs-6 text-right price ">43</div>
+                                                       <span class="col-xs-4 text-center sessionpoint" style="display: block;">[&nbsp;<span style="display: inline;" class="">120</span>&nbsp;] </span>
+                                                    </a>
+                                                 </td>
+                                                 <td class="col-xs-6 text-center sessionbetbox BackColor" style="background-color: rgb(174, 219, 251);">
+                                                    <a>
+                                                       <div class="col-xs-6 text-right price ">43</div>
+                                                       <span class="col-xs-4 text-center sessionpoint" style="display: block;">[&nbsp;<span style="display: inline;" class="">100</span>&nbsp;] </span>
+                                                    </a>
+                                                 </td>
+                                              </tr>
+                                              <!-- end ngIf: fancy.ballStatus=='' -->
+                                              <!-- ngIf: fancy.ballStatus=='SUSPENDED' -->
+                                              <!-- ngIf: fancy.ballStatus=='INACTIVE' -->
+                                              <!-- ngIf: fancy.ballStatus=='BALL RUNNING...' -->
+                                              <tr>
+                                                 <td>
+                                                    <div class="col-xs-12 no-padding">
+                                                       <div class="col-xs-8 no-padding">
+                                                          <span class="sessionlibility no-padding" style="color: #ff0000;">Libility : <b id="fancy_book_13881856" style="color: red;">--</b></span>
+                                                       </div>
+                                                       <div class="col-xs-4 no-padding">
+                                                          <span class="label label-danger cursor-pointer" data-toggle="modal" data-target="#FancybookModal">Book</span>
+                                                       </div>
+                                                    </div>
+                                                 </td>
+                                                 <td>
+                                                    <div class="col-xs-12 no-padding">
+                                                       <div class="no-padding"><span class="">Min / Max:</span> <span class="label label-warning cursor-pointer ">500<b>-</b>100000</span></div>
+                                                    </div>
+                                                 </td>
+                                              </tr>
+                                           </tbody>
+                                           <!-- end ngRepeat: fancy in fancydata track by fancy.id -->
+                                           <tbody style="" class="">
+                                              <tr>
+                                                 <td colspan="2" style="background: #000;color: #fff;font-weight: bolder;" class="">D TIRIPANO RUN</td>
+                                              </tr>
+                                              <!-- ngIf: fancy.ballStatus=='' -->
+                                              <tr class="">
+                                                 <td class="col-xs-6 text-center sessionbetbox Laycolor" style="background-color: rgb(255, 202, 213);">
+                                                    <a>
+                                                       <div class="col-xs-6 text-right price ">15</div>
+                                                       <span class="col-xs-4 text-center sessionpoint" style="display: block;">[&nbsp;<span style="display: inline;" class="">110</span>&nbsp;] </span>
+                                                    </a>
+                                                 </td>
+                                                 <td class="col-xs-6 text-center sessionbetbox BackColor" style="background-color: rgb(174, 219, 251);">
+                                                    <a>
+                                                       <div class="col-xs-6 text-right price ">15</div>
+                                                       <span class="col-xs-4 text-center sessionpoint" style="display: block;">[&nbsp;<span style="display: inline;" class="">90</span>&nbsp;] </span>
+                                                    </a>
+                                                 </td>
+                                              </tr>
+                                              <!-- end ngIf: fancy.ballStatus=='' -->
+                                              <!-- ngIf: fancy.ballStatus=='SUSPENDED' -->
+                                              <!-- ngIf: fancy.ballStatus=='INACTIVE' -->
+                                              <!-- ngIf: fancy.ballStatus=='BALL RUNNING...' -->
+                                              <tr>
+                                                 <td>
+                                                    <div class="col-xs-12 no-padding">
+                                                       <div class="col-xs-8 no-padding">
+                                                          <span class="sessionlibility no-padding" style="color: #ff0000;">Libility : <b id="fancy_book_13881857" style="color: red;">0</b></span>
+                                                       </div>
+                                                       <div class="col-xs-4 no-padding">
+                                                          <span class="label label-danger cursor-pointer" data-toggle="modal" data-target="#FancybookModal">Book</span>
+                                                       </div>
+                                                    </div>
+                                                 </td>
+                                                 <td>
+                                                    <div class="col-xs-12 no-padding">
+                                                       <div class="no-padding"><span class="">Min / Max:</span> <span class="label label-warning cursor-pointer ">500<b>-</b>100000</span></div>
+                                                    </div>
+                                                 </td>
+                                              </tr>
+                                           </tbody>
+                                           <!-- end ngRepeat: fancy in fancydata track by fancy.id -->
+                                           <tbody style="" class="">
+                                              <tr>
+                                                 <td colspan="2" style="background: #000;color: #fff;font-weight: bolder;" class="">25 OVER RUN ZIM</td>
+                                              </tr>
+                                              <!-- ngIf: fancy.ballStatus=='' -->
+                                              <tr class="">
+                                                 <td class="col-xs-6 text-center sessionbetbox Laycolor" style="background-color: rgb(255, 202, 213);">
+                                                    <a>
+                                                       <div class="col-xs-6 text-right price ">33</div>
+                                                       <span class="col-xs-4 text-center sessionpoint" style="display: block;">[&nbsp;<span style="display: inline;" class="">115</span>&nbsp;] </span>
+                                                    </a>
+                                                 </td>
+                                                 <td class="col-xs-6 text-center sessionbetbox BackColor" style="background-color: rgb(174, 219, 251);">
+                                                    <a>
+                                                       <div class="col-xs-6 text-right price ">33</div>
+                                                       <span class="col-xs-4 text-center sessionpoint" style="display: block;">[&nbsp;<span style="display: inline;" class="">85</span>&nbsp;] </span>
+                                                    </a>
+                                                 </td>
+                                              </tr>
+                                              <!-- end ngIf: fancy.ballStatus=='' -->
+                                              <!-- ngIf: fancy.ballStatus=='SUSPENDED' -->
+                                              <!-- ngIf: fancy.ballStatus=='INACTIVE' -->
+                                              <!-- ngIf: fancy.ballStatus=='BALL RUNNING...' -->
+                                              <tr>
+                                                 <td>
+                                                    <div class="col-xs-12 no-padding">
+                                                       <div class="col-xs-8 no-padding">
+                                                          <span class="sessionlibility no-padding" style="color: #ff0000;">Libility : <b id="fancy_book_13881894" style="color: red;">-1000</b></span>
+                                                       </div>
+                                                       <div class="col-xs-4 no-padding">
+                                                          <span class="label label-danger cursor-pointer" data-toggle="modal" data-target="#FancybookModal">Book</span>
+                                                       </div>
+                                                    </div>
+                                                 </td>
+                                                 <td>
+                                                    <div class="col-xs-12 no-padding">
+                                                       <div class="no-padding"><span class="">Min / Max:</span> <span class="label label-warning cursor-pointer ">500<b>-</b>100000</span></div>
+                                                    </div>
+                                                 </td>
+                                              </tr>
+                                           </tbody>
+                                           <!-- end ngRepeat: fancy in fancydata track by fancy.id -->
+                                        </table>
+                                        <!-- end ngIf: fancydata.length > 0 -->
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="col-xs-12 no-padding">
+                                  <div class="col-md-3 no-padding search1">
+                                     <input type="text" placeholder="Search here..." class="form-control">
+                                  </div>
+                                  <div class="col-md-2">
+                                     <button class="mr-1 mb-1 btn btn-outline-danger btn-min-width">Reject All Bets</button>
+                                  </div>
+                                  <div class="downld">
+                                     <a href="" id="pdf"><img title="pdf" class="ng-scope" src="assets/pdf.png"></a>
+                                     <a href="" id="excel"><img title="Excel" class="ng-scope" src="assets/excel.png"></a>
+                                     <a href="" id="csv"><img title="csv" class="ng-scope" src="assets/csv.png"></a>
+                                  </div>
+                                  <div class=" ibox float-e-margins pull-right">
+                                     <div>
+                                        <label class="label-control " style="float: right;">Total Records : 72</label>
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="ibox float-e-margins">
+                                  <div class="ibox-content no-padding" style="overflow-y: auto;max-height: 500px;">
+                                     <div class="table-responsive">
+                                        <table id="testttt" class="table table-bordered" style="font-size: 12px; text-align: center; white-space: nowrap;">
+                                           <thead>
+                                              <tr>
+                                                <th><input type="checkbox"></th>
+                                                <th>Active</th>
+                                                <th>Accept</th>
+                                                <th>ID</th>
+                                                <th>MDL</th>
+                                                <th>DL</th>
+                                                <th>Client</th>
+                                                <th>Selection</th>
+                                                <th>BackLay</th>
+                                                <th>Rate/score</th>
+                                                <th>Stake</th>
+                                                <th>Status</th>
+                                                <th>Placed Time</th>
+                                                <th>Info</th>
+                                                <th>Last Login</th>
+                                              </tr>
+                                           </thead>
+                                           <tbody class="tbl">
+                                              <tr class="ng-scope" id="backlay_{{index}}" [ngClass]="user.BackLay === 'BACK' ||  user.BackLay === 'YES' ? 'back' : 'lay'" *ngFor="let user of reportbetdata">
+                                                 <td data-header="'ng-table/headers/checkbox.html'" class="ng-binding" >
+                                                    <input type="checkbox" value="{{user.id}}"> 
+                                                 </td>
+                                                 <td title="'Active'" class="text-center" data-title-text="Action" >
+                                                    <button class="fa fa-times fa-2 btn btn-xs btn-danger" data-toggle="modal" data-target="#Reject-Bet"> </button>
+                                                 </td>
+                                                 <td title="'Accept'" style="text-align:center">
+                                                    
+                                                       <img title="Accept" data-ng-src="checkmark.png" style="cursor:pointer;width:20px;height:20px;" class="" src="assets/checkmark.png">
+                                               
+                                                 </td>
+                                                 <td title="'ID'" data-title-text="ID " class="" data-filter="{ID:'text'}" data-sortable="'ID'">{{user.ID}}</td>
+                                                 <td title="'MDL'" data-title-text="MDL" data-filter="{MDL:'text'}" data-sortable="'MDL'" class=" ">{{user.MDL}}</td>
+                                                 <td title="'DL'" data-title-text="DL" data-filter="{DL:'text'}" data-sortable="'DL'" class=" ">{{user.DL}}</td>
+                                                 <td title="'Client'" data-title-text="Client " data-filter="{Client:'text'}" data-sortable="'Client'" class=" ">{{user.Client}}</td>
+                                                 <td title="'Selection'" data-title-text="Selection" class="" 
+                                                    data-filter="{Selection:'text'}" data-sortable="'Selection'">{{user.Selection}} </td>
+                                                 <td  style='white-space: nowrap' title="'BackLay'" data-title-text="Back/Lay " class=" "><span>{{user.BackLay}}</span>
+                                                    <label  class="switch1" *ngIf="user.BackLay == 'BACK' || user.BackLay == 'LAY' " style="vertical-align: middle;">
+                                                    <input id="togglebacklay_{{index}}" type="checkbox" [(ngModel)]="backlaycheck"   *ngIf="user.BackLay === 'BACK' ||  user.BackLay === 'YES' ? true : false" (click)="changeBacklay(index)" style="display: none;">
+                                                    <span class="slider round"></span>
+                                                    </label>
+                                                 </td>
+                                                 <td title="'Rate/score'" data-title-text="Rate/score " data-filter="{Ratescore:'text'}" data-sortable="'Ratescore'">
+                                                    <span  class="" >{{user.Ratescore}}</span><!-- end ngIf: user.score==0 --> 
+                                                 </td>
+                                                 <td title="'Stake'" data-title-text="Stake" class="" data-filter="{Stake:'text'}" data-sortable="'Stake'">{{user.Stake}}</td>
+                                                 <td title="'Status'" data-title-text="Status" data-filter="{Stake:'text'}" data-sortable="'Stake'" class=" ">{{user.Status}}</td>
+                                                 <td title="'Placed Time'" data-title-text="Placed Time " class=" " data-filter="{PlacedTime:'text'}" data-sortable="'PlacedTime'">{{user.PlacedTime}} </td>
+                                                 <td title="'Info'" class="text-center infomsg " data-title-text="Info ">
+                                                    <!-- ngIf: user.source!='web' --><i  class="fa fa-mobile fa-2 text-danger  " data-toggle="popover " data-placement="auto left " data-content="os:Android, os_version:7.1.1, browser:Chrome, browser_version:70, IP: 47.30.128.219 " data-original-title=" " title="os:Android, os_version:7.1.1, browser:Chrome, browser_version:70, IP: 47.30.128.219 "></i><!-- end ngIf: user.source!='web' -->
+                                                    <!-- ngIf: user.source=='web' -->
+                                                 </td>
+                                                 <td title="'Last Login'" data-title-text="Placed Time " class=" " data-filter="{PlacedTime:'text'}" data-sortable="'PlacedTime'">{{user.LoggedOut}} </td>
+                                              </tr>
+                                           </tbody>
+                                        </table>
+                                     <!--    <div data-ng-table-pagination="params" template-url="templates.pagination " class=" ng-isolate-scope "> -->
+                                           <!-- ngInclude: templateUrl -->
+                                           <!-- <div class=""> -->
+                                              <!-- ngIf: params.data.length -->
+                                              <!-- <div class="ng-table-pager"  data-params.data.length> -->
+                                                 <!-- ngIf: params.settings().counts.length --> <!-- ngIf: pages.length --> 
+                                              </div>
+                                              <!-- end ngIf: params.data.length --> 
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          
+          <!-- File export table -->
+    
+    
+ <div id="mpeMarletPlaceBet" class="modal " aria-hidden="true" style="display: none;">
+    <div class="modal-dialog ">
+       <div class="modal-content ">
+          <div class="modal-header mpe-laycolorgroud " id="mpemodelbody">
+             <b><span id="mpeHeader" class="inline  ">Bangladesh v Zimbabwe - Match Odds</span></b>&nbsp;<span class="inline ">Place bet</span>
+          </div>
+          <div class="modal-body ">
+             <div class="row mpeplacebet-border-bottom " id="ddldropdown">
+                <div class="col-lg-12 no-padding ">
+                   <div class="col-md-12 ">
+                   </div>
+                </div>
+             </div>
+             <div id="divMarketDetail">
+                <div class="row mpeplacebet-border-bottom top-margin-10px ">
+                   <div class="col-md-4 form-group ">
+                      <select class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty "   style="display: none; ">
+                         <option value=" " class=" ">--Select MDL--</option>
+                         <option label="arjun (arjun123) " value="number:1095 ">arjun (arjun123)</option>
+                         <option label="Ashok (demo1) " value="number:179 ">Ashok (demo1)</option>
+                         <option label="demo (demomdl1) " value="number:1516 ">demo (demomdl1)</option>
+                         <option label="demo (demomdl2) " value="number:1519 ">demo (demomdl2)</option>
+                         <option label="demomdl (demomdl) " value="number:25 ">demomdl (demomdl)</option>
+                         <option label="kishor (kishor1) " value="number:159 ">kishor (kishor1)</option>
+                         <option label="master (runmsa) " value="number:1517 ">master (runmsa)</option>
+                         <option label="RAHUL JAIN (RAHUL) " value="number:35 ">RAHUL JAIN (RAHUL)</option>
+                         <option label="sagar (sagar) " value="number:31 ">sagar (sagar)</option>
+                      </select>
+                      <div class="chosen-container chosen-container-single " style="width: 0px; " title=" ">
+                         <a class="chosen-single" >
+                            <span>--Select MDL--</span>
+                            <div><b></b></div>
+                         </a>
+                         <div class="chosen-drop ">
+                            <div class="chosen-search "><input type="text" autocomplete="off"></div>
+                            <ul class="chosen-results "></ul>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-4 form-group ">
+                      <select  class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty loading "  style="display: none; ">
+                         <option value=" " class=" ">--Select DL--</option>
+                      </select>
+                      <div class="chosen-container chosen-container-single chosen-disabled " style="width: 0px; " title=" ">
+                         <a class="chosen-single">
+                            <span>--Select DL--</span>
+                            <div><b></b></div>
+                         </a>
+                         <div class="chosen-drop ">
+                            <div class="chosen-search "><input type="text" autocomplete="off"></div>
+                            <ul class="chosen-results "></ul>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-4 form-group ">
+                      <select class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty loading "   style="display: none; ">
+                         <option value=" " selected="selected" class=" ">--Select Client--</option>
+                      </select>
+                      <div class="chosen-container chosen-container-single chosen-disabled " style="width: 0px; " title=" ">
+                         <a class="chosen-single" >
+                            <span>--Select Client--</span>
+                            <div><b></b></div>
+                         </a>
+                         <div class="chosen-drop ">
+                            <div class="chosen-search "><input type="text" autocomplete="off"></div>
+                            <ul class="chosen-results "></ul>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="row mpeplacebet-border-bottom top-margin-10px ">
+                   <div class="col-lg-12 no-padding ">
+                      <div class="col-md-6 ">
+                         <div class="col-lg-12 no-padding ">
+                            <label class="display-inline-block custom-control custom-radio ">
+                            <input type="radio" id="BackSlip" name="placebetradio " value="back " class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty ">
+                            <span class="bg-primary custom-control-indicator "></span>
+                            <span class="custom-control-description ">Back</span>
+                            </label>
+                            <label class="display-inline-block custom-control custom-radio ">
+                            <input type="radio" id="LaySlip" name="placebetradio " value="lay " class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty ">
+                            <span class="bg-primary custom-control-indicator "></span>
+                            <span class="custom-control-description ">Lay</span>
+                            </label>   
+                            <label class="display-inline-block custom-control custom-checkbox ">
+                            <input type="checkbox" id="Matchedchkbx" class="custom-control-input">
+                            <span class="bg-primary custom-control-indicator "></span>
+                            <span class="custom-control-description ">Matched</span>
+                            </label>                                
+                         </div>
+                        </div>
+                      <div class="col-md-6 ">                  
+                         <input type="password" class="form-control " id="password_bet" placeholder="Enter Password">             
+                      </div>
+                   </div>
+                </div>
+                <div class="row ">
+                   <div class="col-md-12 no-padding ">
+                      <div class="col-md-4 form-group ">
+                         <b>Rate :</b>
+                         <div class="input-group ">
+                            <span class="input-group-btn ">
+                            <button type="button" class="btn btn-default btn-number odds " disabled="disabled" data-type="minus " data-field="quant[1] ">
+                            <span class="fa fa-minus " aria-hidden="true"></span>
+                            </button>
+                            </span>
+                            <input type="text" id="odds_bet" name="quant[1] " class="form-control input-number " value="1" >
+                            <span class="input-group-btn ">
+                            <button type="button" class="btn btn-default btn-number odds " data-type="plus " data-field="quant[1] ">
+                            <span class="fa fa-plus " aria-hidden="true"></span>
+                            </button>
+                            </span>
+                         </div>
+                         <!-- <div class="input-group "> -->
+                         <!-- <span class="input-group-btn ">                         
+                            <button class="btn btn-info bootstrap-touchspin-down " type="button " id="btnDecrementRate787 " >-</button>
+                            
+                            </span>  -->                    
+                         <!--  <input min="1 " step="0.01 " max="100 "  tabindex="1 " class="form-control " type="number " value=" " name="mktRate " id=" "> -->                     
+                         <!-- <span class="input-group-btn ">                        
+                            <button class="btn btn-info bootstrap-touchspin-up " type="button " id="btnIncrementRate787 " >+</button>
+                            
+                            </span>  -->                
+                         <!-- </div> -->
+                      </div>
+                      <div class="col-md-4 form-group ">
+                         <b>Stack :</b> 
+                         <div class="input-group ">
+                            <span class="input-group-btn ">
+                            <button type="button" class="btn btn-danger btn-number stake " data-type="minus " data-field="quant[2] ">
+                            <span class="fa fa-minus " aria-hidden="true"></span>
+                            </button>
+                            </span>
+                            <input type="text" id="stake_bet" name="quant[2] " class="form-control input-number " value="10" >
+                            <span class="input-group-btn ">
+                            <button type="button" class="btn btn-success btn-number stake " data-type="plus " data-field="quant[2] ">
+                            <span class="fa fa-plus" aria-hidden="true"></span>
+                            </button>
+                            </span>
+                         </div>
+                         <!-- <div class="input-group ">                      -->
+                         <!-- <span class="input-group-btn ">                        
+                            <button class="btn btn-info bootstrap-touchspin-down " type="button " id="btnDecrementStake787 " >-</button>         
+                            
+                            </span> -->                     
+                         <!-- <input min="1 " max="99999999 " tabindex="2 " class="form-control " type="number " value=" " name="MktStack " id=" ">                      -->
+                         <!-- <span class="input-group-btn ">                         
+                            <button class="btn btn-info bootstrap-touchspin-up " type="button " id="btnIncrementStake787 ">+</button>
+                            
+                            </span>   -->               
+                         <!-- </div> -->
+                      </div>
+                      <div class="col-md-4 form-group ">
+                         <b>Profit | Loss :</b>                 
+                         <div class="input-group ">                     
+                            <input class="form-control text-right allowDecimal " type="text" value=" " name="PL " id="pnL_bet" style="color: rgb(255, 0, 0); ">                 
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-lg-12 text-center ">
+                   <button value="5000 " class="Stakevalue btn btn-info cursor-pointer ">5000</button>
+                   <button value="10000 " class="Stakevalue btn btn-info cursor-pointer ">10000</button>
+                   <button value="25000 " class="Stakevalue btn btn-info cursor-pointer ">25000</button>
+                   <button value="50000 " class="Stakevalue btn btn-info cursor-pointer ">50000</button>
+                   <button value="100000 " class="Stakevalue btn btn-info cursor-pointer ">1 Lakh</button>
+                   <button value="500000 " class="Stakevalue btn btn-info cursor-pointer ">5 Lakh</button>
+                   <button class="btn btn-danger clear ">Clear</button>
+                </div>
+                <div class="row white-bg " style="margin-top: 50px ">
+                   <div class="col-lg-3 ">             
+                      <button tabindex="5" type="reset" class="btn btn-danger " data-dismiss="modal " style="width: 100% "><i class="fa fa-times "></i>Cancel</button>         
+                   </div>
+                   <div class="col-lg-9 ">             
+                      <button tabindex="3" type="button" id="btn_placebet" class="btn btn-success " style="width: 100% " ><i class="fa fa-check "></i>Place Bet</button>         
+                   </div>
+                </div>
+             </div>
+             <div class="csslayer" id="divmpeOverlayer">
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <div id="FancybookModal" class="modal bs-example-modal-lg ng-scope in"  role="dialog">
+    <div class="modal-dialog" role="document" style="max-width: 500px">
+       <div class="modal-content" >
+          <div class="modal-header">
+             <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> × </button> --> 
+             <h3 class="modal-title">Fancy Book</h3>
+          </div>
+          <div class="modal-body" style="overflow-y: auto;max-height: 300px;">
+             <table class="table table-bordered text-xs-center">
+                <thead>
+                   <tr>
+                      <td><b>Score</b></td>
+                      <td><b>Amount</b></td>
+                   </tr>
+                </thead>
+                <tbody>
+                   <!-- ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">180</strong></td>
+                      <td><span>
+                         <strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">1985</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">181</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">1985</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">182</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">1985</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr  class="ng-scope">
+                      <td><strong class="ng-binding">183</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">1985</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">184</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">1985</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">185</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">1985</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">186</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">1985</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">187</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">1985</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">188</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">1985</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">189</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">3185</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">190</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(17, 232, 17);">3185</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">191</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(239, 134, 172);">-196665</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr  class="ng-scope">
+                      <td><strong class="ng-binding">192</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(239, 134, 172);">-196665</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">193</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(239, 134, 172);">-196665</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">194</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(239, 134, 172);">-199385</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">195</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(239, 134, 172);">-199385</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">196</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(239, 134, 172);">-199385</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">197</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(239, 134, 172);">-199385</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">198</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(239, 134, 172);">-199385</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">199</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(239, 134, 172);">-199385</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <tr class="ng-scope">
+                      <td><strong class="ng-binding">200</strong></td>
+                      <td><span><strong data-ng-style="fancybook.Value>=0 &amp;&amp; {'color':'#11e811'}  || fancybook.Value<0 &amp;&amp; {'color':'#ef86ac'}" class="ng-binding" style="color: rgb(239, 134, 172);">-199385</strong></span>
+                      </td>
+                   </tr>
+                   <!-- end ngRepeat: fancybook in fancyBookdata -->
+                   <!-- ngIf: fancyBookdata.length<1 -->
+                   <!-- end ngRepeat: fancyData in fancyDataList -->
+                </tbody>
+             </table>
+          </div>
+          <div class="modal-footer"> <button type="button" class="mr-1 mb-1 btn btn-outline-primary btn-min-width ng-scope" data-dismiss="modal"> Close </button> </div>
+       </div>
+    </div>
+ </div>
+ <div class="modal " id="Reject-Bet">
+    <div class="modal-dialog" role="document" style="max-width: 400px">
+       <div class="modal-content">
+         <div class="modal-header " style="display: flex;">
+                     <h3 class="modal-title">Reject Bet</h3>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">×</span>
+                     </button>
+                     
+                 </div>
+          <div class="modal-body row">
+             <div class="col-md-12">
+                <div class="col-lg-3">
+                   <label class="label-control">Bet ID :</label>
+                </div>
+                <div class="col-lg-6">
+                   <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" style="margin-bottom: 5px;">
+                </div>
+             </div>
+             <div class="col-md-12">
+                <div class="col-lg-3">
+                   <label class="label-control">Password :</label>
+                </div>
+                <div class="col-lg-6">
+                   <input type="Password" maxlength="8"  class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength">
+                </div>
+             </div>
+          </div>
+          <div class="modal-footer">
+             <input type="reset" class="mr-1 mb-1 btn btn-outline-danger btn-min-width" data-dismiss="modal" value="Close">
+             <input type="submit" class="mr-1 mb-1 btn btn-outline-danger btn-min-width" value="Reject Bet">
+          </div>
+       </div>
+    </div>
+ </div>
+ <div class="modal " id="Reject-Multiple-Bet">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content ">
+          <div class="modal-header ">
+             <button type="button" class="close " data-dismiss="modal " aria-label="Close ">
+             <span aria-hidden="true">×</span>
+             </button>
+             <h3 class="modal-title ">Reject Bet</h3>
+          </div>
+          <div class="modal-body row ">
+             <div class="col-md-12 ">
+                <div class="col-lg-3 ">
+                   <label class="label-control ">Bet ID :</label>
+                </div>
+                <div class="col-md-3 ">
+                   <input type="text" class="form-control" id="rejectmultibetid" style="color: rgb(255, 0, 0);margin-bottom: 5px; ">
+                </div>
+             </div>
+             <div class="col-md-12 ">
+                <div class="col-lg-3 ">
+                   <label class="label-control ">Password :</label>
+                </div>
+                <div class="col-lg-3 ">
+                   <input type="password" autocomplete="off" id="FancyMultiPassword" class="form-control ">
+                </div>
+             </div>
+          </div>
+          <div class="modal-footer ">
+             <input type="reset" class="btn btn-primary btn-lg " data-dismiss="modal " value="close ">
+             <input type="submit" class="btn btn-danger btn-lg"  value="Reject Multiple Bets ">
+          </div>
+       </div>
+    </div>
+ </div>
+ <div class="modal" id="User-Lock">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content ">
+          <div class="modal-header ">
+             <button type="button" class="close " data-dismiss="modal " aria-label="Close ">
+             <span aria-hidden="true">×</span>
+             </button>
+             <h3 class="modal-title" id="myModalLabel35">Active Users</h3>
+          </div>
+          <form class="ng-pristine ng-valid ">
+             <div class="modal-body " style="height: 400px;overflow-y: auto; ">
+                <section id="scroll">
+                    <h2 style="display: none;"> fjhsffg </h2>
+                   <div class="row ">
+                      <div class="col-xs-12 ">
+                         <div class="card-body collapse in ">
+                            <div class="card-block card-dashboard no-padding " style="padding-top: 0px;/* padding-bottom: 4px; */ ">
+                               <div class="col-md-12 ">
+                                  <div class="col-md-3 ">
+                                     <select id="userList" style="margin-bottom: 10px " data-ng-change="getActiveUserList() " class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ">
+                                        <!-- <option value=" ">-Select-</option> -->
+                                        <option value="2 ">All</option>
+                                        <option value="1 ">Active</option>
+                                        <option value="0 ">Block</option>
+                                     </select>
+                                  </div>
+                                  <div class="col-md-12 ">
+                                     <div class="col-md-2 no-padding ">
+                                        <label class="label-control ">MKT Type :</label>
+                                     </div>
+                                     <div class="col-md-10 no-padding ">
+                                        <label class="display-inline-block custom-control custom-radio ">
+                                        <input type="radio" name="UserList " value="1 " class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty ">
+                                        <span class="bg-primary custom-control-indicator "></span>
+                                        <span class="custom-control-description ">All</span>
+                                        </label>
+                                        <label class="display-inline-block custom-control custom-radio ">
+                                        <input type="radio" name="UserList" value="2" class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty ">
+                                        <span class="bg-primary custom-control-indicator "></span>
+                                        <span class="custom-control-description ">Match Odds</span>
+                                        </label>
+                                        <label class="display-inline-block custom-control custom-radio ">
+                                        <input type="radio" name="UserList " value="3 " class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty ">
+                                        <span class="bg-primary custom-control-indicator "></span>
+                                        <span class="custom-control-description ">Fancy</span>
+                                        </label>
+                                        <label class="display-inline-block custom-control custom-radio ">
+                                        <input type="radio" name="UserList " value="4 " class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty ">
+                                        <span class="bg-primary custom-control-indicator "></span>
+                                        <span class="custom-control-description ">Book Maker</span>
+                                        </label>
+                                     </div>
+                                  </div>
+                               </div>
+                               <table data-ng-table="userblockUn " class="table table-striped table-bordered  ng-table ">
+                                  <!-- ngInclude: templates.header -->
+                                  <thead class=" ">
+                                     <!-- ngIf: params.hasGroup() --> 
+                                     <tr class="ng-table-sort-header ">
+                                        <!-- ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) -->
+                                        <th title="" class="header">
+                                           <!-- ngIf: !template -->
+                                           <div class="ng-table-header "> <span class=" sort-indicator">Username</span> </div>
+                                           <!-- end ngIf: !template -->
+                                           <!-- ngIf: template -->
+                                        </th>
+                                        <!-- end ngIf: $column.show(this) -->
+                                        <!-- end ngRepeat: $column in $columns -->
+                                        <!-- ngIf: $column.show(this) -->
+                                        <th title="" class="header">
+                                           <!-- ngIf: !template --> <!-- ngIf: template --><!-- ngInclude: template -->
+                                           <div  class=" ">
+                                              <input type="checkbox" name="filter-checkbox" value=" " class=" ">
+                                           </div>
+                                           <!-- end ngIf: template --> 
+                                        </th>
+                                        <!-- end ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --> 
+                                     </tr>
+                                     <tr data-ng-show="show_filter " class="ng-table-filters">
+                                        <!-- ngRepeat: $column in $columns --><!-- ngIf: $column.show(this) -->
+                                        <th data-title-text="Username" class="filter">
+                                           <!-- ngRepeat: (name, filter) in $column.filter(this) -->
+                                           <!-- ngInclude: config.getTemplateUrl(filter) -->
+                                           <div>
+                                              <input type="text" name="username"   class="input-filter form-control " placeholder=""> 
+                                           </div>
+                                           <!-- end ngRepeat: (name, filter) in $column.filter(this) -->
+                                        </th>
+                                        <!-- end ngIf: $column.show(this) -->
+                                        <!-- end ngRepeat: $column in $columns -->
+                                        <!-- ngIf: $column.show(this) -->
+                                        <th data-title-text="" class="filter" >
+                                           <!-- ngRepeat: (name, filter) in $column.filter(this) --> 
+                                        </th>
+                                        <!-- end ngIf: $column.show(this) --><!-- end ngRepeat: $column in $columns --> 
+                                     </tr>
+                                  </thead>
+                                  <!-- <tr 
+                                     UserStatus==2 || user.status==UserStatus "> -->
+                                  <tbody>
+                                     <!-- ngRepeat: user in $data -->
+                                  </tbody>
+                               </table>
+                               <!-- <div data-ng-table-pagination="params " template-url="templates.pagination " class=" ng-isolate-scope ">
+                               
+                                  <div class=" ">
+                                     
+                                  </div>
+                               </div> -->
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </section>
+             </div>
+             <div class="modal-footer " style="background-color: #fdf7f7 ">
+                <input type="button" class="btn btn-outline-danger btn-lg "  value="Block ">
+                <input type="button" class="btn btn-outline-success btn-lg "   value="UnBlock ">
+                <input type="button" class="btn btn-outline-primary btn-lg " data-dismiss="modal " value="Close ">
+             </div>
+          </form>
+       </div>
+    </div>
+ </div>
+ <script type="text/ng-template" id="ng-table/headers/checkbox.html">
+    <input type="checkbox" data-ng-model="checkboxes.checked" id="select_all" name="filter-checkbox" value="" />
+ </script>

@@ -1,0 +1,241 @@
+<style>
+    .card-block {
+        padding: 0
+    }
+    
+    .btn-outline-info {
+        color: #fff;
+        background-image: none;
+        background-color: #10827d;
+    }
+    
+    .card-header {
+        padding: 0!important
+    }
+</style>
+
+<div class="app-content content container-fluid ng-scope">
+
+    <div class="content-wrapper">
+
+        <div class="content-body">
+
+            <section>
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <div class="card-header">
+
+                            <form class="ng-pristine ng-valid">
+
+                                <div class="header _clearfix">
+
+                                    <h1 class="ng-binding ng-scope">BOOK DETAIL</h1></div>
+
+                                <hr>
+
+                                <div class="card-block">
+
+                                    <div class="form form-horizontal">
+
+                                        <div class="form-body">
+
+                                            <div class="form-group row">
+
+                                                <label class="col-md-2 label-control">Sport Name <span class="danger">*</span></label>
+
+                                                <div class="col-md-3">
+
+                                                    <select class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty" id="sport" data-ng-model="SportName" aria-label="SportName">
+                                                        <option value="" class="" selected="selected">Select Sport</option>
+                                                        <option label="Soccer" value="object:425">Soccer</option>
+                                                        <option label="Election" value="object:426">Election</option>
+                                                        <option label="Tennis" value="object:427">Tennis</option>
+                                                        <option label="Cricket" value="object:428">Cricket</option>
+                                                    </select>
+                                                    <div class="chosen-container chosen-container-single" style="width: 281px;" title="" id="sport_chosen">
+                                                        <a class="chosen-single" tabindex="-1">
+                                                            <div><b></b></div>
+                                                        </a>
+                                                        <div class="chosen-drop">
+
+                                                            <ul class="chosen-results"></ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-md-3 top_marg">
+
+                                                    <select class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty loading" aria-label="Tournaments">
+                                                        <option value="" class="" selected="selected">Select Tournaments</option>
+                                                        <option label="International Twenty20 Matches" value="1">International Twenty20 Matches</option>
+                                                        <option label="ICC Womens World Twenty20" value="2">ICC Womens World Twenty20</option>
+                                                        <option label="One Day Internationals" value="3">One Day Internationals</option>
+                                                        <option label="Test Matches" value="4">Test Matches</option>
+                                                    </select>
+                                                    <div class="chosen-container chosen-container-single chosen-disabled" style="width: 281px;" title="" id="tournament_chosen">
+                                                        <a class="chosen-single" tabindex="-1">
+                                                            <div><b></b></div>
+                                                        </a>
+                                                        <div class="chosen-drop">
+
+                                                            <ul class="chosen-results"></ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-md-3 top_marg">
+
+                                                    <select class="form-control ng-pristine ng-untouched ng-valid localytics-chosen ng-empty loading" aria-label="Match">
+                                                        <option value="" class="" selected="selected">Select Match</option>
+                                                        <option label="ICC Womens World Twenty20" value="1">ICC Womens World Twenty20</option>
+                                                        <option label="England Women v Sri Lanka Women" value="2">England Women v Sri Lanka Women</option>
+                                                        <option label="India Women v Pakistan Women" value="3">India Women v Pakistan Women</option>
+                                                    </select>
+                                                    <div class="chosen-container chosen-container-single chosen-disabled" style="width: 281px;" title="" id="match_chosen">
+                                                        <a class="chosen-single" tabindex="-1">
+                                                            <div><b></b></div>
+                                                        </a>
+                                                        <div class="chosen-drop">
+
+                                                            <ul class="chosen-results"></ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <!-- <div class="form-group row ng-hide" style="text-align: center;">
+
+                                                <button class="btn btn-Info" style="margin-bottom: 15px;">
+
+                                                  </button>
+
+                                            </div> -->
+
+                                            <div class="form-group row">
+
+                                                <label class="col-md-2 label-control">Header Name <span class="danger">*</span></label>
+
+                                                <div class="col-md-3">
+
+                                                    <input type="text" maxlength="20" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" style="text-transform: uppercase;" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" aria-label="input">
+
+                                                    <input type="hidden" autocomplete="off" class="ng-pristine ng-untouched ng-valid ng-empty">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row" style="">
+
+                                                <label class="col-md-2 label-control">Min Stake <span class="danger">*</span></label>
+
+                                                <div class="col-md-3">
+
+                                                    <input type="number" min="0" class="form-control ng-pristine ng-untouched ng-valid ng-empty" aria-label="MinStake">
+
+                                                </div>
+
+                                                <label class="col-md-2 label-control">Max Stake <span class="danger">*</span></label>
+
+                                                <div class="col-md-3">
+
+                                                    <input type="number" min="0" class="form-control ng-pristine ng-untouched ng-valid ng-empty" aria-label="MaxStake">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+
+                                                <label class="col-md-2 label-control">Min Rate <span class="danger">*</span></label>
+
+                                                <div class="col-md-3">
+
+                                                    <input type="number" min="0" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" aria-label="Min Rate">
+
+                                                </div>
+
+                                                <label class="col-md-2 label-control">Max Rate <span class="danger">*</span></label>
+
+                                                <div class="col-md-3">
+
+                                                    <input type="number" min="0" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" aria-label="MaxRate">
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group row">
+
+                                            <label class="col-md-2 label-control">Maximum Profit</label>
+
+                                            <div class="col-md-3">
+
+                                                <input type="number" min="0" class="form-control ng-pristine ng-untouched ng-valid ng-empty" aria-label="MaximumProfit">
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group row">
+
+                                            <label class="col-md-2 label-control">Rates Different</label>
+
+                                            <div class="col-md-3">
+
+                                                <input type="number" min="0" class="form-control ng-pristine ng-untouched ng-valid ng-empty" aria-label="RatesDifferent">
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group row">
+
+                                            <label class="col-md-2 label-control">maxStakePerRate</label>
+
+                                            <div class="col-md-3">
+
+                                                <input type="number" min="0" class="form-control ng-pristine ng-untouched ng-valid ng-empty" aria-label="maxStakePerRate">
+
+                                            </div>
+
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="form-actions" style="text-align: center;">
+
+                                            <button type="button" class="mr-1 mb-1 btn btn-outline-info btn-min-width ng-scope">Add New</button>
+
+                                            <button type="button" onclick="location.href='#!/booklist'" class="mr-1 mb-1 btn btn-outline-danger btn-min-width">Cancel</button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+       
+
+    </div>
+
+</div>
+

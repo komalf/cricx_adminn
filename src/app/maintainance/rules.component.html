@@ -1,0 +1,85 @@
+
+<script src="https://cdn.ckeditor.com/4.11.1/basic/ckeditor.js"></script>
+<style class="ng-scope">
+    .chosen-container.chosen-container-single {
+        width: 100% !important;
+    }
+
+    .nav-tabs {
+        margin-top: 6%;
+    }
+
+
+    .btns {
+        text-align: center;
+
+    }
+
+    .btn-outline-primary {
+        color: #fff;
+        background-image: none;
+        background-color: #10827d;
+    }
+
+    .row {
+        margin-left: -28px;
+        margin-right: -20px;
+    }
+</style>
+<div class="app-content content container-fluid ng-scope">
+    <div class="content-wrapper">
+        <div class="content-header-right col-md-6 col-xs-12"></div>
+        <div class="content-body">
+
+            <section id="card-actions">
+                <div class="row">
+                    <div class="col-xs-12">
+
+
+
+
+                        <div class="header _clearfix">
+
+                            <h1 class="ng-binding ng-scope">GENERAL RULES</h1>
+
+                        </div>
+
+                    </div>
+                    <div class="card-body collapse in">
+                        <div class="card-block">
+                            <div class="form form-horizontal">
+                                <form class="form-horizontal ng-pristine ng-valid">
+                                    <div class="form-group row">
+                                        <div class="col-md-3">
+                                            <label class="label-control" style="float: right">Rules:</label>
+                                        </div>
+                                        <div class="col-md-9">
+
+                                            <textarea name="editor1"></textarea>
+                                            <script>
+                                                CKEDITOR.replace('editor1');
+                                            </script>
+
+
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <div class="btns">
+                                        <button type="button"
+                                            class="mr-1 mb-1 btn btn-outline-primary btn-min-width ng-scope">Save</button>
+                                        <button type="button"
+                                            class="mr-1 mb-1 btn btn-outline-primary btn-min-width ng-scope">Cancel
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
